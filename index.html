@@ -1,0 +1,1361 @@
+<!--
+  UNITED CITIZEN LAW — v4 (Apex Growth Corp, July 2026)
+  Black/Gold/White · step-by-step case-review wizard (Apex pattern) · live language
+  switching EN/ES/دری/اردو/العربية with per-key English fallback · smart links.
+  ⚠️ DEPLOY CHECKLIST:
+   1. FORM_ENDPOINT → your Formspree URL (later: CRM/n8n webhook — payload matches).
+   2. Verify geo pin + set aggregateRating.reviewCount to the LIVE Google count.
+   3. Dari/Urdu/Arabic strings: have a native speaker review before production
+      (Spanish is complete; the other three cover the conversion layer and fall
+      back to English elsewhere by design).
+   4. Client-side language toggle is a UX feature — the SEO plan still requires
+      real indexable /es/ etc. pages per GROWTH-PLAN.md (hreflang there).
+   5. PREVIEW_MODE=false once real practice pages exist.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sacramento Personal Injury Lawyer | United Citizen Law — No Fee Unless We Win</title>
+<meta name="description" content="Injured in a crash? Sacramento personal injury attorney Sam Fareed has recovered $13M+ for clients — car, truck, rideshare &amp; dog bite cases. Free 24/7 consultation in English, Español, دری, اردو &amp; العربية. No fee unless we win. (916) 800-8457.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://uclaw.net/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="United Citizen Law">
+<meta property="og:title" content="Sacramento Personal Injury Lawyer | United Citizen Law">
+<meta property="og:description" content="$13M+ recovered. Free consultation 24/7 in 5 languages. No fee unless we win. Founded by an attorney who survived his own serious crash.">
+<meta property="og:url" content="https://uclaw.net/">
+<meta property="og:image" content="https://uclaw.net/og/ucl-results-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="geo.region" content="US-CA">
+<meta name="geo.placename" content="Sacramento">
+<meta name="theme-color" content="#070708">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": "https://uclaw.net/#firm",
+      "name": "United Citizen Law",
+      "alternateName": "United Citizen Law, A Fareed Injury Firm",
+      "slogan": "From beginning to end, your fight is our fight.",
+      "description": "United Citizen Law is a Sacramento personal injury law firm founded by attorney Sam Fareed. The firm represents injured people in car, truck, motorcycle, rideshare, pedestrian, dog bite, and premises liability cases on a contingency basis, serving clients in English, Spanish, Dari/Farsi, Hindi/Urdu, and Arabic.",
+      "url": "https://uclaw.net/",
+      "logo": "https://uclaw.net/wp-content/uploads/2023/04/ucl-main-logo-gold.svg",
+      "image": "https://uclaw.net/og/ucl-results-card.png",
+      "telephone": "+1-916-800-8457",
+      "email": "intake@uclaw.net",
+      "priceRange": "Free consultation — no fee unless we win (contingency)",
+      "knowsAbout": ["Personal injury law","Car accidents","Truck accidents","Motorcycle accidents","Rideshare accidents","Dog bites","Premises liability","Wrongful death","California insurance claims"],
+      "address": { "@type": "PostalAddress", "streetAddress": "3301 Watt Ave, Suite 100", "addressLocality": "Sacramento", "addressRegion": "CA", "postalCode": "95821", "addressCountry": "US" },
+      "geo": { "@type": "GeoCoordinates", "latitude": 38.62477, "longitude": -121.38391 },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=United+Citizen+Law+3301+Watt+Ave+Suite+100+Sacramento+CA+95821",
+      "openingHoursSpecification": [ { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" } ],
+      "areaServed": [
+        {"@type":"City","name":"Sacramento"},{"@type":"City","name":"Elk Grove"},{"@type":"City","name":"Roseville"},
+        {"@type":"City","name":"Folsom"},{"@type":"City","name":"Citrus Heights"},{"@type":"City","name":"Rancho Cordova"},
+        {"@type":"AdministrativeArea","name":"Sacramento County"}
+      ],
+      "availableLanguage": ["English","Spanish","Persian","Urdu","Hindi","Arabic"],
+      "founder": { "@id": "https://uclaw.net/about/sam-fareed/#person" },
+      "sameAs": [
+        "https://www.yelp.com/biz/united-citizen-law-sacramento",
+        "https://www.facebook.com/UnitedCitizenLaw/",
+        "https://www.linkedin.com/company/uc-law",
+        "https://www.bbb.org/us/ca/sacramento/profile/personal-injury-lawyer/united-citizen-law-a-fareed-injury-firm-1156-90100660",
+        "https://profiles.superlawyers.com/california/sacramento/lawfirm/united-citizen-law/fd829b5a-58ab-45b5-8762-1888a78bddc3.html"
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47", "bestRating": "5" },
+      "review": [
+        { "@type": "Review", "reviewRating": {"@type":"Rating","ratingValue":"5"}, "author": {"@type":"Person","name":"M. R."}, "reviewBody": "The other driver's insurance was uncooperative and evasive. Mr. Fareed fought hard for us and kept us informed at every step." },
+        { "@type": "Review", "reviewRating": {"@type":"Rating","ratingValue":"5"}, "author": {"@type":"Person","name":"A. H."}, "reviewBody": "Attorney Sam truly listens. He set a plan on the first call and delivered on every promise. My family could speak Dari with the team." },
+        { "@type": "Review", "reviewRating": {"@type":"Rating","ratingValue":"5"}, "author": {"@type":"Person","name":"S. G."}, "reviewBody": "Transparent, professional, and genuinely caring. The settlement exceeded what I expected." }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://uclaw.net/about/sam-fareed/#person",
+      "name": "Sam Fareed",
+      "jobTitle": "Founding Attorney",
+      "worksFor": { "@id": "https://uclaw.net/#firm" },
+      "description": "Sam Fareed is a Sacramento personal injury attorney and the founder of United Citizen Law. After surviving a serious car accident in 2017, he built a firm where injured clients speak directly with their attorney. Super Lawyers Rising Star 2021–2026.",
+      "knowsLanguage": ["English","Persian","Urdu"],
+      "award": ["Super Lawyers Rising Star (2021–2026)","Recognized by Forbes among Sacramento's top injury lawyers"],
+      "url": "https://uclaw.net/about/sam-fareed/",
+      "sameAs": ["https://profiles.superlawyers.com/california/sacramento/lawyer/sam-fareed/1babc303-f776-467d-89bc-1a2dbec8bb71.html"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://uclaw.net/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much does a Sacramento personal injury lawyer cost?", "acceptedAnswer": { "@type": "Answer", "text": "Nothing up front. United Citizen Law works on contingency: the consultation is free, and you pay no attorney fee unless we recover compensation for you." } },
+        { "@type": "Question", "name": "How long do I have to file an injury claim in California?", "acceptedAnswer": { "@type": "Answer", "text": "In most California personal injury cases you have two years from the date of injury to file a lawsuit. Claims against government entities can require a notice within six months, so call as soon as possible." } },
+        { "@type": "Question", "name": "What is my case worth?", "acceptedAnswer": { "@type": "Answer", "text": "Case value depends on medical costs, lost income, future treatment, and pain and suffering. Our results include a $5 million recovery, but every case is unique — a free consultation gives you an honest assessment, not a formula." } },
+        { "@type": "Question", "name": "Should I talk to the insurance company before a lawyer?", "acceptedAnswer": { "@type": "Answer", "text": "No. Do not give a recorded statement before speaking to an attorney. Adjusters are trained to minimize your claim; anything you say can reduce your compensation." } },
+        { "@type": "Question", "name": "Do you speak my language?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our team serves clients in English, Spanish, Dari/Farsi, Hindi/Urdu, and Arabic — your case is handled in your language from the first call, by the people actually working your case." } },
+        { "@type": "Question", "name": "What if I can't come to your office?", "acceptedAnswer": { "@type": "Answer", "text": "We come to you. If you are hospitalized or recovering at home anywhere in the Sacramento area, we will meet you where you are, or by video." } },
+        { "@type": "Question", "name": "What should I do right after a car accident in Sacramento?", "acceptedAnswer": { "@type": "Answer", "text": "Get medical care first, even if you feel fine — some injuries appear days later. Photograph the scene and vehicles, collect the other driver's information, request a police report, and talk to a lawyer before any insurance company." } },
+        { "@type": "Question", "name": "How long does a personal injury case take?", "acceptedAnswer": { "@type": "Answer", "text": "Straightforward claims often resolve in a few months; serious-injury cases can take a year or more, because settling before your medical picture is clear usually means settling for less. We move every case as fast as its full value allows." } }
+      ]
+    },
+    { "@type": "WebSite", "@id": "https://uclaw.net/#website", "url": "https://uclaw.net/", "name": "United Citizen Law", "publisher": { "@id": "https://uclaw.net/#firm" }, "inLanguage": "en-US" }
+  ]
+}
+</script>
+<style>
+  :root{
+    --black:#070708; --coal:#0d0d10; --coal-2:#131318; --white:#ffffff; --paper:#fbfaf7;
+    --ink:#101216; --body-d:#c9c4b4; --body-l:#4a4d55; --mute-d:#8d8878; --mute-l:#71747d;
+    --gold:#d4a72c; --gold-hi:#f0cf6a; --gold-deep:#8a6a10;
+    --hair-d:rgba(255,255,255,.09); --hair-g:rgba(212,167,44,.28); --hair-l:rgba(16,18,22,.1);
+    --ease:cubic-bezier(.32,.72,0,1);
+    --serif:"Didot","Bodoni MT","Playfair Display","Palatino","Palatino Linotype",Georgia,serif;
+    --sans:"Avenir Next","Avenir","Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:6.5rem}
+  body{background:var(--black);color:var(--body-d);font-family:var(--sans);line-height:1.7;font-size:1.0625rem;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body.lock{overflow:hidden}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:.004em;text-wrap:balance}
+  img,svg{max-width:100%;height:auto}
+  a{color:var(--gold-hi)}
+  :focus-visible{outline:3px solid var(--gold-hi);outline-offset:3px;border-radius:3px}
+  .skip{position:absolute;inset-inline-start:-9999px;top:0;background:var(--gold);color:var(--black);padding:.8rem 1.4rem;z-index:120;font-weight:700}
+  .skip:focus{inset-inline-start:0}
+  .wrap{max-width:74rem;margin-inline:auto;padding-inline:clamp(1.25rem,4.5vw,3rem)}
+  .grain{position:fixed;inset:0;z-index:70;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E")}
+  /* ── language switcher + topbar ── */
+  .topstrip{position:fixed;top:0;left:0;right:0;z-index:92;display:flex;justify-content:center;padding:.45rem 1rem 0}
+  .langsw{display:inline-flex;gap:.15rem;background:rgba(13,13,16,.7);backdrop-filter:blur(14px);border:1px solid var(--hair-d);border-radius:999px;padding:.18rem}
+  .langsw button{background:none;border:0;color:var(--mute-d);font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:.28rem .65rem;border-radius:999px;cursor:pointer;transition:all .35s var(--ease)}
+  .langsw button:hover{color:var(--white)}
+  .langsw button.on{background:rgba(212,167,44,.16);color:var(--gold-hi)}
+  /* ── floating pill nav ── */
+  .navwrap{position:fixed;top:2.5rem;left:0;right:0;z-index:90;display:flex;justify-content:center;padding-inline:1rem}
+  .pillnav{display:flex;align-items:center;gap:1.4rem;background:rgba(13,13,16,.72);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid var(--hair-d);border-radius:999px;padding:.5rem .55rem .5rem 1.35rem;box-shadow:0 18px 50px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);max-width:100%}
+  [dir="rtl"] .pillnav{padding:.5rem 1.35rem .5rem .55rem}
+  .brand{font-family:var(--serif);font-size:1.08rem;color:var(--white);text-decoration:none;letter-spacing:.05em;white-space:nowrap;display:flex;align-items:center;gap:.55rem;background:none;border:0;cursor:pointer}
+  .brand svg{flex:none}
+  .brand b{color:var(--gold-hi);font-weight:500}
+  .pillnav ul{display:flex;gap:1.35rem;list-style:none;align-items:center}
+  .pillnav ul a{color:#e7e3d6;text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.02em;transition:color .4s var(--ease)}
+  .pillnav ul a:hover{color:var(--gold-hi)}
+  @media(max-width:56rem){.pillnav ul{display:none}}
+  /* ── buttons ── */
+  .btn{display:inline-flex;align-items:center;gap:.8rem;border-radius:999px;text-decoration:none;font-weight:700;font-size:1rem;padding:.55rem .6rem .55rem 1.5rem;min-height:52px;border:1px solid transparent;transition:transform .6s var(--ease),box-shadow .6s var(--ease),background .6s var(--ease);cursor:pointer;font-family:var(--sans)}
+  [dir="rtl"] .btn{padding:.55rem 1.5rem .55rem .6rem}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:scale(.98)}
+  .btn .orb{width:2.15rem;height:2.15rem;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:transform .6s var(--ease)}
+  .btn:hover .orb{transform:translate(2px,-1px) scale(1.06)}
+  .btn-gold{background:linear-gradient(155deg,var(--gold-hi),var(--gold) 70%);color:#151004;box-shadow:0 14px 40px rgba(212,167,44,.28), inset 0 1px 0 rgba(255,255,255,.35)}
+  .btn-gold .orb{background:rgba(12,9,2,.18);color:#151004}
+  .btn-ghost{border-color:var(--hair-g);color:var(--gold-hi);background:rgba(212,167,44,.05)}
+  .btn-ghost .orb{background:rgba(212,167,44,.12);color:var(--gold-hi)}
+  .btn-white{background:var(--white);color:var(--ink);box-shadow:0 14px 34px rgba(0,0,0,.18)}
+  .btn-white .orb{background:rgba(16,18,22,.08);color:var(--ink)}
+  .navcall{padding:.4rem .45rem .4rem 1.1rem;min-height:44px;font-size:.9rem}
+  [dir="rtl"] .navcall{padding:.4rem 1.1rem .4rem .45rem}
+  .navcall .orb{width:1.9rem;height:1.9rem}
+  /* ── eyebrows/sections (unchanged core) ── */
+  .eyebrow{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.32rem .95rem;font-size:.68rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;margin-bottom:1.4rem}
+  [dir="rtl"] .eyebrow{letter-spacing:.06em}
+  .eyebrow::before{content:"";width:.4rem;height:.4rem;border-radius:99px;background:currentColor}
+  .on-dark .eyebrow{background:rgba(212,167,44,.08);border:1px solid var(--hair-g);color:var(--gold-hi)}
+  .on-light .eyebrow{background:rgba(138,106,16,.07);border:1px solid rgba(138,106,16,.25);color:var(--gold-deep)}
+  section{padding-block:clamp(4.5rem,9vw,7.5rem);position:relative}
+  .on-dark{background:var(--black);color:var(--body-d)}
+  .on-dark h1,.on-dark h2,.on-dark h3{color:var(--white)}
+  .on-light{background:var(--paper);color:var(--body-l)}
+  .on-light h2,.on-light h3{color:var(--ink)}
+  .sec-head{max-width:46rem;margin-bottom:clamp(2.2rem,4vw,3.4rem)}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:.9rem}
+  .sec-head p{font-size:1.1rem}
+  .shell{border-radius:2rem;padding:.45rem;background:rgba(255,255,255,.04);border:1px solid var(--hair-d)}
+  .core{border-radius:calc(2rem - .45rem);background:var(--coal);border:1px solid rgba(255,255,255,.05);box-shadow:inset 0 1px 1px rgba(255,255,255,.07)}
+  .on-light .shell{background:rgba(16,18,22,.04);border-color:var(--hair-l)}
+  .on-light .core{background:var(--white);border-color:rgba(16,18,22,.05);box-shadow:inset 0 1px 1px rgba(255,255,255,.9), 0 24px 60px -30px rgba(16,18,22,.18)}
+  /* ── hero ── */
+  .hero{padding-top:clamp(8.5rem,15vw,11.5rem);padding-bottom:clamp(4rem,8vw,6.5rem);overflow:hidden}
+  .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+  .hero::before{width:44rem;height:44rem;top:-18rem;right:-14rem;background:radial-gradient(circle,rgba(212,167,44,.16),transparent 65%)}
+  .hero::after{width:30rem;height:30rem;bottom:-16rem;left:-10rem;background:radial-gradient(circle,rgba(212,167,44,.08),transparent 65%)}
+  .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(2rem,5vw,4.5rem);position:relative;z-index:1;align-items:center}
+  @media(max-width:56rem){.hero-grid{grid-template-columns:1fr}}
+  .hero h1{font-size:clamp(2.5rem,5.6vw,4.3rem);color:var(--white);margin-bottom:1.3rem}
+  .hero h1 em{font-style:italic;background:linear-gradient(120deg,var(--gold-hi),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{font-size:1.16rem;max-width:33rem;margin-bottom:1.7rem}
+  .lede strong{color:var(--white);font-weight:600}
+  .stars{display:flex;align-items:center;flex-wrap:wrap;gap:.7rem;margin-bottom:1.8rem;font-size:.94rem;color:var(--mute-d)}
+  .stars b{color:var(--white)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
+  .risk{font-size:.9rem;color:var(--mute-d)}
+  .lang-line{margin-top:2.2rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+  .langchip{background:rgba(212,167,44,.06);border:1px solid var(--hair-g);color:var(--gold-hi);border-radius:999px;padding:.35rem .95rem;font-size:.92rem;font-family:var(--sans);cursor:pointer;transition:all .35s var(--ease)}
+  .langchip:hover,.langchip.on{background:rgba(212,167,44,.16);color:var(--white)}
+  /* launcher card */
+  .launch-core{padding:clamp(1.7rem,3vw,2.3rem);text-align:center}
+  .launch-core h2{font-size:1.5rem;color:var(--white);margin-bottom:.4rem}
+  .launch-core .sub{font-size:.95rem;color:var(--mute-d);margin-bottom:1.3rem}
+  .launch-list{list-style:none;text-align:start;margin:0 auto 1.4rem;max-width:22rem;display:grid;gap:.55rem}
+  .launch-list li{display:flex;gap:.6rem;align-items:baseline;font-size:.95rem;color:var(--body-d)}
+  .launch-list li::before{content:"✦";color:var(--gold-hi);flex:none}
+  .launch-core .btn{width:100%;justify-content:space-between}
+  .launch-core .alt{font-size:.85rem;color:var(--mute-d);margin-top:.9rem}
+  /* ── credential band / ledger / founder / diff / bento / langs / steps / revs / faq / final / footer ── */
+  .band{padding-block:1.6rem;border-block:1px solid var(--hair-l);overflow:hidden}
+  .marq-track{display:flex;width:max-content;animation:marqR 30s linear infinite}
+  .band:hover .marq-track,.band:focus-within .marq-track{animation-play-state:paused}
+  .marq-seg{display:flex;align-items:center;gap:3.2rem;padding-inline-end:3.2rem;flex:none}
+  @keyframes marqR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  .cred{display:flex;align-items:center;gap:.6rem;font-size:.9rem;font-weight:700;color:var(--ink);letter-spacing:.02em;white-space:nowrap}
+  .cred svg{color:var(--gold-deep);flex:none}
+  @media(prefers-reduced-motion:reduce){.marq-track{animation:none;width:100%;flex-wrap:wrap;justify-content:center}.marq-seg[aria-hidden="true"]{display:none}.marq-seg{flex-wrap:wrap;justify-content:center;gap:1.2rem 2rem;padding:0}}
+  /* team strip */
+  .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));gap:1rem}
+  .tm{text-align:center;padding:1.4rem 1rem;height:100%}
+  .tm img{width:6.4rem;height:6.4rem;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(138,106,16,.35);margin-bottom:.85rem}
+  .tm b{display:block;color:var(--ink);font-size:.98rem;font-family:var(--serif);font-weight:600}
+  .tm span{font-size:.78rem;color:var(--mute-l);letter-spacing:.04em}
+  /* contact band */
+  .contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  @media(max-width:56rem){.contact-grid{grid-template-columns:1fr}}
+  .contact-grid address{font-size:1.05rem;line-height:2}
+  .contact-grid address a{font-weight:700}
+  .ledger-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair-g);border:1px solid var(--hair-g);border-radius:1.4rem;overflow:hidden}
+  @media(max-width:56rem){.ledger-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:34rem){.ledger-grid{grid-template-columns:1fr}}
+  .cell{background:var(--coal);padding:2rem 1.8rem;transition:background .6s var(--ease)}
+  .cell:hover{background:var(--coal-2)}
+  .amt{font-family:var(--serif);font-size:clamp(2rem,3.4vw,2.7rem);color:var(--gold-hi);display:block;line-height:1;font-variant-numeric:tabular-nums}
+  .case{font-size:.9rem;color:var(--mute-d);margin-top:.7rem;display:block}
+  .disclaimer{font-size:.76rem;color:var(--mute-d);margin-top:1.7rem;max-width:54rem}
+  .founder-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+  @media(max-width:56rem){.founder-grid{grid-template-columns:1fr}}
+  .founder h2{font-size:clamp(2rem,4.2vw,3.1rem);margin-bottom:1.1rem}
+  .founder p{font-size:1.08rem;margin-bottom:1.1rem}
+  blockquote{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.7rem);font-style:italic;color:var(--ink);line-height:1.4;padding-inline-start:1.6rem;border-inline-start:3px solid var(--gold);margin:1.7rem 0}
+  .byline{font-size:.92rem;font-weight:700;color:var(--ink)}
+  .byline span{display:block;font-weight:400;color:var(--mute-l);margin-top:.2rem}
+  .portrait-core{overflow:hidden;aspect-ratio:4/5;display:grid;place-items:center;background:linear-gradient(165deg,#15151a,#070708)}
+  .diff{border-radius:1.6rem;border:1px solid var(--hair-g);overflow:hidden}
+  .diff-head,.diff-row{display:grid;grid-template-columns:1.2fr 1fr 1fr}
+  .diff-head{background:rgba(212,167,44,.08);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-hi)}
+  [dir="rtl"] .diff-head{letter-spacing:.04em}
+  .diff-head>div,.diff-row>div{padding:1.05rem 1.4rem}
+  .diff-row{border-top:1px solid rgba(255,255,255,.06);font-size:.97rem}
+  .diff-row>div:first-child{color:#efece1;font-weight:600}
+  .diff-row .mill{color:var(--mute-d)}
+  .diff-row .ucl{color:var(--white)}
+  .diff-row .ucl::before{content:"✦ ";color:var(--gold-hi)}
+  @media(max-width:44rem){
+    .diff-head{display:none}
+    .diff-row{grid-template-columns:1fr;padding-block:.6rem}
+  }
+  .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:1.1rem}
+  .bcard{grid-column:span 4;border-radius:1.6rem;padding:.4rem;background:rgba(16,18,22,.035);border:1px solid var(--hair-l);text-decoration:none;transition:transform .6s var(--ease),box-shadow .6s var(--ease);cursor:pointer;text-align:start}
+  .bcard:hover{transform:translateY(-5px);box-shadow:0 30px 60px -25px rgba(16,18,22,.25)}
+  .bcard-core{border-radius:calc(1.6rem - .4rem);background:var(--white);border:1px solid rgba(16,18,22,.05);box-shadow:inset 0 1px 1px rgba(255,255,255,.9);padding:1.6rem;height:100%;display:flex;flex-direction:column;gap:.55rem}
+  .bcard h3{font-size:1.18rem;color:var(--ink)}
+  .bcard p{font-size:.92rem;color:var(--body-l);flex:1}
+  .bcard .go{font-size:.85rem;font-weight:700;color:var(--gold-deep)}
+  .bcard svg{color:var(--gold-deep)}
+  .bcard .tag{align-self:flex-start;font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);background:rgba(138,106,16,.08);border:1px solid rgba(138,106,16,.22);border-radius:99px;padding:.22rem .7rem;margin-bottom:.3rem}
+  [dir="rtl"] .bcard .tag{letter-spacing:.05em}
+  .b-7{grid-column:span 7}.b-5{grid-column:span 5}.b-6{grid-column:span 6}.b-12{grid-column:span 12}
+  .b-7 .bcard-core{padding:2rem}
+  .b-7 h3{font-size:1.5rem}
+  .b-12 .bcard-core{flex-direction:row;align-items:center;gap:1.4rem}
+  .b-12 p{flex:1}
+  @media(max-width:56rem){.bcard,.b-7,.b-5,.b-6,.b-12{grid-column:span 12}.b-12 .bcard-core{flex-direction:column;align-items:flex-start}}
+  .langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(13.5rem,1fr));gap:1.1rem}
+  .langbtn{cursor:pointer;background:none;border:0;padding:0;text-align:center;font-family:inherit;width:100%}
+  .langbtn .shell{display:block}
+  .langbtn .core{display:block}
+  .lang-core{display:block;padding:1.7rem 1.5rem;text-align:center;height:100%;transition:transform .5s var(--ease)}
+  .langbtn:hover .lang-core{transform:translateY(-3px)}
+  .lang-core .native{font-family:var(--serif);font-size:1.9rem;color:var(--gold-hi);display:block;line-height:1.25;margin-bottom:.5rem}
+  .lang-core .name{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-d)}
+  .lang-core .hint{display:block;font-size:.72rem;color:var(--mute-d);margin-top:.4rem}
+  .steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;counter-reset:s}
+  @media(max-width:56rem){.steps3{grid-template-columns:1fr}}
+  .step-core{padding:2rem 1.7rem;height:100%;counter-increment:s;position:relative}
+  .step-core::before{content:"0" counter(s);font-family:var(--serif);font-size:2.8rem;color:var(--gold-deep);opacity:.55;line-height:1;display:block;margin-bottom:1rem}
+  .step-core h3{font-size:1.2rem;margin-bottom:.5rem}
+  .step-core p{font-size:.95rem}
+  .revs{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.1rem}
+  .rev-core{padding:1.9rem 1.7rem;display:flex;flex-direction:column;gap:1rem;height:100%}
+  .rev-core .q{font-family:var(--serif);font-size:3rem;color:var(--gold);line-height:.4;height:.9rem}
+  .rev-core p{font-size:.99rem;font-style:italic;color:#e7e3d6;flex:1}
+  .rev-core footer{font-size:.85rem;font-weight:700;color:var(--white)}
+  .rev-core footer span{font-weight:400;color:var(--mute-d)}
+  details{border:1px solid var(--hair-l);border-radius:1.1rem;background:var(--white);margin-bottom:.85rem;overflow:hidden;transition:box-shadow .6s var(--ease)}
+  details[open]{box-shadow:0 22px 50px -28px rgba(16,18,22,.22)}
+  summary{cursor:pointer;font-weight:700;color:var(--ink);padding:1.15rem 1.4rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:48px;font-size:1.02rem}
+  summary::-webkit-details-marker{display:none}
+  summary .sig{flex:none;width:1.7rem;height:1.7rem;border-radius:99px;border:1px solid rgba(138,106,16,.35);color:var(--gold-deep);display:grid;place-items:center;font-family:var(--serif);font-size:1.15rem;transition:transform .6s var(--ease)}
+  details[open] summary .sig{transform:rotate(45deg)}
+  .answer{padding:0 1.4rem 1.25rem;font-size:.98rem;color:var(--body-l)}
+  .final{text-align:center;overflow:hidden}
+  .final::before{content:"";position:absolute;width:52rem;height:52rem;left:50%;top:-30rem;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(212,167,44,.17),transparent 62%);filter:blur(70px);pointer-events:none}
+  .final h2{font-size:clamp(2.1rem,4.6vw,3.4rem);max-width:44rem;margin-inline:auto;position:relative}
+  .final p{max-width:34rem;margin:1.2rem auto 2.2rem;position:relative}
+  .final .cta-row{justify-content:center;position:relative}
+  footer.site{background:#050506;border-top:1px solid var(--hair-d);font-size:.93rem;color:var(--mute-d)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.6rem;padding-block:3.6rem}
+  @media(max-width:56rem){.foot-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:34rem){.foot-grid{grid-template-columns:1fr}}
+  footer.site h3{color:var(--white);font-family:var(--sans);font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;margin-bottom:1.1rem}
+  [dir="rtl"] footer.site h3{letter-spacing:.05em}
+  footer.site ul{list-style:none}
+  footer.site li{margin-bottom:.6rem}
+  footer.site a{color:#cfcaba;text-decoration:none;transition:color .4s var(--ease);cursor:pointer}
+  footer.site a:hover{color:var(--gold-hi)}
+  address{font-style:normal;line-height:1.85}
+  .legal{border-top:1px solid rgba(255,255,255,.06);padding-block:1.5rem;font-size:.76rem;color:#6f6a5c}
+  .callbar{position:fixed;bottom:.8rem;left:.8rem;right:.8rem;z-index:95;display:none;grid-template-columns:1.2fr 1fr;gap:.5rem}
+  .callbar a{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem;font-weight:800;text-decoration:none;font-size:1rem;min-height:54px;border-radius:999px;box-shadow:0 16px 40px rgba(0,0,0,.5);cursor:pointer}
+  .callbar .c1{background:linear-gradient(155deg,var(--gold-hi),var(--gold));color:#151004}
+  .callbar .c2{background:rgba(13,13,16,.9);backdrop-filter:blur(14px);color:var(--white);border:1px solid var(--hair-d)}
+  @media(max-width:48rem){.callbar{display:grid}body{padding-bottom:4.6rem}}
+  /* ── toast ── */
+  .toast{position:fixed;left:50%;bottom:5.6rem;transform:translate(-50%,20px);background:rgba(13,13,16,.94);border:1px solid var(--hair-g);color:var(--gold-hi);padding:.7rem 1.3rem;border-radius:999px;font-size:.9rem;font-weight:600;z-index:99;opacity:0;pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease);max-width:92vw;text-align:center}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  @media(min-width:48rem){.toast{bottom:2rem}}
+  /* ══ THE WIZARD (Apex pattern) ══ */
+  .wiz{position:fixed;inset:0;z-index:110;background:radial-gradient(120% 120% at 50% -20%,#101014,#070708);display:none;flex-direction:column;overflow-y:auto}
+  .wiz.open{display:flex}
+  .wiz-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem clamp(1.2rem,4vw,2.2rem);position:sticky;top:0;background:rgba(7,7,8,.85);backdrop-filter:blur(14px);z-index:2}
+  .wiz-count{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--mute-d)}
+  [dir="rtl"] .wiz-count{letter-spacing:.06em}
+  .wiz-count b{color:var(--gold-hi)}
+  .wiz-close{background:rgba(255,255,255,.05);border:1px solid var(--hair-d);color:var(--mute-d);border-radius:99px;width:2.5rem;height:2.5rem;font-size:1.05rem;cursor:pointer;transition:all .35s var(--ease)}
+  .wiz-close:hover{color:var(--white);border-color:var(--hair-g)}
+  .wiz-bar{height:2px;background:rgba(255,255,255,.08);position:relative}
+  .wiz-bar i{position:absolute;inset-inline-start:0;top:0;bottom:0;background:linear-gradient(90deg,var(--gold),var(--gold-hi));transition:width .6s var(--ease)}
+  .wiz-body{flex:1;display:grid;place-items:center;padding:2.2rem clamp(1.2rem,4vw,2.2rem) 3rem}
+  .fstep{width:100%;max-width:38rem;display:none}
+  .fstep.on{display:block}
+  .fstep .q{font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,4.6vw,3rem);color:var(--white);line-height:1.1;margin-bottom:.8rem;text-wrap:balance}
+  .fstep .help{color:var(--mute-d);font-size:1rem;margin-bottom:1.7rem;max-width:44ch}
+  html.js .fstep.step-in>*{opacity:0;transform:translateY(calc(16px * var(--dir,1)));animation:stepIn .55s var(--ease) forwards}
+  html.js .fstep.step-in>*:nth-child(1){animation-delay:.02s}
+  html.js .fstep.step-in>*:nth-child(2){animation-delay:.09s}
+  html.js .fstep.step-in>*:nth-child(3){animation-delay:.16s}
+  html.js .fstep.step-in>*:nth-child(4){animation-delay:.23s}
+  html.js .fstep.step-in>*:nth-child(5){animation-delay:.30s}
+  @keyframes stepIn{to{opacity:1;transform:none}}
+  .opts{display:grid;gap:.7rem}
+  @media(min-width:40rem){.opts.two{grid-template-columns:1fr 1fr}}
+  .opt{display:flex;align-items:center;gap:.9rem;width:100%;text-align:start;padding:1rem 1.1rem;border:1px solid var(--hair-d);border-radius:1rem;background:rgba(255,255,255,.03);color:#e7e3d6;font-family:var(--sans);font-size:1rem;cursor:pointer;transition:border-color .25s,background .25s,transform .25s var(--ease)}
+  .opt:hover{border-color:var(--hair-g);background:rgba(212,167,44,.06);transform:translateX(3px)}
+  [dir="rtl"] .opt:hover{transform:translateX(-3px)}
+  .opt .key{flex:none;width:1.8rem;height:1.8rem;display:grid;place-items:center;border:1px solid var(--hair-d);border-radius:.5rem;font-size:.78rem;font-weight:700;color:var(--gold-hi);transition:all .25s}
+  .opt .tick{margin-inline-start:auto;color:var(--gold-hi);opacity:0;transform:scale(.6);transition:all .25s var(--ease)}
+  .opt.sel{border-color:var(--gold);background:rgba(212,167,44,.12)}
+  .opt.sel .key{background:linear-gradient(135deg,var(--gold-hi),var(--gold));color:#151004;border-color:transparent}
+  .opt.sel .tick{opacity:1;transform:scale(1)}
+  .wiz .control{width:100%;font-family:var(--sans);font-size:1.15rem;color:var(--white);background:rgba(255,255,255,.05);border:1px solid var(--hair-d);border-radius:1rem;padding:1.05rem 1.1rem;transition:border-color .2s,box-shadow .2s}
+  .wiz .control::placeholder{color:#6d6a5e}
+  .wiz .control:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,167,44,.16)}
+  textarea.control{resize:vertical;min-height:6.5rem}
+  .wiz-err{display:none;color:#e8907e;font-size:.88rem;margin-top:.6rem}
+  .wiz-err.show{display:block}
+  .wiz-nav{display:flex;align-items:center;gap:1rem;margin-top:1.7rem;flex-wrap:wrap}
+  .wiz-back{background:none;border:0;color:var(--mute-d);font-family:var(--sans);font-size:.9rem;font-weight:600;cursor:pointer;padding:.6rem .4rem}
+  .wiz-back:hover{color:var(--white)}
+  .enter-hint{font-size:.78rem;color:#6d6a5e;margin-inline-start:auto}
+  .enter-hint kbd{border:1px solid var(--hair-d);border-radius:.35rem;padding:.1rem .4rem;font-family:var(--sans)}
+  .skiplink{background:none;border:0;color:var(--mute-d);text-decoration:underline;cursor:pointer;font-size:.88rem;font-family:var(--sans);padding:.4rem}
+  .skiplink:hover{color:var(--gold-hi)}
+  .cond{display:none;margin-top:1rem}
+  .cond.show{display:block}
+  /* success */
+  .fsuccess{text-align:center;max-width:32rem;margin-inline:auto}
+  .fsuccess .badge{width:4.5rem;height:4.5rem;margin:0 auto 1.4rem;border-radius:50%;display:grid;place-items:center;color:var(--gold-hi);background:radial-gradient(circle at 50% 40%,rgba(212,167,44,.24),transparent 70%);border:1px solid var(--hair-g)}
+  html.js .fsuccess .badge{animation:popin .6s cubic-bezier(.2,1.3,.4,1) both}
+  @keyframes popin{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+  .fsuccess h2{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--white);margin-bottom:.8rem}
+  .fsuccess p{color:var(--body-d);margin-bottom:.5rem}
+  .fsuccess .btn{margin-top:1.2rem}
+  .fsuccess .note{font-size:.78rem;color:var(--mute-d);margin-top:1.2rem}
+  /* reveals */
+  html.js .rv{opacity:0;transform:translateY(26px);filter:blur(5px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+  html.js .rv.in{opacity:1;transform:none;filter:none}
+  html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.js .rv.d3{transition-delay:.24s}html.js .rv.d4{transition-delay:.32s}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    html.js .rv{opacity:1;transform:none;filter:none;transition:none}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+
+  /* team clickable + bio modal */
+  .tmbtn{display:block;width:100%;text-align:center;cursor:pointer;font:inherit;color:inherit;-webkit-appearance:none;appearance:none}
+  .tmbtn .core{display:block}
+  .tmbtn .tm{transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+  .tmbtn:hover .tm{transform:translateY(-4px)}
+  .tm b{min-height:2.5em;display:flex;align-items:center;justify-content:center}
+  .tm .role{display:block;min-height:2.6em}
+  .viewbio{display:inline-block;margin-top:.7rem;font-size:.76rem;font-weight:700;letter-spacing:.03em;color:var(--gold-deep);font-family:var(--sans)}
+  .tmbtn:hover .viewbio{color:var(--gold)}
+  .biomodal{position:fixed;inset:0;z-index:130;display:grid;place-items:center;padding:1.2rem}
+  .biomodal[hidden]{display:none}
+  .biomodal-scrim{position:absolute;inset:0;background:rgba(6,7,8,.72);backdrop-filter:blur(6px)}
+  .biomodal-card{position:relative;z-index:1;max-width:33rem;width:100%;max-height:88vh;overflow-y:auto;background:var(--coal,#141418);border:1px solid var(--hair-g);border-radius:1.5rem;padding:2rem 1.9rem;text-align:center;box-shadow:0 40px 100px -30px rgba(0,0,0,.8)}
+  .biomodal-card img{width:8rem;height:8rem;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(212,167,44,.5);margin-bottom:1rem}
+  .biomodal-card h3{color:var(--white);font-size:1.5rem;margin-bottom:.2rem}
+  .bm-role{color:var(--gold-hi);font-weight:700;font-family:var(--sans);font-size:.92rem;display:block;margin-bottom:.6rem}
+  .bm-meta{color:var(--mute-d);font-size:.84rem;margin-bottom:1.1rem}
+  .bm-meta a{color:var(--gold-hi)}
+  .biomodal-card p{color:var(--body-d);font-size:.98rem;line-height:1.65;text-align:start}
+  .biomodal-x{position:absolute;top:.9rem;inset-inline-end:.9rem;width:2.2rem;height:2.2rem;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid var(--hair-d);color:var(--white);cursor:pointer;font-size:1rem;line-height:1}
+
+  /* ── mobile polish (nav/lang/hero fit) ── */
+  @media(max-width:56rem){
+    .topstrip{padding:.4rem .6rem 0}
+    .langsw{gap:.05rem;padding:.15rem;max-width:calc(100vw - 1.2rem)}
+    .langsw button{padding:.26rem .5rem;font-size:.7rem}
+    .navwrap{top:2.75rem;padding-inline:.6rem}
+    .pillnav{gap:.5rem;padding:.38rem .38rem .38rem .9rem;width:100%;justify-content:space-between}
+    .brand{font-size:.9rem;letter-spacing:.03em}
+    .brand svg{width:17px;height:17px}
+    .navcall{padding:.4rem;min-height:44px;width:44px;justify-content:center;font-size:0;flex:none}
+    .navcall .orb{margin:0;width:1.7rem;height:1.7rem}
+    .hero{padding-top:clamp(9.5rem,24vw,12rem)}
+    .hero h1{font-size:clamp(2.05rem,8.4vw,3rem);line-height:1.08}
+    .lede{font-size:1.05rem}
+    .cta-row .btn{flex:1 1 auto;justify-content:space-between}
+  }
+  @media(max-width:22rem){ .langsw button{padding:.22rem .38rem;font-size:.64rem} }
+
+  /* ── mobile v2: smaller CTA bar + tighter headings (iPhone; clears home indicator) ── */
+  @media(max-width:48rem){
+    .callbar{bottom:calc(.5rem + env(safe-area-inset-bottom));left:.6rem;right:.6rem;gap:.45rem}
+    .callbar a{padding:.6rem .8rem;font-size:.84rem;min-height:44px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+    body{padding-bottom:calc(3.9rem + env(safe-area-inset-bottom))}
+  }
+  @media(max-width:56rem){
+    .hero h1{font-size:clamp(1.95rem,7.6vw,2.9rem);line-height:1.07}
+    .sec-head h2{font-size:clamp(1.55rem,6.4vw,2.4rem)}
+    .founder h2{font-size:clamp(1.6rem,6.6vw,2.4rem)}
+    .sec-head p,.founder p,.lede{font-size:1rem}
+    section{padding-block:clamp(3rem,8vw,5rem)}
+    .navwrap{top:2.6rem}
+    .pillnav{padding:.34rem .34rem .34rem .85rem}
+    .brand{font-size:.86rem}
+    .byline{font-size:.85rem}
+    blockquote{font-size:1.15rem}
+  }
+</style>
+
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="topstrip">
+  <div class="langsw" role="group" aria-label="Language">
+    <button data-setlang="en" class="on">EN</button>
+    <button data-setlang="es">ES</button>
+    <button data-setlang="fa" lang="fa">دری</button>
+    <button data-setlang="ur" lang="ur">اردو</button>
+    <button data-setlang="ar" lang="ar">عربي</button>
+  </div>
+</div>
+
+<div class="navwrap">
+  <nav class="pillnav" aria-label="Main">
+    <button class="brand" data-home aria-label="United Citizen Law — back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0cf6a" stroke-width="1.1" aria-hidden="true"><path d="M12 3v18M5 21h14M12 5l-5.5 3M12 5l5.5 3M3.5 13.5 6.5 8l3 5.5c-.8 1-2.1 1.6-3 1.6s-2.2-.6-3-1.6ZM14.5 13.5 17.5 8l3 5.5c-.8 1-2.1 1.6-3 1.6s-2.2-.6-3-1.6Z"/></svg>
+      UNITED CITIZEN <b>LAW</b></button>
+    <ul>
+      <li><a href="#practice-areas" data-i18n="nav.practice">Practice Areas</a></li>
+      <li><a href="#results" data-i18n="nav.results">Results</a></li>
+      <li><a href="#sam-fareed" data-i18n="nav.about">About Sam</a></li>
+      <li><a href="#team" data-i18n="nav.team">Team</a></li>
+      <li><a href="#languages" data-i18n="nav.langs">Languages</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+    </ul>
+    <a class="btn btn-gold navcall" href="tel:+19168008457">(916) 800-8457
+      <span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a>
+  </nav>
+</div>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero on-dark" aria-labelledby="hero-h">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow rv" data-i18n="hero.eyebrow">Sacramento Personal Injury · Free Consultation 24/7</span>
+        <h1 id="hero-h" class="rv d1" data-i18n-html="hero.h1">Injured? You deserve a lawyer who's <em>been in your seat.</em></h1>
+        <p class="lede rv d2" data-i18n-html="hero.lede">United Citizen Law was founded by attorney <strong>Sam Fareed</strong> — a serious-crash survivor himself. We've recovered <strong>$13&nbsp;million+</strong> for injured Californians, and you speak directly with your attorney. Always.</p>
+        <div class="stars rv d2">
+          <svg width="104" height="19" viewBox="0 0 110 20" fill="#f0cf6a" role="img" aria-label="Rated 4.9 out of 5 stars"><path d="M10 1l2.6 5.8 6.4.6-4.8 4.2 1.4 6.2L10 14.5 4.4 17.8l1.4-6.2L1 7.4l6.4-.6z"/><path d="M32 1l2.6 5.8 6.4.6-4.8 4.2 1.4 6.2L32 14.5l-5.6 3.3 1.4-6.2-4.8-4.2 6.4-.6z"/><path d="M54 1l2.6 5.8 6.4.6-4.8 4.2 1.4 6.2L54 14.5l-5.6 3.3 1.4-6.2-4.8-4.2 6.4-.6z"/><path d="M76 1l2.6 5.8 6.4.6-4.8 4.2 1.4 6.2L76 14.5l-5.6 3.3 1.4-6.2-4.8-4.2 6.4-.6z"/><path d="M98 1l2.6 5.8 6.4.6-4.8 4.2 1.4 6.2L98 14.5l-5.6 3.3 1.4-6.2-4.8-4.2 6.4-.6z"/></svg>
+          <span data-i18n-html="hero.stars"><b>4.9</b> · BBB A+ · Super Lawyers Rising Star ’21–’26 · Featured by Forbes</span>
+        </div>
+        <div class="cta-row rv d3">
+          <a class="btn btn-gold" href="tel:+19168008457"><span data-i18n="cta.call">Call now — it's free</span>
+            <span class="orb" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a>
+          <button class="btn btn-ghost" data-wizard><span data-i18n="cta.review">Free case review</span>
+            <span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></button>
+        </div>
+        <p class="risk rv d3" data-i18n="hero.risk">No fee unless we win. Hospitalized? We come to you.</p>
+        <div class="lang-line rv d4" aria-label="Languages spoken">
+          <button class="langchip" data-setlang="en">English</button>
+          <button class="langchip" data-setlang="es">Español</button>
+          <button class="langchip" data-setlang="fa" lang="fa">دری / فارسی</button>
+          <button class="langchip" data-setlang="ur" lang="ur">اردو / हिन्दी</button>
+          <button class="langchip" data-setlang="ar" lang="ar">العربية</button>
+        </div>
+      </div>
+      <div class="shell rv d2" id="case-review">
+        <div class="core launch-core">
+          <h2 data-i18n="launch.h">Free case review</h2>
+          <p class="sub" data-i18n="launch.sub">Six quick questions. Sixty seconds. A real person replies in minutes — day or night.</p>
+          <ul class="launch-list">
+            <li data-i18n="launch.b1">$0 unless we win your case</li>
+            <li data-i18n="launch.b2">Answered 24/7, in your language</li>
+            <li data-i18n="launch.b3">Hospitalized? We come to you</li>
+          </ul>
+          <button class="btn btn-gold" data-wizard><span data-i18n="launch.start">Start my free case review</span>
+            <span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></button>
+          <p class="alt" data-i18n-html="launch.alt">Prefer to talk? <a href="tel:+19168008457">(916) 800-8457</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS — continuous rightward marquee -->
+  <div class="on-light band" role="complementary" aria-label="Credentials">
+    <div class="marq-track">
+      <div class="marq-seg">
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></svg><span data-i18n="cred.bbb">BBB A+ Accredited</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.7-4.9 4.4 1.4 6.4L12 16.7 6 20l1.4-6.4L2.5 9.2l6.6-.7 2.9-6Z"/></svg><span data-i18n="cred.sl">Super Lawyers Rising Star 2021–2026</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-i18n="cred.forbes">Featured by Forbes</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="cred.247">Phones answered 24/7</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3.5c2.6 2.5 3.9 5.4 3.9 8.5s-1.3 6-3.9 8.5C9.4 18 8.1 15.1 8.1 12s1.3-6 3.9-8.5Z"/></svg><span data-i18n="cred.lang">5 languages spoken</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3v18M5 21h14M12 5l-5.5 3M12 5l5.5 3"/></svg><span data-i18n="cred.rec">$13M+ recovered for clients</span></span>
+      </div>
+      <div class="marq-seg" aria-hidden="true">
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></svg><span>BBB A+ Accredited</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.7-4.9 4.4 1.4 6.4L12 16.7 6 20l1.4-6.4L2.5 9.2l6.6-.7 2.9-6Z"/></svg><span>Super Lawyers Rising Star 2021–2026</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Featured by Forbes</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>Phones answered 24/7</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3.5c2.6 2.5 3.9 5.4 3.9 8.5s-1.3 6-3.9 8.5C9.4 18 8.1 15.1 8.1 12s1.3-6 3.9-8.5Z"/></svg><span>5 languages spoken</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3v18M5 21h14M12 5l-5.5 3M12 5l5.5 3"/></svg><span>$13M+ recovered for clients</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <section class="on-dark" id="results" aria-labelledby="results-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="res.eyebrow">The Ledger · Case Results</span>
+        <h2 id="results-h" class="rv d1" data-i18n="res.h">$13 million+ recovered for people like you</h2>
+        <p class="rv d2" data-i18n="res.sub">Real outcomes against the same insurance companies you're facing right now.</p>
+      </div>
+      <div class="ledger-grid rv d2">
+        <div class="cell"><span class="amt">$<span class="cnt" data-n="5000000">5,000,000</span></span><span class="case" data-i18n="res.c1">Catastrophic injury settlement</span></div>
+        <div class="cell"><span class="amt">$<span class="cnt" data-n="2000000">2,000,000</span></span><span class="case" data-i18n="res.c2">Motor vehicle collision</span></div>
+        <div class="cell"><span class="amt">$<span class="cnt" data-n="1750000">1,750,000</span></span><span class="case" data-i18n="res.c3">Serious injury recovery</span></div>
+        <div class="cell"><span class="amt">$<span class="cnt" data-n="1250000">1,250,000</span></span><span class="case" data-i18n="res.c4">Auto accident settlement</span></div>
+        <div class="cell"><span class="amt">$<span class="cnt" data-n="1100000">1,100,000</span></span><span class="case" data-i18n="res.c5">Injury settlement</span></div>
+        <div class="cell"><span class="amt">$<span class="cnt" data-n="915000">915,000</span></span><span class="case" data-i18n="res.c6">Vehicle collision recovery</span></div>
+      </div>
+      <p class="disclaimer rv d3" data-i18n="res.disc">Past results do not guarantee, warrant, or predict future outcomes. Recovery depends on the specific facts, injuries, and law applicable to each matter. Attorney advertising.</p>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="on-light founder" id="sam-fareed" aria-labelledby="sam-h">
+    <div class="wrap founder-grid">
+      <div class="shell rv">
+        <div class="core portrait-core">
+          <img src="./team/sam-founder.jpg" alt="Attorney Sam Fareed, founding attorney of United Citizen Law" width="560" height="840" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow rv" data-i18n="sam.eyebrow">Why We Exist</span>
+        <h2 id="sam-h" class="rv d1" data-i18n="sam.h">In 2017, Sam Fareed was the one in the hospital bed.</h2>
+        <p class="rv d2" data-i18n-html="sam.p1">A serious car accident during his time at UCLA left Sam navigating surgeries, insurance adjusters, and the question every injured person faces: <em>who is actually on my side?</em> The firms he called treated him like a file number. So he became the lawyer he couldn't find.</p>
+        <blockquote class="rv d2" data-i18n="sam.quote">“No one should have to fight the insurance machine alone, in pain, or in a language that isn't theirs. Your fight is our fight — from the first call to the final victory.”</blockquote>
+        <p class="byline rv d3">Sam Fareed <span data-i18n="sam.byline">Founding Attorney · Super Lawyers Rising Star 2021–2026 · Recognized by Forbes among Sacramento's top injury lawyers</span></p>
+        <p style="margin-top:1.6rem" class="rv d3"><button class="btn btn-white" style="border:1px solid var(--hair-l)" data-wizard><span data-i18n="sam.cta">Tell us what happened</span>
+          <span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></button></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="on-light" id="team" aria-labelledby="team-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="tw.eyebrow">The People In Your Corner</span>
+        <h2 id="team-h" class="rv d1" data-i18n="tw.h">One team. Five languages. Your case by name.</h2>
+        <p class="rv d2" data-i18n="tw.sub">No call centers, no case mills — these are the actual people who answer your call, build your case, and fight for your recovery.</p>
+      </div>
+      <div class="team-grid">
+        <button class="shell rv tmbtn" data-mem="0" aria-label="View bio for Sam Fareed"><span class="core tm"><img src="./team/sam-fareed.jpg" alt="Sam Fareed, Founding Attorney" width="320" height="480" loading="lazy" decoding="async"><b>Sam Fareed</b><span class="role" data-i18n="tw.r1">Founding Attorney</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
+        <button class="shell rv tmbtn d1" data-mem="1" aria-label="View bio for Shereen Ghaith"><span class="core tm"><img src="./team/shereen-ghaith.jpg" alt="Shereen Ghaith, Associate Attorney" width="320" height="480" loading="lazy" decoding="async"><b>Shereen Ghaith</b><span class="role" data-i18n="tw.r2">Associate Attorney</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
+        <button class="shell rv tmbtn d2" data-mem="2" aria-label="View bio for Laila Fareed"><span class="core tm"><img src="./team/homaira-laila-fareed.jpg" alt="Laila Fareed, Associate Attorney" width="320" height="480" loading="lazy" decoding="async"><b>Laila Fareed</b><span class="role" data-i18n="tw.r3">Associate Attorney</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
+        <button class="shell rv tmbtn d3" data-mem="3" aria-label="View bio for Zahid “Sher” Fareed"><span class="core tm"><img src="./team/zahid-sher-fareed.jpg" alt="Zahid “Sher” Fareed, Client Services Director" width="320" height="480" loading="lazy" decoding="async"><b>Zahid “Sher” Fareed</b><span class="role" data-i18n="tw.r4">Client Services Director</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
+        <button class="shell rv tmbtn" data-mem="4" aria-label="View bio for Abdul Wardak"><span class="core tm"><img src="./team/abdul-wardak.jpg" alt="Abdul Wardak, Case Manager · EN/Dari/Pashto" width="320" height="480" loading="lazy" decoding="async"><b>Abdul Wardak</b><span class="role" data-i18n="tw.r5">Case Manager · EN/Dari/Pashto</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
+        <button class="shell rv tmbtn" data-mem="5" aria-label="View bio for Richard Prasad"><span class="core tm"><img src="./team/richard-prasad.jpg" alt="Richard Prasad, Paralegal" width="320" height="480" loading="lazy" decoding="async"><b>Richard Prasad</b><span class="role" data-i18n="tw.r6">Paralegal</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
+        <button class="shell rv tmbtn d1" data-mem="6" aria-label="View bio for Roya Fareed"><span class="core tm"><img src="./team/roya-fareed.jpg" alt="Roya Fareed, Controller" width="320" height="480" loading="lazy" decoding="async"><b>Roya Fareed</b><span class="role" data-i18n="tw.r7">Controller</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
+        <button class="shell rv tmbtn d2" data-mem="7" aria-label="View bio for Yasir Albadran"><span class="core tm"><img src="./team/yasir-albadran.jpg" alt="Yasir Albadran, Office Clerk · Arabic support" width="320" height="480" loading="lazy" decoding="async"><b>Yasir Albadran</b><span class="role" data-i18n="tw.r8">Office Clerk · Arabic support</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
+        <button class="shell rv tmbtn d3" data-mem="8" aria-label="View bio for Jesse Fareed"><span class="core tm"><img src="./team/jesse-fareed.jpg" alt="Jesse Fareed, Office Clerk" width="320" height="480" loading="lazy" decoding="async"><b>Jesse Fareed</b><span class="role" data-i18n="tw.r9">Office Clerk</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
+      </div>
+      <p style="margin-top:1.8rem" class="rv"><a href="./team.html" data-jump="#team" data-i18n="tw.all">Meet the full team — bios, languages &amp; direct extensions →</a></p>
+    </div>
+  </section>
+
+  <!-- DIFFERENCE -->
+  <section class="on-dark" aria-labelledby="diff-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="diff.eyebrow">Why-This-Not-That</span>
+        <h2 id="diff-h" class="rv d1" data-i18n-html="diff.h">The billboard firms play volume.<br>We play <em style="font-style:italic;color:var(--gold-hi)">your case.</em></h2>
+      </div>
+      <div class="diff rv d2">
+        <div class="diff-head" aria-hidden="true"><div></div><div data-i18n="diff.colA">High-volume settlement mills</div><div>United Citizen Law</div></div>
+        <div class="diff-row"><div data-i18n="diff.r1">Who answers your call</div><div class="mill" data-i18n="diff.r1a">A call center reading a script</div><div class="ucl" data-i18n="diff.r1b">Our team — 24/7, in your language</div></div>
+        <div class="diff-row"><div data-i18n="diff.r2">Who works your case</div><div class="mill" data-i18n="diff.r2a">Rotating case managers</div><div class="ucl" data-i18n="diff.r2b">Your attorney, start to finish</div></div>
+        <div class="diff-row"><div data-i18n="diff.r3">Case updates</div><div class="mill" data-i18n="diff.r3a">You chase them</div><div class="ucl" data-i18n="diff.r3b">Proactive updates at every milestone</div></div>
+        <div class="diff-row"><div data-i18n="diff.r4">Settlement strategy</div><div class="mill" data-i18n="diff.r4a">Quick turnover, discounted value</div><div class="ucl" data-i18n="diff.r4b">Full value — we prepare every case for trial</div></div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICE AREAS -->
+  <section class="on-light" id="practice-areas" aria-labelledby="areas-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="pa.eyebrow">Practice Areas</span>
+        <h2 id="areas-h" class="rv d1" data-i18n="pa.h">If you were hurt in Sacramento, we handle it</h2>
+        <p class="rv d2" data-i18n="pa.sub">Every case type below is handled personally — on contingency, in your language.</p>
+      </div>
+      <div class="bento">
+        <a class="bcard b-7 rv" href="./car-accident-lawyer-sacramento.html" data-case="car"><span class="bcard-core">
+          <span class="tag" data-i18n="pa.tag">Most common in Sacramento</span>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 17H3.5a.5.5 0 0 1-.5-.5V12l2.2-5.5A2 2 0 0 1 7.1 5h9.8a2 2 0 0 1 1.9 1.5L21 12v4.5a.5.5 0 0 1-.5.5H19"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6M5.5 11h13"/></svg>
+          <h3 data-i18n="pa.car">Car Accidents</h3>
+          <p data-i18n="pa.carP">Rear-endings, intersection crashes, distracted and uninsured drivers. The insurance company already assigned an adjuster whose job is to pay you less — our job is the opposite.</p>
+          <span class="go" data-i18n="pa.go">Learn more →</span></span></a>
+        <a class="bcard b-5 rv d1" href="./rideshare-accident-lawyer-sacramento.html" data-case="rideshare"><span class="bcard-core">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 21s-7-6.4-7-11.5a7 7 0 0 1 14 0C19 14.6 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <h3 data-i18n="pa.ride">Rideshare Accidents</h3>
+          <p data-i18n="pa.rideP">Uber &amp; Lyft crashes involve layered insurance policies most firms fumble. We know which coverage applies — and when.</p>
+          <span class="go" data-i18n="pa.go2">Learn more →</span></span></a>
+        <a class="bcard rv" href="./truck-accident-lawyer-sacramento.html" data-case="truck"><span class="bcard-core">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 5h14v11H1zM15 9h4l3 3v4h-7z"/><circle cx="6" cy="18" r="1.8"/><circle cx="18" cy="18" r="1.8"/></svg>
+          <h3 data-i18n="pa.truck">Truck Accidents</h3>
+          <p data-i18n="pa.truckP">Carriers deploy rapid-response teams within hours. You need the same speed on your side.</p>
+          <span class="go" data-i18n="pa.go3">Learn more →</span></span></a>
+        <a class="bcard rv d1" href="./motorcycle-accident-lawyer-sacramento.html" data-case="moto"><span class="bcard-core">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="m9 8 2 4h4M13 5h3l3 7M9 8H6.5"/></svg>
+          <h3 data-i18n="pa.moto">Motorcycle Accidents</h3>
+          <p data-i18n="pa.motoP">Riders get blamed by default. We flip that script with evidence and relentless preparation.</p>
+          <span class="go" data-i18n="pa.go4">Learn more →</span></span></a>
+        <a class="bcard rv d2" href="./dog-bite-lawyer-sacramento.html" data-case="dog"><span class="bcard-core">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M10 5.2 8 3 4 7l2.2 2M14 5.2 16 3l4 4-2.2 2M12 22c-3.5 0-6-2.4-6-6 0-3.2 2.6-6.5 6-6.5s6 3.3 6 6.5c0 3.6-2.5 6-6 6Z"/><path d="M10 14.5h.01M14 14.5h.01"/></svg>
+          <h3 data-i18n="pa.dog">Dog Bites</h3>
+          <p data-i18n="pa.dogP">California holds owners strictly liable. We handle the claim while you focus on healing.</p>
+          <span class="go" data-i18n="pa.go5">Learn more →</span></span></a>
+        <a class="bcard b-6 rv" href="./slip-and-fall-lawyer-sacramento.html" data-case="slip"><span class="bcard-core">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="m7.5 21 2.2-6.5L7 12l1.5-4.5L13 9l3 2-1.5 3.5L17 21M3 21h18"/></svg>
+          <h3 data-i18n="pa.slip">Slip &amp; Fall / Premises Liability</h3>
+          <p data-i18n="pa.slipP">Property owners owe you a safe environment — wet floors, broken stairs, poor lighting. When they cut corners, we hold them accountable.</p>
+          <span class="go" data-i18n="pa.go6">Learn more →</span></span></a>
+        <a class="bcard b-6 rv d1" href="./pedestrian-accident-lawyer-sacramento.html" data-case="ped"><span class="bcard-core">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="13.5" cy="4" r="2"/><path d="m8 21 2.5-7L8.5 12l1-4 4.5 1.5L16 12M6 9.5 10 8M14 21l-1.5-5"/></svg>
+          <h3 data-i18n="pa.ped">Pedestrian &amp; Bicycle Accidents</h3>
+          <p data-i18n="pa.pedP">Crosswalk and bike-lane collisions cause devastating injuries against zero protection. California law is on your side — we enforce it, fully.</p>
+          <span class="go" data-i18n="pa.go7">Learn more →</span></span></a>
+        <a class="bcard b-12 rv" href="./wrongful-death-lawyer-sacramento.html" data-case="other"><span class="bcard-core">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 21s-8-5.2-10-9.6C.6 8 3 4.6 6.4 4.6c2 0 3.8 1 4.6 2.6L12 8.5l1-1.3c.8-1.6 2.6-2.6 4.6-2.6 3.4 0 5.8 3.4 4.4 6.8C20 15.8 12 21 12 21Z"/></svg>
+          <h3 data-i18n="pa.wd">Wrongful Death &amp; Everything Else</h3>
+          <p data-i18n="pa.wdP">No settlement replaces a life — but accountability, answers, and your family's security matter. Whatever happened to you, tell us. If we can't take it, we'll point you to someone who can.</p>
+          <span class="go" data-i18n="pa.go8">Learn more →</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section class="on-dark" id="languages" aria-labelledby="lang-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="lg.eyebrow">Your Language, Your Case</span>
+        <h2 id="lang-h" class="rv d1" data-i18n="lg.h">Justice shouldn't require a translator</h2>
+        <p class="rv d2" data-i18n="lg.sub">When you're hurt, you shouldn't have to fight in a second language. Our team — not a phone service — handles your case in five. Tap yours:</p>
+      </div>
+      <div class="langs">
+        <button class="langbtn rv" data-setlang="en"><span class="shell" style="display:block"><span class="core lang-core"><span class="native">English</span><span class="name">English</span><span class="hint" data-i18n="lg.tap">tap to switch</span></span></span></button>
+        <button class="langbtn rv d1" data-setlang="es"><span class="shell" style="display:block"><span class="core lang-core"><span class="native">Español</span><span class="name">Spanish</span><span class="hint" data-i18n="lg.tap2">tap to switch</span></span></span></button>
+        <button class="langbtn rv d2" data-setlang="fa"><span class="shell" style="display:block"><span class="core lang-core"><span class="native" lang="fa" dir="rtl">دری / فارسی</span><span class="name">Dari / Farsi</span><span class="hint" data-i18n="lg.tap3">tap to switch</span></span></span></button>
+        <button class="langbtn rv d3" data-setlang="ur"><span class="shell" style="display:block"><span class="core lang-core"><span class="native"><span lang="ur" dir="rtl">اردو</span> / <span lang="hi">हिन्दी</span></span><span class="name">Urdu / Hindi</span><span class="hint" data-i18n="lg.tap4">tap to switch</span></span></span></button>
+        <button class="langbtn rv d4" data-setlang="ar"><span class="shell" style="display:block"><span class="core lang-core"><span class="native" lang="ar" dir="rtl">العربية</span><span class="name">Arabic</span><span class="hint" data-i18n="lg.tap5">tap to switch</span></span></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="on-light" aria-labelledby="steps-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="st.eyebrow">What Happens Next</span>
+        <h2 id="steps-h" class="rv d1" data-i18n="st.h">From first call to final check</h2>
+      </div>
+      <div class="steps3">
+        <div class="shell rv"><div class="core step-core"><h3 data-i18n="st.s1">Free consultation, today</h3><p data-i18n="st.s1p">Call, text, or send the form — a real person answers 24/7, in your language. Hospitalized? We come to you anywhere in the Sacramento area.</p></div></div>
+        <div class="shell rv d1"><div class="core step-core"><h3 data-i18n="st.s2">We take over everything</h3><p data-i18n="st.s2p">Insurance calls, police reports, medical records, repair estimates — all of it moves to our desk. You focus on one job: getting better.</p></div></div>
+        <div class="shell rv d2"><div class="core step-core"><h3 data-i18n="st.s3">You pay nothing until we win</h3><p data-i18n="st.s3p">We build your case like it's going to trial and negotiate from strength. Our fee comes only out of the recovery we win for you.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="on-dark" id="client-reviews" aria-labelledby="reviews-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="rv.eyebrow">Client Voices</span>
+        <h2 id="reviews-h" class="rv d1" data-i18n="rv.h">4.9 stars — earned one family at a time</h2>
+      </div>
+      <div class="revs">
+        <article class="shell rv"><div class="core rev-core"><span class="q" aria-hidden="true">“</span><p data-i18n="rv.r1">The other driver's insurance was uncooperative and evasive. Mr. Fareed fought hard for us and kept us informed at every step. We never felt like a case number.</p><footer>M.R. <span data-i18n="rv.r1a">· Car accident client, Sacramento</span></footer></div></article>
+        <article class="shell rv d1"><div class="core rev-core"><span class="q" aria-hidden="true">“</span><p data-i18n="rv.r2">Attorney Sam truly listens. He set a plan on the first call and delivered on every promise. My family could speak Dari with the team, which made all the difference.</p><footer>A.H. <span data-i18n="rv.r2a">· Injury client, Arden-Arcade</span></footer></div></article>
+        <article class="shell rv d2"><div class="core rev-core"><span class="q" aria-hidden="true">“</span><p data-i18n="rv.r3">Transparent, professional, and genuinely caring. They handled everything with the insurance company and the settlement exceeded what I expected.</p><footer>S.G. <span data-i18n="rv.r3a">· Rideshare accident client, Elk Grove</span></footer></div></article>
+      </div>
+      <p style="margin-top:1.8rem" class="rv d3"><a href="https://www.yelp.com/biz/united-citizen-law-sacramento" target="_blank" rel="noopener" data-i18n="rv.all">Read all reviews on Yelp →</a></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="on-light" id="faq" aria-labelledby="faq-h">
+    <div class="wrap" style="max-width:52rem">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="fq.eyebrow">Questions, Answered</span>
+        <h2 id="faq-h" class="rv d1" data-i18n="fq.h">What injured people ask us first</h2>
+      </div>
+      <details class="rv"><summary><span data-i18n="fq.q1">How much does a personal injury lawyer cost?</span><span class="sig" aria-hidden="true">+</span></summary><div class="answer"><p data-i18n="fq.a1">Nothing up front — ever. The consultation is free and we work on contingency: our fee comes only out of the compensation we recover for you. If we don't win, you don't pay attorney fees.</p></div></details>
+      <details class="rv"><summary><span data-i18n="fq.q2">How long do I have to file a claim in California?</span><span class="sig" aria-hidden="true">+</span></summary><div class="answer"><p data-i18n="fq.a2">In most cases, two years from the date of injury. Claims against government entities can require notice within six months. Evidence disappears fast either way — call as soon as you can.</p></div></details>
+      <details class="rv"><summary><span data-i18n="fq.q3">What is my case worth?</span><span class="sig" aria-hidden="true">+</span></summary><div class="answer"><p data-i18n="fq.a3">It depends on your medical costs, lost income, future treatment, and pain and suffering. Our recoveries have reached $5 million, but no honest lawyer quotes a number before understanding your case — that's what the free consultation is for.</p></div></details>
+      <details class="rv"><summary><span data-i18n="fq.q4">Should I talk to the insurance company first?</span><span class="sig" aria-hidden="true">+</span></summary><div class="answer"><p data-i18n="fq.a4">No — and don't give a recorded statement. Adjusters are trained to minimize claims, and your words can be used to reduce your compensation. Let us do the talking; it's free to start.</p></div></details>
+      <details class="rv"><summary><span data-i18n="fq.q5">Do you really speak my language?</span><span class="sig" aria-hidden="true">+</span></summary><div class="answer"><p data-i18n="fq.a5">Yes. Our team serves clients in English, Spanish, Dari/Farsi, Hindi/Urdu, and Arabic — not through a phone translation service, but through the people actually handling your case.</p></div></details>
+      <details class="rv"><summary><span data-i18n="fq.q6">What if I can't travel to your office?</span><span class="sig" aria-hidden="true">+</span></summary><div class="answer"><p data-i18n="fq.a6">We come to you — hospital, home, or by video — anywhere in the Sacramento region, including Elk Grove, Roseville, Folsom, Citrus Heights, and Rancho Cordova.</p></div></details>
+      <details class="rv"><summary><span data-i18n="fq.q7">What should I do right after a car accident?</span><span class="sig" aria-hidden="true">+</span></summary><div class="answer"><p data-i18n="fq.a7">Get medical care first, even if you feel fine — some injuries appear days later. Photograph the scene and vehicles, collect the other driver's information, request a police report, and talk to a lawyer before any insurance company.</p></div></details>
+      <details class="rv"><summary><span data-i18n="fq.q8">How long does a personal injury case take?</span><span class="sig" aria-hidden="true">+</span></summary><div class="answer"><p data-i18n="fq.a8">Straightforward claims often resolve in months; serious-injury cases can take a year or more, because settling before your medical picture is clear usually means settling for less. We move every case as fast as its full value allows.</p></div></details>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="on-dark final" aria-labelledby="final-h">
+    <div class="wrap">
+      <span class="eyebrow rv" data-i18n="fin.eyebrow">One Call Changes Everything</span>
+      <h2 id="final-h" class="rv d1" data-i18n-html="fin.h">The insurance company already has lawyers.<br>Now you do too.</h2>
+      <p class="rv d2" data-i18n="fin.sub">Free consultation · No fee unless we win · Answered 24/7, in five languages.</p>
+      <div class="cta-row rv d3">
+        <a class="btn btn-gold" href="tel:+19168008457"><span data-i18n="fin.call">Call (916) 800-8457</span>
+          <span class="orb" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a>
+        <button class="btn btn-ghost" data-wizard><span data-i18n="fin.start">Start my free case review</span>
+          <span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT US -->
+  <section class="on-light" id="contact" aria-labelledby="contact-h" style="border-top:1px solid var(--hair-l)">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow rv" data-i18n="ct.eyebrow">Contact Us</span>
+        <h2 id="contact-h" class="rv d1" style="font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:1rem" data-i18n="ct.h">Come see us, call us, or we'll come to you</h2>
+        <address class="rv d2" itemscope itemtype="https://schema.org/PostalAddress">
+          <strong data-i18n="ct.office">Office:</strong> <span itemprop="streetAddress">3301 Watt Ave, Suite 100</span>, <span itemprop="addressLocality">Sacramento</span>, <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95821</span><br>
+          <strong data-i18n="ct.phone">Phone:</strong> <a href="tel:+19168008457">(916) 800-8457</a> <span class="rvmute" style="color:var(--mute-l)" data-i18n="ct.247">— answered 24/7, in five languages</span><br>
+          <strong data-i18n="ct.email">Email:</strong> <a href="mailto:clients@uclaw.net">clients@uclaw.net</a><br>
+          <strong data-i18n="ct.hours">Hours:</strong> <span data-i18n="ct.hoursV">Mon–Fri 8:00am–7:00pm (phones never close)</span><br>
+          <a href="https://www.google.com/maps/search/?api=1&query=United+Citizen+Law+3301+Watt+Ave+Suite+100+Sacramento+CA+95821" target="_blank" rel="noopener" data-i18n="ct.map">Open in Google Maps →</a>
+        </address>
+      </div>
+      <div class="shell rv d2"><div class="core" style="padding:1.8rem;text-align:center">
+        <h3 style="font-size:1.25rem;margin-bottom:.5rem" data-i18n="ct.cardH">Not sure where to start?</h3>
+        <p style="font-size:.95rem;margin-bottom:1.2rem" data-i18n="ct.cardP">Answer six quick questions and the right person will call you back — usually within minutes.</p>
+        <button class="btn btn-gold" data-wizard style="width:100%;justify-content:space-between"><span data-i18n="ct.cardBtn">Start my free case review</span>
+          <span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></button>
+      </div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <h3>United Citizen Law</h3>
+      <address itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">3301 Watt Ave, Suite 100</span><br>
+        <span itemprop="addressLocality">Sacramento</span>, <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95821</span><br>
+        <a href="tel:+19168008457">(916) 800-8457</a><br>
+        <a href="https://www.google.com/maps/search/?api=1&query=United+Citizen+Law+3301+Watt+Ave+Suite+100+Sacramento+CA+95821" target="_blank" rel="noopener" data-i18n="ft.dir">Get directions</a>
+      </address>
+      <p style="margin-top:.9rem"><span data-i18n="ft.hours">Office: Mon–Fri 8:00am–7:00pm</span><br><span data-i18n="ft.247">Phones answered 24/7 · Se habla español</span></p>
+    </div>
+    <div>
+      <h3 data-i18n="ft.pa">Practice Areas</h3>
+      <ul>
+        <li><a href="./car-accident-lawyer-sacramento.html" data-case="car" data-i18n="ft.car">Car Accidents</a></li>
+        <li><a href="./truck-accident-lawyer-sacramento.html" data-case="truck" data-i18n="ft.truck">Truck Accidents</a></li>
+        <li><a href="./motorcycle-accident-lawyer-sacramento.html" data-case="moto" data-i18n="ft.moto">Motorcycle Accidents</a></li>
+        <li><a href="./rideshare-accident-lawyer-sacramento.html" data-case="rideshare" data-i18n="ft.ride">Rideshare Accidents</a></li>
+        <li><a href="./dog-bite-lawyer-sacramento.html" data-case="dog" data-i18n="ft.dog">Dog Bites</a></li>
+        <li><a href="./slip-and-fall-lawyer-sacramento.html" data-case="slip" data-i18n="ft.slip">Slip &amp; Fall</a></li>
+        <li><a href="./wrongful-death-lawyer-sacramento.html" data-case="other" data-i18n="ft.wd">Wrongful Death</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 data-i18n="ft.serving">Serving</h3>
+      <ul>
+        <li>Sacramento</li><li>Elk Grove</li><li>Roseville</li><li>Folsom</li>
+        <li>Citrus Heights</li><li>Rancho Cordova</li><li data-i18n="ft.county">All of Sacramento County</li>
+      </ul>
+    </div>
+    <div>
+      <h3 data-i18n="ft.firm">Firm</h3>
+      <ul>
+        <li><a data-jump="#sam-fareed" data-i18n="ft.about">About Sam Fareed</a></li>
+        <li><a data-jump="#results" data-i18n="ft.results">Case Results</a></li>
+        <li><a data-jump="#client-reviews" data-i18n="ft.reviews">Reviews</a></li>
+        <li><a data-jump="#faq" data-i18n="ft.faq">FAQs</a></li>
+        <li><a data-setlang="es">Español</a></li>
+        <li><a data-wizard data-i18n="ft.contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p data-i18n="ft.legal">© 2026 United Citizen Law. Attorney advertising. Past results do not guarantee future outcomes. This website is for general information only and does not constitute legal advice; contacting the firm does not create an attorney-client relationship. Content reviewed by attorney Sam Fareed · Last updated July 10, 2026.</p>
+  </div>
+</footer>
+
+<nav class="callbar" aria-label="Quick contact">
+  <a class="c1" href="tel:+19168008457"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg><span data-i18n="cb.call">Call now — free</span></a>
+  <a class="c2" data-wizard role="button" tabindex="0"><span data-i18n="cb.review">Case review</span></a>
+</nav>
+
+<!-- ═══ CASE REVIEW WIZARD ═══ -->
+<div class="wiz" id="wiz" role="dialog" aria-modal="true" aria-labelledby="wiz-count">
+  <div class="wiz-top">
+    <span class="wiz-count" id="wiz-count"><span data-i18n="wz.q">Question</span> <b id="wiz-cur">1</b> / <b id="wiz-total">6</b></span>
+    <button class="wiz-close" id="wiz-close" aria-label="Close" title="Esc">✕</button>
+  </div>
+  <div class="wiz-bar" aria-hidden="true"><i id="wiz-fill" style="width:16%"></i></div>
+  <div class="wiz-body">
+
+    <div class="fstep" id="ws-type">
+      <h2 class="q" data-i18n="wz.typeQ">What kind of accident was it?</h2>
+      <p class="help" data-i18n="wz.typeH">This helps the right person call you back. Press a letter or tap.</p>
+      <div class="opts two" id="type-opts">
+        <button class="opt" data-val="car"><span class="key">A</span><span data-i18n="wz.car">Car accident</span><span class="tick">✦</span></button>
+        <button class="opt" data-val="truck"><span class="key">B</span><span data-i18n="wz.truck">Truck accident</span><span class="tick">✦</span></button>
+        <button class="opt" data-val="moto"><span class="key">C</span><span data-i18n="wz.moto">Motorcycle accident</span><span class="tick">✦</span></button>
+        <button class="opt" data-val="rideshare"><span class="key">D</span><span data-i18n="wz.ride">Rideshare (Uber/Lyft)</span><span class="tick">✦</span></button>
+        <button class="opt" data-val="ped"><span class="key">E</span><span data-i18n="wz.ped">Pedestrian or bicycle</span><span class="tick">✦</span></button>
+        <button class="opt" data-val="dog"><span class="key">F</span><span data-i18n="wz.dog">Dog bite / animal attack</span><span class="tick">✦</span></button>
+        <button class="opt" data-val="slip"><span class="key">G</span><span data-i18n="wz.slip">Slip and fall</span><span class="tick">✦</span></button>
+        <button class="opt" data-val="other"><span class="key">H</span><span data-i18n="wz.other">Something else</span><span class="tick">✦</span></button>
+      </div>
+      <div class="cond" id="other-cond">
+        <label style="display:block;font-size:.85rem;color:var(--gold-hi);font-weight:700;margin-bottom:.4rem" for="w-otherdesc" data-i18n="wz.otherL">Tell us briefly what happened *</label>
+        <textarea class="control" id="w-otherdesc" rows="3" data-i18n-ph="wz.otherPh" placeholder="e.g., I was hurt at work by faulty equipment…"></textarea>
+      </div>
+      <p class="wiz-err" id="err-type" data-i18n="wz.typeErr">Please choose one — or pick "Something else" and describe it.</p>
+      <div class="wiz-nav">
+        <button class="btn btn-gold" data-next style="display:none" id="type-next"><span data-i18n="wz.cont">Continue</span><span class="orb" aria-hidden="true">→</span></button>
+      </div>
+    </div>
+
+    <div class="fstep" id="ws-name">
+      <h2 class="q" data-i18n="wz.nameQ">What's your name?</h2>
+      <p class="help" data-i18n="wz.nameH">So the team knows who to ask for.</p>
+      <input class="control" id="w-name" autocomplete="name" data-i18n-ph="wz.namePh" placeholder="First and last name">
+      <p class="wiz-err" id="err-name" data-i18n="wz.nameErr">Please tell us your name.</p>
+      <div class="wiz-nav">
+        <button class="wiz-back" data-back>←&nbsp;<span data-i18n="wz.back">Back</span></button>
+        <button class="btn btn-gold" data-next><span data-i18n="wz.cont2">Continue</span><span class="orb" aria-hidden="true">→</span></button>
+        <span class="enter-hint" aria-hidden="true"><kbd>Enter ↵</kbd></span>
+      </div>
+    </div>
+
+    <div class="fstep" id="ws-phone">
+      <h2 class="q" data-i18n="wz.phoneQ">Best number to reach you?</h2>
+      <p class="help" data-i18n="wz.phoneH">A real person will call or text within minutes — never spam.</p>
+      <input class="control" id="w-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(916) 555-0123">
+      <p class="wiz-err" id="err-phone" data-i18n="wz.phoneErr">Please enter a 10-digit phone number.</p>
+      <div class="wiz-nav">
+        <button class="wiz-back" data-back>←&nbsp;<span data-i18n="wz.back2">Back</span></button>
+        <button class="btn btn-gold" data-next><span data-i18n="wz.cont3">Continue</span><span class="orb" aria-hidden="true">→</span></button>
+        <span class="enter-hint" aria-hidden="true"><kbd>Enter ↵</kbd></span>
+      </div>
+    </div>
+
+    <div class="fstep" id="ws-date">
+      <h2 class="q" data-i18n="wz.dateQ">When did it happen?</h2>
+      <p class="help" data-i18n="wz.dateH">California gives you limited time to file — this tells us how much runway you have.</p>
+      <input class="control" id="w-date" type="date">
+      <div class="wiz-nav">
+        <button class="wiz-back" data-back>←&nbsp;<span data-i18n="wz.back3">Back</span></button>
+        <button class="btn btn-gold" data-next><span data-i18n="wz.cont4">Continue</span><span class="orb" aria-hidden="true">→</span></button>
+        <button class="skiplink" data-skip data-i18n="wz.skip">I'm not sure — skip</button>
+      </div>
+    </div>
+
+    <div class="fstep" id="ws-lang">
+      <h2 class="q" data-i18n="wz.langQ">Which language should we use?</h2>
+      <p class="help" data-i18n="wz.langH">Your whole case runs in your language — calls, texts, paperwork walkthroughs.</p>
+      <div class="opts" id="lang-opts">
+        <button class="opt" data-val="English"><span class="key">A</span>English<span class="tick">✦</span></button>
+        <button class="opt" data-val="Español"><span class="key">B</span>Español<span class="tick">✦</span></button>
+        <button class="opt" data-val="Dari/Farsi"><span class="key">C</span><span lang="fa">دری / فارسی</span><span class="tick">✦</span></button>
+        <button class="opt" data-val="Urdu/Hindi"><span class="key">D</span><span lang="ur">اردو</span> / <span lang="hi">हिन्दी</span><span class="tick">✦</span></button>
+        <button class="opt" data-val="Arabic"><span class="key">E</span><span lang="ar">العربية</span><span class="tick">✦</span></button>
+      </div>
+      <div class="wiz-nav">
+        <button class="wiz-back" data-back>←&nbsp;<span data-i18n="wz.back4">Back</span></button>
+      </div>
+    </div>
+
+    <div class="fstep" id="ws-extra">
+      <h2 class="q" data-i18n="wz.extraQ">Anything else we should know?</h2>
+      <p class="help" data-i18n="wz.extraH">Injuries, the other driver, the insurance company — anything. Optional, but it helps.</p>
+      <textarea class="control" id="w-extra" rows="4" data-i18n-ph="wz.extraPh" placeholder="In a few words…"></textarea>
+      <div class="wiz-nav">
+        <button class="wiz-back" data-back>←&nbsp;<span data-i18n="wz.back5">Back</span></button>
+        <button class="btn btn-gold" id="wiz-submit"><span data-i18n="wz.submit">Send my free case review</span><span class="orb" aria-hidden="true">✦</span></button>
+      </div>
+      <p class="wiz-err" id="err-send" data-i18n="wz.sendErr">That didn't send. Please try again — or call us right now at (916) 800-8457.</p>
+      <p style="font-size:.74rem;color:#6d6a5e;margin-top:1rem" data-i18n="wz.fine">Submitting doesn't create an attorney-client relationship. Your information stays confidential. By submitting you agree to be contacted by phone/SMS about your inquiry.</p>
+    </div>
+
+    <div class="fstep fsuccess" id="ws-done">
+      <span class="badge"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4.5 12.5 5 5L19.5 7"/></svg></span>
+      <h2 data-i18n="wz.doneH">Got it — the team is on it.</h2>
+      <p data-i18n="wz.doneP">Expect a call or text within minutes, in your language. If you're at the ER or it's urgent, don't wait for us:</p>
+      <a class="btn btn-gold" href="tel:+19168008457"><span data-i18n="wz.doneCall">Call (916) 800-8457</span>
+        <span class="orb" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a>
+      <p class="note" id="wiz-demo-note"></p>
+    </div>
+
+  </div>
+</div>
+
+<div class="biomodal" id="biomodal" role="dialog" aria-modal="true" aria-labelledby="bm-name" hidden>
+  <div class="biomodal-scrim" data-bmclose></div>
+  <div class="biomodal-card">
+    <button class="biomodal-x" data-bmclose aria-label="Close bio">&#10005;</button>
+    <img id="bm-img" alt="" width="128" height="128">
+    <h3 id="bm-name"></h3><span class="bm-role" id="bm-role"></span>
+    <div class="bm-meta" id="bm-meta"></div><p id="bm-bio"></p>
+  </div>
+</div>
+<script>
+(function(){
+'use strict';
+/* ══ CONFIG ══ */
+var FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; /* ⚠️ paste your Formspree URL, later the CRM/n8n webhook */
+var PREVIEW_MODE  = true;
+
+document.documentElement.classList.add('js');
+var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function $(s){ return document.querySelector(s); }
+function $$(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); }
+
+/* ══ i18n ══
+   EN + ES are complete. FA (Dari), UR, AR cover the conversion layer and fall
+   back to English per-key — complete them in place, no code changes needed.
+   ⚠️ Have FA/UR/AR reviewed by a native speaker before production. */
+var CASE_LABELS = {car:'Car accident',truck:'Truck accident',moto:'Motorcycle accident',rideshare:'Rideshare (Uber/Lyft) accident',ped:'Pedestrian or bicycle accident',dog:'Dog bite / animal attack',slip:'Slip and fall',other:'Something else'};
+var I18N = {
+en:{},
+es:{
+ "skip":"Saltar al contenido","nav.practice":"Áreas de práctica","nav.results":"Resultados","nav.about":"Sobre Sam","nav.langs":"Idiomas","nav.faq":"Preguntas",
+ "hero.eyebrow":"Lesiones personales en Sacramento · Consulta gratis 24/7",
+ "hero.h1":"¿Lesionado? Usted merece un abogado que <em>ha estado en su lugar.</em>",
+ "hero.lede":"United Citizen Law fue fundada por el abogado <strong>Sam Fareed</strong>, sobreviviente de un accidente grave. Hemos recuperado <strong>más de $13 millones</strong> para californianos lesionados, y usted habla directamente con su abogado. Siempre.",
+ "hero.stars":"<b>4.9</b> · BBB A+ · Super Lawyers Rising Star ’21–’26 · Destacado por Forbes",
+ "cta.call":"Llame ahora — es gratis","cta.review":"Revisión gratuita de su caso",
+ "hero.risk":"No paga nada si no ganamos. ¿Hospitalizado? Vamos a usted.",
+ "launch.h":"Revisión gratuita de su caso","launch.sub":"Seis preguntas rápidas. Sesenta segundos. Una persona real le responde en minutos — de día o de noche.",
+ "launch.b1":"$0 si no ganamos su caso","launch.b2":"Atendemos 24/7, en su idioma","launch.b3":"¿Hospitalizado? Vamos a usted",
+ "launch.start":"Comenzar mi revisión gratuita","launch.alt":"¿Prefiere hablar? <a href='tel:+19168008457'>(916) 800-8457</a>",
+ "cred.bbb":"Acreditados BBB A+","cred.sl":"Super Lawyers Rising Star 2021–2026","cred.forbes":"Destacado por Forbes","cred.247":"Teléfonos atendidos 24/7","cred.lang":"Hablamos 5 idiomas",
+ "res.eyebrow":"El Libro Mayor · Resultados","res.h":"Más de $13 millones recuperados para gente como usted","res.sub":"Resultados reales contra las mismas aseguradoras que usted enfrenta ahora.",
+ "res.c1":"Acuerdo por lesión catastrófica","res.c2":"Colisión de vehículo motorizado","res.c3":"Recuperación por lesión grave","res.c4":"Acuerdo por accidente de auto","res.c5":"Acuerdo por lesiones","res.c6":"Recuperación por colisión vehicular",
+ "res.disc":"Los resultados pasados no garantizan resultados futuros. Cada recuperación depende de los hechos, las lesiones y la ley aplicable a cada caso. Publicidad de abogados.",
+ "sam.eyebrow":"Por qué existimos","sam.h":"En 2017, Sam Fareed era el que estaba en la cama del hospital.",
+ "sam.p1":"Un accidente grave durante sus años en UCLA dejó a Sam entre cirugías, ajustadores de seguros y la pregunta que enfrenta todo lesionado: <em>¿quién está realmente de mi lado?</em> Los bufetes que llamó lo trataron como un número de expediente. Así que se convirtió en el abogado que no pudo encontrar.",
+ "sam.quote":"“Nadie debería enfrentar a la maquinaria de los seguros solo, con dolor, o en un idioma que no es el suyo. Su lucha es nuestra lucha — desde la primera llamada hasta la victoria final.”",
+ "sam.byline":"Abogado fundador · Super Lawyers Rising Star 2021–2026 · Reconocido por Forbes entre los mejores abogados de lesiones de Sacramento",
+ "sam.cta":"Cuéntenos qué pasó",
+ "diff.eyebrow":"La diferencia","diff.h":"Los bufetes de los espectaculares juegan al volumen.<br>Nosotros jugamos <em style='font-style:italic;color:var(--gold-hi)'>su caso.</em>",
+ "diff.colA":"Bufetes de alto volumen","diff.r1":"Quién contesta su llamada","diff.r1a":"Un call center leyendo un guion","diff.r1b":"Nuestro equipo — 24/7, en su idioma",
+ "diff.r2":"Quién trabaja su caso","diff.r2a":"Gestores que van rotando","diff.r2b":"Su abogado, de principio a fin",
+ "diff.r3":"Actualizaciones del caso","diff.r3a":"Usted tiene que perseguirlas","diff.r3b":"Avisos proactivos en cada etapa",
+ "diff.r4":"Estrategia de acuerdo","diff.r4a":"Cierre rápido, valor descontado","diff.r4b":"Valor completo — preparamos cada caso para juicio",
+ "diff.r5":"Si está hospitalizado","diff.r5a":"“Venga cuando esté mejor”","diff.r5b":"Vamos a usted",
+ "pa.eyebrow":"Áreas de práctica","pa.h":"Si se lesionó en Sacramento, lo manejamos","pa.sub":"Cada tipo de caso se maneja personalmente — sin costo inicial, en su idioma.","pa.tag":"El más común en Sacramento",
+ "pa.car":"Accidentes de auto","pa.carP":"Choques por alcance, cruces peligrosos, conductores distraídos o sin seguro. La aseguradora ya asignó un ajustador cuyo trabajo es pagarle menos — nuestro trabajo es lo contrario.",
+ "pa.ride":"Accidentes de Uber/Lyft","pa.rideP":"Los choques de rideshare involucran capas de pólizas que muchos bufetes confunden. Nosotros sabemos cuál cobertura aplica — y cuándo.",
+ "pa.truck":"Accidentes de camión","pa.truckP":"Las empresas despliegan equipos de respuesta en horas. Usted necesita la misma velocidad de su lado.",
+ "pa.moto":"Accidentes de motocicleta","pa.motoP":"A los motociclistas los culpan por default. Nosotros volteamos esa historia con evidencia y preparación implacable.",
+ "pa.dog":"Mordeduras de perro","pa.dogP":"California responsabiliza estrictamente a los dueños. Nosotros manejamos el reclamo mientras usted se recupera.",
+ "pa.slip":"Resbalones y caídas","pa.slipP":"Los propietarios le deben un lugar seguro — pisos mojados, escaleras rotas, mala iluminación. Cuando recortan gastos, los hacemos responsables.",
+ "pa.ped":"Peatones y ciclistas","pa.pedP":"Los atropellos en cruces y ciclovías causan lesiones devastadoras sin protección alguna. La ley de California está de su lado — nosotros la hacemos cumplir.",
+ "pa.wd":"Muerte injusta y todo lo demás","pa.wdP":"Ningún acuerdo reemplaza una vida — pero la rendición de cuentas, las respuestas y la seguridad de su familia importan. Lo que sea que le pasó, cuéntenos.",
+ "lg.eyebrow":"Su idioma, su caso","lg.h":"La justicia no debería requerir traductor","lg.sub":"Cuando está lesionado, no debería pelear en un segundo idioma. Nuestro equipo — no un servicio telefónico — maneja su caso en cinco. Toque el suyo:",
+ "lg.tap":"toque para cambiar","lg.tap2":"toque para cambiar","lg.tap3":"toque para cambiar","lg.tap4":"toque para cambiar","lg.tap5":"toque para cambiar",
+ "st.eyebrow":"Qué sigue","st.h":"De la primera llamada al cheque final",
+ "st.s1":"Consulta gratis, hoy","st.s1p":"Llame, mande texto o llene el formulario — una persona real contesta 24/7, en su idioma. ¿Hospitalizado? Vamos a usted en toda el área de Sacramento.",
+ "st.s2":"Nos encargamos de todo","st.s2p":"Llamadas de la aseguradora, reportes policiales, expedientes médicos, presupuestos — todo pasa a nuestro escritorio. Usted concéntrese en una cosa: recuperarse.",
+ "st.s3":"No paga nada hasta ganar","st.s3p":"Preparamos su caso como si fuera a juicio y negociamos desde la fuerza. Nuestros honorarios salen únicamente de lo que recuperamos para usted.",
+ "rv.eyebrow":"Voces de clientes","rv.h":"4.9 estrellas — ganadas familia por familia",
+ "rv.r1":"La aseguradora del otro conductor no cooperaba y era evasiva. El Sr. Fareed peleó duro por nosotros y nos mantuvo informados en cada paso. Nunca nos sentimos como un número de expediente.","rv.r1a":"· Cliente de accidente de auto, Sacramento",
+ "rv.r2":"El abogado Sam realmente escucha. Trazó un plan en la primera llamada y cumplió cada promesa. Mi familia pudo hablar dari con el equipo, y eso lo cambió todo.","rv.r2a":"· Cliente de lesiones, Arden-Arcade",
+ "rv.r3":"Transparentes, profesionales y genuinamente atentos. Manejaron todo con la aseguradora y el acuerdo superó lo que esperaba.","rv.r3a":"· Cliente de accidente de rideshare, Elk Grove",
+ "rv.all":"Lea todas las reseñas en Yelp →",
+ "fq.eyebrow":"Preguntas, respondidas","fq.h":"Lo que los lesionados nos preguntan primero",
+ "fq.q1":"¿Cuánto cuesta un abogado de lesiones personales?","fq.a1":"Nada por adelantado — nunca. La consulta es gratis y trabajamos por contingencia: nuestros honorarios salen solo de la compensación que recuperamos para usted. Si no ganamos, no paga honorarios.",
+ "fq.q2":"¿Cuánto tiempo tengo para reclamar en California?","fq.a2":"En la mayoría de los casos, dos años desde la fecha de la lesión. Los reclamos contra entidades del gobierno pueden requerir aviso en seis meses. La evidencia desaparece rápido — llame lo antes posible.",
+ "fq.q3":"¿Cuánto vale mi caso?","fq.a3":"Depende de sus gastos médicos, salarios perdidos, tratamiento futuro y el dolor sufrido. Nuestras recuperaciones han llegado a $5 millones, pero ningún abogado honesto da una cifra sin conocer su caso — para eso es la consulta gratis.",
+ "fq.q4":"¿Debo hablar primero con la aseguradora?","fq.a4":"No — y no dé una declaración grabada. Los ajustadores están entrenados para minimizar reclamos, y sus palabras pueden usarse para reducir su compensación. Deje que nosotros hablemos; empezar es gratis.",
+ "fq.q5":"¿De verdad hablan mi idioma?","fq.a5":"Sí. Atendemos en inglés, español, dari/farsi, urdu/hindi y árabe — no con un servicio de traducción telefónica, sino con las personas que realmente llevan su caso.",
+ "fq.q6":"¿Y si no puedo ir a su oficina?","fq.a6":"Vamos a usted — hospital, casa o por video — en toda la región de Sacramento, incluyendo Elk Grove, Roseville, Folsom, Citrus Heights y Rancho Cordova.",
+ "fq.q7":"¿Qué hago justo después de un accidente?","fq.a7":"Primero atención médica, aunque se sienta bien — algunas lesiones aparecen días después. Fotografíe la escena y los vehículos, tome los datos del otro conductor, pida el reporte policial y hable con un abogado antes que con cualquier aseguradora.",
+ "fq.q8":"¿Cuánto tarda un caso de lesiones?","fq.a8":"Los reclamos sencillos suelen resolverse en meses; los casos graves pueden tomar un año o más, porque llegar a un acuerdo antes de conocer su panorama médico completo casi siempre significa aceptar menos.",
+ "fin.eyebrow":"Una llamada lo cambia todo","fin.h":"La aseguradora ya tiene abogados.<br>Ahora usted también.","fin.sub":"Consulta gratis · No paga si no ganamos · Atendemos 24/7, en cinco idiomas.",
+ "fin.call":"Llame al (916) 800-8457","fin.start":"Comenzar mi revisión gratuita",
+ "ft.dir":"Cómo llegar","ft.hours":"Oficina: Lun–Vie 8:00am–7:00pm","ft.247":"Teléfonos atendidos 24/7 · Se habla español","ft.pa":"Áreas de práctica",
+ "ft.car":"Accidentes de auto","ft.truck":"Accidentes de camión","ft.moto":"Accidentes de motocicleta","ft.ride":"Accidentes de rideshare","ft.dog":"Mordeduras de perro","ft.slip":"Resbalones y caídas","ft.wd":"Muerte injusta",
+ "ft.serving":"Servimos a","ft.county":"Todo el condado de Sacramento","ft.firm":"El bufete","ft.about":"Sobre Sam Fareed","ft.results":"Resultados","ft.reviews":"Reseñas","ft.faq":"Preguntas","ft.contact":"Contacto",
+ "ft.legal":"© 2026 United Citizen Law. Publicidad de abogados. Los resultados pasados no garantizan resultados futuros. Este sitio es solo información general y no constituye asesoría legal; contactar al bufete no crea una relación abogado-cliente. Contenido revisado por el abogado Sam Fareed · Actualizado el 10 de julio de 2026.",
+ "cb.call":"Llamar ahora — gratis","cb.review":"Revisión de caso",
+ "wz.q":"Pregunta","wz.typeQ":"¿Qué tipo de accidente fue?","wz.typeH":"Esto ayuda a que le devuelva la llamada la persona correcta. Presione una letra o toque.",
+ "wz.car":"Accidente de auto","wz.truck":"Accidente de camión","wz.moto":"Accidente de motocicleta","wz.ride":"Rideshare (Uber/Lyft)","wz.ped":"Peatón o bicicleta","wz.dog":"Mordedura de perro","wz.slip":"Resbalón y caída","wz.other":"Otra cosa",
+ "wz.otherL":"Cuéntenos brevemente qué pasó *","wz.otherPh":"p. ej., me lesioné en el trabajo por equipo defectuoso…","wz.typeErr":"Elija una opción — o elija \"Otra cosa\" y descríbala.",
+ "wz.cont":"Continuar","wz.cont2":"Continuar","wz.cont3":"Continuar","wz.cont4":"Continuar","wz.back":"Atrás","wz.back2":"Atrás","wz.back3":"Atrás","wz.back4":"Atrás","wz.back5":"Atrás",
+ "wz.nameQ":"¿Cuál es su nombre?","wz.nameH":"Para que el equipo sepa por quién preguntar.","wz.namePh":"Nombre y apellido","wz.nameErr":"Por favor díganos su nombre.",
+ "wz.phoneQ":"¿A qué número le llamamos?","wz.phoneH":"Una persona real le llamará o mandará texto en minutos — nunca spam.","wz.phoneErr":"Ingrese un número de 10 dígitos.",
+ "wz.dateQ":"¿Cuándo ocurrió?","wz.dateH":"California da tiempo limitado para presentar el reclamo — esto nos dice cuánto margen tiene.","wz.skip":"No estoy seguro — saltar",
+ "wz.langQ":"¿En qué idioma le atendemos?","wz.langH":"Todo su caso corre en su idioma — llamadas, textos y papeleo.",
+ "wz.extraQ":"¿Algo más que debamos saber?","wz.extraH":"Lesiones, el otro conductor, la aseguradora — lo que sea. Opcional, pero ayuda.","wz.extraPh":"En pocas palabras…",
+ "wz.submit":"Enviar mi revisión gratuita","wz.sendErr":"No se envió. Intente de nuevo — o llámenos ahora al (916) 800-8457.",
+ "wz.fine":"Enviar este formulario no crea una relación abogado-cliente. Su información es confidencial. Al enviar acepta que le contactemos por teléfono/SMS sobre su consulta.",
+ "wz.doneH":"Listo — el equipo ya está en ello.","wz.doneP":"Espere una llamada o texto en minutos, en su idioma. Si está en emergencias o es urgente, no nos espere:","wz.doneCall":"Llame al (916) 800-8457",
+ "nav.team":"Equipo","cred.rec":"Más de $13M recuperados para clientes",
+ "tw.eyebrow":"La gente en su esquina","tw.h":"Un equipo. Cinco idiomas. Su caso, por su nombre.","tw.sub":"Sin call centers ni fábricas de casos — estas son las personas reales que contestan su llamada, arman su caso y pelean por su recuperación.",
+ "tw.r1":"Abogado fundador","tw.r2":"Abogada asociada","tw.r3":"Abogada asociada","tw.r4":"Director de servicios al cliente","tw.r5":"Gestor de casos · EN/Dari/Pastún","tw.r6":"Paralegal","tw.r7":"Contralora","tw.r8":"Auxiliar de oficina · apoyo en árabe","tw.r9":"Auxiliar de oficina",
+ "tw.all":"Conozca al equipo completo — biografías, idiomas y extensiones →",
+ "ct.eyebrow":"Contáctenos","ct.h":"Visítenos, llámenos, o nosotros vamos a usted","ct.office":"Oficina:","ct.phone":"Teléfono:","ct.247":"— atendido 24/7, en cinco idiomas","ct.email":"Correo:","ct.hours":"Horario:","ct.hoursV":"Lun–Vie 8:00am–7:00pm (los teléfonos nunca cierran)","ct.map":"Abrir en Google Maps →","ct.cardH":"¿No sabe por dónde empezar?","ct.cardP":"Responda seis preguntas rápidas y la persona indicada le devolverá la llamada — normalmente en minutos.","ct.cardBtn":"Comenzar mi revisión gratuita",
+ "pa.go":"Más información →","pa.go2":"Más información →","pa.go3":"Más información →","pa.go4":"Más información →","pa.go5":"Más información →","pa.go6":"Más información →","pa.go7":"Más información →","pa.go8":"Más información →",
+ "toast.lang":"Sitio en español — el equipo también atiende en español","toast.case":"Cuéntenos sobre su {case} — toma 60 segundos"
+},
+fa:{
+ "nav.practice":"زمینه‌های کاری","nav.results":"نتایج","nav.about":"درباره سام","nav.langs":"زبان‌ها","nav.faq":"سوالات",
+ "hero.eyebrow":"وکیل صدمات شخصی در سکرامنتو · مشاوره رایگان ۲۴/۷",
+ "hero.h1":"آسیب دیده‌اید؟ شما وکیلی می‌خواهید که <em>خودش جای شما بوده است.</em>",
+ "hero.lede":"دفتر حقوقی United Citizen Law توسط وکیل <strong>سام فرید</strong> — که خود از یک تصادف شدید جان به در برده — بنیان‌گذاری شد. ما بیش از <strong>۱۳ میلیون دلار</strong> برای آسیب‌دیدگان کالیفرنیا گرفته‌ایم و شما همیشه مستقیماً با وکیل خود صحبت می‌کنید.",
+ "cta.call":"همین حالا تماس بگیرید — رایگان است","cta.review":"بررسی رایگان پرونده",
+ "hero.risk":"تا نبریم، هیچ حق‌الوکاله‌ای نمی‌پردازید. در بیمارستان هستید؟ ما نزد شما می‌آییم.",
+ "launch.h":"بررسی رایگان پرونده","launch.sub":"شش سوال کوتاه. شصت ثانیه. یک انسان واقعی ظرف چند دقیقه پاسخ می‌دهد — روز یا شب.",
+ "launch.b1":"۰ دلار مگر اینکه پرونده را ببریم","launch.b2":"پاسخگویی ۲۴/۷ به زبان شما","launch.b3":"در بیمارستان هستید؟ ما می‌آییم",
+ "launch.start":"شروع بررسی رایگان پرونده","launch.alt":"ترجیح می‌دهید صحبت کنید؟ <a href='tel:+19168008457'>(916) 800-8457</a>",
+ "fin.call":"تماس: (916) 800-8457","fin.start":"شروع بررسی رایگان پرونده",
+ "fin.h":"شرکت بیمه وکیل دارد.<br>حالا شما هم دارید.","fin.sub":"مشاوره رایگان · بدون برد، بدون هزینه · پاسخگویی ۲۴/۷ به پنج زبان.","fin.eyebrow":"یک تماس همه چیز را عوض می‌کند",
+ "cb.call":"تماس رایگان","cb.review":"بررسی پرونده",
+ "wz.q":"سوال","wz.typeQ":"چه نوع حادثه‌ای بود؟","wz.typeH":"این کمک می‌کند فرد مناسب با شما تماس بگیرد.",
+ "wz.car":"تصادف خودرو","wz.truck":"تصادف کامیون","wz.moto":"تصادف موتورسیکلت","wz.ride":"اوبر/لیفت","wz.ped":"عابر پیاده یا دوچرخه","wz.dog":"گاز گرفتن سگ","wz.slip":"لغزیدن و افتادن","wz.other":"چیز دیگری",
+ "wz.otherL":"لطفاً کوتاه بگویید چه اتفاقی افتاد *","wz.otherPh":"مثلاً: سر کار با دستگاه معیوب آسیب دیدم…","wz.typeErr":"لطفاً یکی را انتخاب کنید — یا «چیز دیگری» را بزنید و توضیح دهید.",
+ "wz.cont":"ادامه","wz.cont2":"ادامه","wz.cont3":"ادامه","wz.cont4":"ادامه","wz.back":"بازگشت","wz.back2":"بازگشت","wz.back3":"بازگشت","wz.back4":"بازگشت","wz.back5":"بازگشت",
+ "wz.nameQ":"نام شما چیست؟","wz.nameH":"تا تیم ما بداند با چه کسی صحبت می‌کند.","wz.namePh":"نام و نام خانوادگی","wz.nameErr":"لطفاً نام خود را بنویسید.",
+ "wz.phoneQ":"بهترین شماره برای تماس با شما؟","wz.phoneH":"یک انسان واقعی ظرف چند دقیقه تماس می‌گیرد یا پیام می‌دهد — هرگز مزاحمت نه.","wz.phoneErr":"لطفاً یک شماره ۱۰ رقمی وارد کنید.",
+ "wz.dateQ":"چه زمانی اتفاق افتاد؟","wz.dateH":"کالیفرنیا زمان محدودی برای طرح دعوا می‌دهد — این به ما می‌گوید چقدر فرصت دارید.","wz.skip":"مطمئن نیستم — رد شو",
+ "wz.langQ":"به کدام زبان خدمت‌تان کنیم؟","wz.langH":"تمام پرونده شما به زبان خودتان پیش می‌رود — تماس‌ها، پیام‌ها و مدارک.",
+ "wz.extraQ":"چیز دیگری هست که باید بدانیم؟","wz.extraH":"جراحت‌ها، راننده مقابل، شرکت بیمه — هر چیزی. اختیاری، اما کمک می‌کند.","wz.extraPh":"در چند کلمه…",
+ "wz.submit":"ارسال بررسی رایگان پرونده","wz.sendErr":"ارسال نشد. دوباره تلاش کنید — یا همین حالا زنگ بزنید: (916) 800-8457.",
+ "wz.fine":"ارسال این فرم رابطه وکیل-موکل ایجاد نمی‌کند. اطلاعات شما محرمانه می‌ماند.",
+ "wz.doneH":"دریافت شد — تیم ما پیگیر است.","wz.doneP":"ظرف چند دقیقه به زبان خودتان تماس یا پیام دریافت می‌کنید. اگر اورژانسی است، منتظر ما نمانید:","wz.doneCall":"تماس: (916) 800-8457",
+ "toast.lang":"صفحه به دری — تیم ما به دری هم پاسخ می‌دهد","toast.case":"درباره {case} به ما بگویید — فقط ۶۰ ثانیه"
+},
+ur:{
+ "nav.practice":"شعبے","nav.results":"نتائج","nav.about":"سام کے بارے میں","nav.langs":"زبانیں","nav.faq":"سوالات",
+ "hero.eyebrow":"سیکرامنٹو میں ذاتی چوٹ کے وکیل · مفت مشورہ ۲۴/۷",
+ "hero.h1":"زخمی ہوئے ہیں؟ آپ کو ایسا وکیل چاہیے جو <em>خود آپ کی جگہ رہ چکا ہو۔</em>",
+ "hero.lede":"United Citizen Law کی بنیاد وکیل <strong>سام فرید</strong> نے رکھی — جو خود ایک سنگین حادثے سے بچ نکلے۔ ہم نے کیلیفورنیا کے زخمیوں کے لیے <strong>۱۳ ملین ڈالر سے زائد</strong> وصول کیے ہیں، اور آپ ہمیشہ براہِ راست اپنے وکیل سے بات کرتے ہیں۔",
+ "cta.call":"ابھی کال کریں — بالکل مفت","cta.review":"مفت کیس جائزہ",
+ "hero.risk":"جیت نہ ہو تو فیس نہیں۔ ہسپتال میں ہیں؟ ہم خود آتے ہیں۔",
+ "launch.h":"مفت کیس جائزہ","launch.sub":"چھ مختصر سوالات۔ ساٹھ سیکنڈ۔ ایک حقیقی انسان منٹوں میں جواب دیتا ہے — دن ہو یا رات۔",
+ "launch.b1":"جیت نہ ہو تو $0","launch.b2":"۲۴/۷ آپ کی زبان میں","launch.b3":"ہسپتال میں ہیں؟ ہم آئیں گے",
+ "launch.start":"میرا مفت جائزہ شروع کریں","launch.alt":"بات کرنا چاہتے ہیں؟ <a href='tel:+19168008457'>(916) 800-8457</a>",
+ "fin.call":"کال کریں: (916) 800-8457","fin.start":"میرا مفت جائزہ شروع کریں",
+ "fin.h":"انشورنس کمپنی کے پاس وکیل ہیں۔<br>اب آپ کے پاس بھی ہیں۔","fin.sub":"مفت مشورہ · جیت نہ ہو تو فیس نہیں · پانچ زبانوں میں ۲۴/۷۔","fin.eyebrow":"ایک کال سب بدل دیتی ہے",
+ "cb.call":"مفت کال کریں","cb.review":"کیس جائزہ",
+ "wz.q":"سوال","wz.typeQ":"حادثہ کس قسم کا تھا؟","wz.typeH":"اس سے درست شخص آپ کو کال کرے گا۔",
+ "wz.car":"کار حادثہ","wz.truck":"ٹرک حادثہ","wz.moto":"موٹر سائیکل حادثہ","wz.ride":"اوبر/لفٹ","wz.ped":"پیدل یا سائیکل","wz.dog":"کتے کا کاٹنا","wz.slip":"پھسلنا اور گرنا","wz.other":"کچھ اور",
+ "wz.otherL":"مختصراً بتائیں کیا ہوا *","wz.otherPh":"مثلاً: کام پر خراب مشین سے زخمی ہوا…","wz.typeErr":"براہ کرم ایک منتخب کریں — یا \"کچھ اور\" چن کر وضاحت کریں۔",
+ "wz.cont":"جاری رکھیں","wz.cont2":"جاری رکھیں","wz.cont3":"جاری رکھیں","wz.cont4":"جاری رکھیں","wz.back":"واپس","wz.back2":"واپس","wz.back3":"واپس","wz.back4":"واپس","wz.back5":"واپس",
+ "wz.nameQ":"آپ کا نام کیا ہے؟","wz.nameH":"تاکہ ٹیم جانے کس سے بات کرنی ہے۔","wz.namePh":"نام اور خاندانی نام","wz.nameErr":"براہ کرم اپنا نام لکھیں۔",
+ "wz.phoneQ":"رابطے کا بہترین نمبر؟","wz.phoneH":"ایک حقیقی انسان منٹوں میں کال یا میسج کرے گا — کبھی سپیم نہیں۔","wz.phoneErr":"براہ کرم ۱۰ ہندسوں کا نمبر درج کریں۔",
+ "wz.dateQ":"کب ہوا؟","wz.dateH":"کیلیفورنیا محدود وقت دیتا ہے — اس سے پتہ چلتا ہے کتنی مہلت باقی ہے۔","wz.skip":"یقین نہیں — چھوڑیں",
+ "wz.langQ":"کس زبان میں بات کریں؟","wz.langH":"آپ کا پورا کیس آپ کی زبان میں چلتا ہے — کالز، پیغامات، کاغذات۔",
+ "wz.extraQ":"کچھ اور جو ہمیں معلوم ہو؟","wz.extraH":"چوٹیں، دوسرا ڈرائیور، انشورنس کمپنی — کچھ بھی۔ اختیاری، مگر مددگار۔","wz.extraPh":"چند الفاظ میں…",
+ "wz.submit":"میرا مفت جائزہ بھیجیں","wz.sendErr":"ارسال نہیں ہوا۔ دوبارہ کوشش کریں — یا ابھی کال کریں: (916) 800-8457۔",
+ "wz.fine":"فارم بھیجنے سے وکیل-موکل تعلق نہیں بنتا۔ آپ کی معلومات خفیہ رہتی ہیں۔",
+ "wz.doneH":"مل گیا — ٹیم کام پر لگ گئی۔","wz.doneP":"منٹوں میں آپ کی زبان میں کال یا میسج آئے گا۔ اگر ایمرجنسی ہے تو ہمارا انتظار نہ کریں:","wz.doneCall":"کال کریں: (916) 800-8457",
+ "toast.lang":"سائٹ اردو میں — ٹیم اردو میں بھی جواب دیتی ہے","toast.case":"اپنے {case} کے بارے میں بتائیں — صرف ۶۰ سیکنڈ"
+},
+ar:{
+ "nav.practice":"مجالات العمل","nav.results":"النتائج","nav.about":"عن سام","nav.langs":"اللغات","nav.faq":"الأسئلة",
+ "hero.eyebrow":"محامي إصابات شخصية في ساكرامنتو · استشارة مجانية ٢٤/٧",
+ "hero.h1":"أُصبت؟ تستحق محامياً <em>عاش ما تعيشه الآن.</em>",
+ "hero.lede":"تأسس مكتب United Citizen Law على يد المحامي <strong>سام فريد</strong> — الناجي من حادث سير خطير. حصّلنا أكثر من <strong>١٣ مليون دولار</strong> للمصابين في كاليفورنيا، وأنت تتحدث دائماً مع محاميك مباشرة.",
+ "cta.call":"اتصل الآن — مجاناً","cta.review":"مراجعة مجانية لقضيتك",
+ "hero.risk":"لا أتعاب إلا إذا ربحنا. في المستشفى؟ نأتي إليك.",
+ "launch.h":"مراجعة مجانية لقضيتك","launch.sub":"ستة أسئلة سريعة. ستون ثانية. إنسان حقيقي يرد خلال دقائق — ليلاً أو نهاراً.",
+ "launch.b1":"٠ دولار ما لم نربح قضيتك","launch.b2":"نرد ٢٤/٧ بلغتك","launch.b3":"في المستشفى؟ نأتي إليك",
+ "launch.start":"ابدأ مراجعتي المجانية","launch.alt":"تفضّل الاتصال؟ <a href='tel:+19168008457'>(916) 800-8457</a>",
+ "fin.call":"اتصل: (916) 800-8457","fin.start":"ابدأ مراجعتي المجانية",
+ "fin.h":"شركة التأمين لديها محامون.<br>الآن أنت أيضاً.","fin.sub":"استشارة مجانية · لا أتعاب إلا بالفوز · نرد ٢٤/٧ بخمس لغات.","fin.eyebrow":"مكالمة واحدة تغيّر كل شيء",
+ "cb.call":"اتصل مجاناً","cb.review":"مراجعة القضية",
+ "wz.q":"سؤال","wz.typeQ":"ما نوع الحادث؟","wz.typeH":"هذا يساعد الشخص المناسب على معاودة الاتصال بك.",
+ "wz.car":"حادث سيارة","wz.truck":"حادث شاحنة","wz.moto":"حادث دراجة نارية","wz.ride":"أوبر/ليفت","wz.ped":"مشاة أو دراجة","wz.dog":"عضة كلب","wz.slip":"انزلاق وسقوط","wz.other":"شيء آخر",
+ "wz.otherL":"أخبرنا باختصار ماذا حدث *","wz.otherPh":"مثال: أُصبت في العمل بسبب معدات معطوبة…","wz.typeErr":"اختر واحداً من فضلك — أو اختر «شيء آخر» واشرح.",
+ "wz.cont":"متابعة","wz.cont2":"متابعة","wz.cont3":"متابعة","wz.cont4":"متابعة","wz.back":"رجوع","wz.back2":"رجوع","wz.back3":"رجوع","wz.back4":"رجوع","wz.back5":"رجوع",
+ "wz.nameQ":"ما اسمك؟","wz.nameH":"ليعرف الفريق بمن يتصل.","wz.namePh":"الاسم واللقب","wz.nameErr":"من فضلك اكتب اسمك.",
+ "wz.phoneQ":"أفضل رقم للتواصل؟","wz.phoneH":"إنسان حقيقي سيتصل أو يراسلك خلال دقائق — لا إزعاج أبداً.","wz.phoneErr":"أدخل رقماً من ١٠ أرقام من فضلك.",
+ "wz.dateQ":"متى وقع الحادث؟","wz.dateH":"كاليفورنيا تمنح وقتاً محدوداً لرفع الدعوى — هذا يخبرنا كم تبقّى لديك.","wz.skip":"لست متأكداً — تخطَّ",
+ "wz.langQ":"بأي لغة نخدمك؟","wz.langH":"قضيتك كلها تسير بلغتك — المكالمات والرسائل والأوراق.",
+ "wz.extraQ":"هل من شيء آخر يجب أن نعرفه؟","wz.extraH":"الإصابات، السائق الآخر، شركة التأمين — أي شيء. اختياري لكنه مفيد.","wz.extraPh":"بكلمات قليلة…",
+ "wz.submit":"أرسل مراجعتي المجانية","wz.sendErr":"لم يُرسَل. حاول مجدداً — أو اتصل الآن: (916) 800-8457.",
+ "wz.fine":"إرسال النموذج لا ينشئ علاقة محامٍ-موكل. معلوماتك سرية.",
+ "wz.doneH":"وصلت — الفريق يعمل عليها.","wz.doneP":"توقّع اتصالاً أو رسالة خلال دقائق بلغتك. إن كانت حالة طارئة فلا تنتظرنا:","wz.doneCall":"اتصل: (916) 800-8457",
+ "toast.lang":"الموقع بالعربية — الفريق يجيب بالعربية أيضاً","toast.case":"أخبرنا عن {case} — ٦٠ ثانية فقط"
+}
+};
+var RTL = {fa:1, ur:1, ar:1};
+var LANG_TO_FORM = {en:'English', es:'Español', fa:'Dari/Farsi', ur:'Urdu/Hindi', ar:'Arabic'};
+var EN_CACHE = {};
+function cacheEnglish(){
+  $$('[data-i18n]').forEach(function(el){ EN_CACHE[el.dataset.i18n] = el.textContent; });
+  $$('[data-i18n-html]').forEach(function(el){ EN_CACHE[el.dataset.i18nHtml] = el.innerHTML; });
+  $$('[data-i18n-ph]').forEach(function(el){ EN_CACHE[el.dataset.i18nPh] = el.getAttribute('placeholder')||''; });
+}
+var curLang = 'en';
+function t(key){
+  var d = I18N[curLang]||{};
+  return (key in d) ? d[key] : EN_CACHE[key];
+}
+function applyLang(code, silent){
+  if(!I18N[code] && code!=='en') return;
+  curLang = code;
+  try{ localStorage.setItem('ucl_lang', code); }catch(e){}
+  document.documentElement.lang = code==='en'?'en-US':code;
+  document.documentElement.dir = RTL[code]?'rtl':'ltr';
+  $$('[data-i18n]').forEach(function(el){ var v=t(el.dataset.i18n); if(v!=null) el.textContent=v; });
+  $$('[data-i18n-html]').forEach(function(el){ var v=t(el.dataset.i18nHtml); if(v!=null) el.innerHTML=v; });
+  $$('[data-i18n-ph]').forEach(function(el){ var v=t(el.dataset.i18nPh); if(v!=null) el.setAttribute('placeholder',v); });
+  $$('[data-setlang]').forEach(function(b){ b.classList.toggle('on', b.dataset.setlang===code); });
+  /* pre-select the wizard language to match the site language */
+  selectOpt('lang-opts', LANG_TO_FORM[code], true);
+  if(!silent && I18N[code] && I18N[code]['toast.lang']) toast(I18N[code]['toast.lang']);
+  if(!silent && code==='en') toast('Site in English');
+}
+
+/* ── reveals + countup ── */
+var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+$$('.rv').forEach(function(el){ io.observe(el); });
+if(!reduce){
+  var cio = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return; cio.unobserve(e.target);
+      var end=+e.target.dataset.n, t0=null, D=1400;
+      (function frame(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/D,1), z=1-Math.pow(1-p,4);
+        e.target.textContent=Math.round(end*z).toLocaleString('en-US');
+        if(p<1) requestAnimationFrame(frame); })(performance.now());
+    });
+  },{threshold:.5});
+  $$('.cnt').forEach(function(el){ cio.observe(el); });
+}
+
+/* ── toast ── */
+var toastEl=null, toastT=null;
+function toast(msg){
+  if(!toastEl){ toastEl=document.createElement('div'); toastEl.className='toast'; toastEl.setAttribute('role','status'); document.body.appendChild(toastEl); }
+  toastEl.textContent=msg;
+  requestAnimationFrame(function(){ toastEl.classList.add('show'); });
+  clearTimeout(toastT); toastT=setTimeout(function(){ toastEl.classList.remove('show'); },3000);
+}
+
+/* ══ WIZARD ══ */
+var ORDER=['type','name','phone','date','lang','extra'];
+var wiz=$('#wiz'), stepIdx=0, answers={caseType:'',otherDesc:'',name:'',phone:'',date:'',language:LANG_TO_FORM.en,extra:''};
+var lastFocus=null;
+function stepEl(i){ return $('#ws-'+ORDER[i]); }
+function selectOpt(groupId, val, silentMove){
+  var g=document.getElementById(groupId); if(!g) return;
+  var hit=false;
+  $$('#'+groupId+' .opt').forEach(function(o){ var on=o.dataset.val===val; o.classList.toggle('sel',on); if(on) hit=true; });
+  return hit;
+}
+function showStep(i, dir){
+  stepIdx=i;
+  $$('.fstep').forEach(function(s){ s.classList.remove('on','step-in'); });
+  var el=stepEl(i)||$('#ws-done');
+  el.style.setProperty('--dir', dir<0?-1:1);
+  el.classList.add('on');
+  if(!reduce){ void el.offsetWidth; el.classList.add('step-in'); }
+  $('#wiz-cur').textContent=Math.min(i+1,ORDER.length);
+  $('#wiz-fill').style.width=((Math.min(i,ORDER.length))/ORDER.length*100+16*(i===0?1:0)||((i)/ORDER.length*100))+'%';
+  $('#wiz-fill').style.width=(((i+1)/ORDER.length)*100)+'%';
+  var focusable=el.querySelector('input,textarea,.opt');
+  setTimeout(function(){ if(focusable) focusable.focus({preventScroll:true}); }, reduce?0:350);
+  wiz.scrollTop=0;
+}
+function openWiz(caseKey){
+  lastFocus=document.activeElement;
+  if(caseKey){ answers.caseType=caseKey; selectOpt('type-opts',caseKey); $('#other-cond').classList.toggle('show',caseKey==='other'); $('#type-next').style.display=caseKey?'inline-flex':'none'; }
+  answers.language=LANG_TO_FORM[curLang];
+  selectOpt('lang-opts',answers.language);
+  wiz.classList.add('open'); document.body.classList.add('lock');
+  showStep(0,1);
+  if(caseKey && caseKey!=='other'){ showStep(1,1); }
+  var lbl = caseKey && (t('wz.'+({car:'car',truck:'truck',moto:'moto',rideshare:'ride',ped:'ped',dog:'dog',slip:'slip',other:'other'}[caseKey]))||CASE_LABELS[caseKey]);
+  if(caseKey){ var msg=(t('toast.case')||'Tell us about your {case} — it takes 60 seconds').replace('{case}', lbl||''); toast(msg); }
+}
+function closeWiz(){
+  wiz.classList.remove('open'); document.body.classList.remove('lock');
+  if(lastFocus && lastFocus.focus) lastFocus.focus();
+}
+$('#wiz-close').addEventListener('click',closeWiz);
+function err(id,on){ var e=$('#err-'+id); if(e) e.classList.toggle('show',!!on); }
+function validate(i){
+  var k=ORDER[i];
+  if(k==='type'){
+    if(!answers.caseType){ err('type',1); return false; }
+    if(answers.caseType==='other'){
+      answers.otherDesc=$('#w-otherdesc').value.trim();
+      if(!answers.otherDesc){ err('type',1); $('#w-otherdesc').focus(); return false; }
+    }
+    err('type',0); return true;
+  }
+  if(k==='name'){ answers.name=$('#w-name').value.trim(); if(!answers.name){ err('name',1); return false; } err('name',0); return true; }
+  if(k==='phone'){ answers.phone=$('#w-phone').value.replace(/\D/g,''); if(answers.phone.length<10){ err('phone',1); return false; } err('phone',0); return true; }
+  if(k==='date'){ answers.date=$('#w-date').value||''; return true; }
+  return true;
+}
+function next(){ if(!validate(stepIdx)) return; if(stepIdx<ORDER.length-1) showStep(stepIdx+1,1); }
+function back(){ if(stepIdx>0) showStep(stepIdx-1,-1); }
+wiz.addEventListener('click',function(e){
+  if(e.target.closest('[data-next]')) { next(); return; }
+  if(e.target.closest('[data-back]')) { back(); return; }
+  if(e.target.closest('[data-skip]')) { answers.date=''; showStep(stepIdx+1,1); return; }
+  var opt=e.target.closest('.opt');
+  if(opt){
+    var group=opt.parentElement.id;
+    $$('#'+group+' .opt').forEach(function(o){ o.classList.toggle('sel',o===opt); });
+    if(group==='type-opts'){
+      answers.caseType=opt.dataset.val;
+      var isOther=answers.caseType==='other';
+      $('#other-cond').classList.toggle('show',isOther);      /* the box appears the second "Something else" is chosen */
+      $('#type-next').style.display='inline-flex';
+      err('type',0);
+      if(isOther){ setTimeout(function(){ $('#w-otherdesc').focus(); }, reduce?0:200); }
+      else if(!reduce){ setTimeout(function(){ if(stepIdx===0) next(); }, 320); }
+      else { next(); }
+    }
+    if(group==='lang-opts'){
+      answers.language=opt.dataset.val;
+      setTimeout(function(){ if(ORDER[stepIdx]==='lang') showStep(stepIdx+1,1); }, reduce?0:320);
+    }
+  }
+});
+document.addEventListener('keydown',function(e){
+  if(!wiz.classList.contains('open')) return;
+  if(e.key==='Escape'){ closeWiz(); return; }
+  if(e.key==='Enter' && !e.shiftKey && ORDER[stepIdx]!=='extra'){
+    var tag=(document.activeElement&&document.activeElement.tagName)||'';
+    if(tag!=='TEXTAREA'){ e.preventDefault(); if(ORDER[stepIdx]==='lang'){ /* choice steps advance on pick */ } else next(); }
+  }
+});
+/* submit */
+$('#wiz-submit').addEventListener('click',function(){
+  answers.extra=$('#w-extra').value.trim();
+  var payload={
+    name:answers.name, phone:answers.phone,
+    case_type:CASE_LABELS[answers.caseType]||answers.caseType,
+    description:answers.caseType==='other'?answers.otherDesc:'',
+    accident_date:answers.date, language:answers.language,
+    message:answers.extra, source:'website-wizard', page:location.href,
+    site_language:curLang, submitted_at:new Date().toISOString()
+  };
+  var btn=this; btn.disabled=true; btn.style.opacity=.7; err('send',0);
+  function done(ok, demoNote){
+    btn.disabled=false; btn.style.opacity=1;
+    if(ok){ showStep(ORDER.length,1); $('#ws-done').classList.add('on'); $('#wiz-cur').textContent=ORDER.length; $('#wiz-fill').style.width='100%'; $('#wiz-demo-note').textContent=demoNote||''; }
+    else err('send',1);
+  }
+  if(FORM_ENDPOINT.indexOf('YOUR_FORM_ID')>-1){
+    setTimeout(function(){ done(true,'Preview mode: connect the Formspree/CRM endpoint at the top of the script to deliver submissions.'); },500);
+    return;
+  }
+  fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
+    .then(function(r){ done(r.ok); })
+    .catch(function(){ done(false); });
+});
+
+/* ══ global interactions ══ */
+document.addEventListener('click',function(ev){
+  var sl=ev.target.closest('[data-setlang]');
+  if(sl){ ev.preventDefault(); applyLang(sl.dataset.setlang); return; }
+  var hm=ev.target.closest('[data-home]');
+  if(hm){ ev.preventDefault(); window.scrollTo({top:0,behavior:reduce?'auto':'smooth'}); return; }
+  var wz=ev.target.closest('[data-wizard]');
+  if(wz){ ev.preventDefault(); openWiz(wz.dataset.case||''); return; }
+  var pcs=ev.target.closest('a[data-case]');
+  if(pcs){ if(PREVIEW_MODE){ ev.preventDefault(); openWiz(pcs.dataset.case||''); } return; }
+  var jp=ev.target.closest('[data-jump]');
+  if(jp){ if(PREVIEW_MODE || !jp.getAttribute('href')){ ev.preventDefault(); var tgt=$(jp.dataset.jump); if(tgt) tgt.scrollIntoView({behavior:reduce?'auto':'smooth'}); } return; }
+});
+/* callbar review is an <a role=button>: support keyboard */
+$$('[data-wizard][role="button"]').forEach(function(el){
+  el.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openWiz(); } });
+});
+
+/* boot: restore language */
+cacheEnglish();
+var savedLang='en';
+try{ savedLang=localStorage.getItem('ucl_lang')||'en'; }catch(e){}
+applyLang(savedLang,true);
+/* open the wizard when arrived from a practice page (e.g. ./#review-truck) */
+(function(){
+  var m=(location.hash||'').match(/^#review(?:-([a-z]+))?$/);
+  if(m){ setTimeout(function(){ openWiz(m[1]||''); }, reduce?0:400); }
+})();
+var TEAM_BIOS=[{"name": "Sam Fareed", "role": "Founding Attorney", "ext": "", "email": "sfareed@uclaw.net", "langs": "English", "bio": "Sam Fareed founded United Citizen Law after surviving a serious car accident in 2017 while an undergraduate at UCLA. Navigating surgeries and insurance adjusters from the victim's side, he made a promise that no one should have to fight that battle alone \u2014 and built the firm he couldn't find. Super Lawyers Rising Star 2021\u20132026 and recognized by Forbes among Sacramento's top injury lawyers."}, {"name": "Shereen Ghaith", "role": "Associate Attorney", "ext": "Ext. 335", "email": "clients@uclaw.net", "langs": "English", "bio": "Shereen holds a B.S. in Business with a concentration in Marketing and a B.A. in Communications focused on Public Relations, both from California State University, Sacramento, as well as a J.D. from McGeorge School of Law. Beyond her professional accomplishments, Shereen finds joy in life's simple pleasures, often spending time at the beach or lake with loved ones."}, {"name": "Laila Fareed", "role": "Associate Attorney", "ext": "Ext. 105", "email": "lailaf@uclaw.net", "langs": "English", "bio": "Laila holds a B.A. from the University of California, Davis, and a J.D. from Lincoln Law School of Sacramento. She has been with United Citizen Law since the start of her career, beginning as a law clerk. Today she handles many aspects of personal injury cases \u2014 client consultations, legal research, drafting documents, negotiating settlements, and representing clients in court. Outside of work, Laila is a devoted mother of three who enjoys hiking and cooking with loved ones."}, {"name": "Zahid \u201cSher\u201d Fareed", "role": "Client Services Director", "ext": "Ext. 102", "email": "clients@uclaw.net", "langs": "English", "bio": "Zahid holds a B.A. in History from California State University, Sacramento. As Head of Client Liaison, he ensures clients receive attentive, professional service and oversees all pre-litigation cases, addressing clients' needs efficiently from the start. He also leads and trains his team with an emphasis on communication and client relationships. Outside of work, Zahid is a dedicated husband and father of three who enjoys traveling and fitness."}, {"name": "Abdul Wardak", "role": "Case Manager \u00b7 EN/Dari/Pashto", "ext": "Ext. 340", "email": "clients@uclaw.net", "langs": "English, Dari, Pashto", "bio": "Abdul is the first point of contact for clients and the face of the firm, handling new intakes and guiding clients through the process. Fluent in English, Dari, and Pashto, he connects with a diverse clientele and ensures smooth communication throughout case management. In his spare time he enjoys football and basketball \u2014 a big Warriors and 49ers fan."}, {"name": "Richard Prasad", "role": "Paralegal", "ext": "Ext. 334", "email": "sfareed@uclaw.net", "langs": "English", "bio": "Richard began his studies at Sacramento City College and continues building his knowledge, particularly in legal and medical research. At the firm he drafts demands, analyzes records, and files complaints; his attention to detail and dedication to clients help keep everything running smoothly. Outside of work he enjoys reading, gardening, and cooking."}, {"name": "Roya Fareed", "role": "Controller", "ext": "Ext. 341", "email": "reyah.ucl@outlook.com", "langs": "English", "bio": "Roya oversees all financial operations of the firm. With more than eight years of experience in banking \u2014 including wealth management and financial planning \u2014 she brings strategic, analytical strength to securing the capital that keeps the firm ready for trial and positioned for growth. An avid traveler who has visited more than 18 countries, she credits that experience with keeping her open-minded and approachable with a diverse clientele."}, {"name": "Yasir Albadran", "role": "Office Clerk \u00b7 Arabic support", "ext": "Ext. 103", "email": "clients@uclaw.net", "langs": "English, Arabic", "bio": "Yasir holds a B.A. in Physical Education from the University of Baghdad, Iraq. He supports daily office operations \u2014 managing documents, scheduling, and client communications \u2014 and, as a first point of contact for many clients, specializes in assisting Arabic-speaking individuals with clarity and precision. Outside of work he enjoys time with family, basketball, traveling, and hiking."}, {"name": "Jesse Fareed", "role": "Office Clerk", "ext": "", "email": "clients@uclaw.net", "langs": "English", "bio": "Jesse frequently works in the field, handling tasks for client cases and making sure everything is done on time, including driving clients to appointments and keeping them comfortable with the process. Outside of work he has a strong interest in culture and entertainment, enjoying classic films and classical music."}];
+(function(){
+ function q(s){return document.querySelector(s);}
+ var bm=q('#biomodal');
+ function openBio(i){var m=TEAM_BIOS[i];if(!m||!bm)return;
+   var card=document.querySelectorAll('.tmbtn')[i];
+   var im=q('#bm-img'); im.src=card?card.querySelector('img').src:''; im.alt=m.name;
+   q('#bm-name').textContent=m.name; q('#bm-role').textContent=m.role;
+   var meta=[]; if(m.langs)meta.push('Speaks '+m.langs); if(m.ext)meta.push(m.ext);
+   if(m.email)meta.push('<a href="mailto:'+m.email+'">'+m.email+'</a>');
+   q('#bm-meta').innerHTML=meta.join(' &middot; '); q('#bm-bio').textContent=m.bio;
+   bm.hidden=false; document.body.style.overflow='hidden';
+   var x=bm.querySelector('.biomodal-x'); if(x)x.focus();
+ }
+ function closeBio(){bm.hidden=true; document.body.style.overflow='';}
+ document.addEventListener('click',function(e){
+   var tb=e.target.closest&&e.target.closest('.tmbtn'); if(tb){e.preventDefault();openBio(+tb.dataset.mem);return;}
+   if(e.target.closest&&e.target.closest('[data-bmclose]')){closeBio();}
+ });
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&bm&&!bm.hidden)closeBio();});
+})();
+
+})();
+</script>
