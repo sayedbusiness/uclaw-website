@@ -39,10 +39,13 @@ img{max-width:100%;height:auto}
 .wide{max-width:74rem}
 /* top + nav */
 .topstrip{position:fixed;top:0;left:0;right:0;z-index:92;display:flex;justify-content:center;gap:.4rem;padding:.45rem 1rem 0}
-.sizesw{display:inline-flex;gap:.15rem;background:rgba(13,13,16,.72);backdrop-filter:blur(14px);border:1px solid var(--hair-d);border-radius:999px;padding:.18rem}
-.sizesw button{background:none;border:0;color:var(--mute-d);font-family:var(--sans);font-weight:700;padding:.28rem .62rem;border-radius:999px;cursor:pointer;min-width:2.3rem;min-height:2.3rem}
-.sizesw button.on{background:rgba(212,167,44,.16);color:var(--gold-hi)}
-.sizesw .s1{font-size:.72rem}.sizesw .s2{font-size:.92rem}
+.langsw{display:inline-flex;gap:.1rem;background:rgba(13,13,16,.7);backdrop-filter:blur(14px);border:1px solid var(--hair-d);border-radius:999px;padding:.18rem;max-width:calc(100vw - 1.2rem)}
+.langsw button{background:none;border:0;color:var(--mute-d);font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:.28rem .6rem;border-radius:999px;cursor:pointer;transition:all .35s var(--ease);min-height:2.1rem}
+.langsw button:hover{color:var(--white)}
+.langsw button.on{background:rgba(212,167,44,.16);color:var(--gold-hi)}
+@view-transition{ navigation: auto; }
+@media(prefers-reduced-motion:reduce){ @view-transition{ navigation: none; } }
+::view-transition-old(root),::view-transition-new(root){ animation-duration:.28s; }
 .navwrap{position:fixed;top:2.5rem;left:0;right:0;z-index:90;display:flex;justify-content:center;padding-inline:1rem}
 .pillnav{display:flex;align-items:center;gap:1.3rem;background:rgba(13,13,16,.74);backdrop-filter:blur(22px);border:1px solid var(--hair-d);border-radius:999px;padding:.5rem .55rem .5rem 1.35rem;box-shadow:0 18px 50px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);max-width:100%}
 .brand{font-family:var(--serif);font-size:1.05rem;color:var(--white);text-decoration:none;letter-spacing:.05em;white-space:nowrap;display:flex;align-items:center;gap:.55rem}
@@ -173,11 +176,14 @@ def head(title, desc, canonical, schema):
 <style>{CSS}</style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 <div class="topstrip">
-  <div class="sizesw" role="group" aria-label="Text size">
-    <button class="s1 on" data-size="normal" aria-label="Normal text size">A</button>
-    <button class="s2" data-size="big" aria-label="Large text size">A</button>
+  <div class="langsw" role="group" aria-label="Language">
+    <button data-setlang="en" class="on">EN</button>
+    <button data-setlang="es">ES</button>
+    <button data-setlang="fa" lang="fa">دری</button>
+    <button data-setlang="ur" lang="ur">اردو</button>
+    <button data-setlang="ar" lang="ar">عربي</button>
   </div>
 </div>
 <div class="navwrap"><nav class="pillnav" aria-label="Main">
@@ -185,11 +191,11 @@ def head(title, desc, canonical, schema):
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0cf6a" stroke-width="1.1" aria-hidden="true"><path d="M12 3v18M5 21h14M12 5l-5.5 3M12 5l5.5 3M3.5 13.5 6.5 8l3 5.5c-.8 1-2.1 1.6-3 1.6s-2.2-.6-3-1.6ZM14.5 13.5 17.5 8l3 5.5c-.8 1-2.1 1.6-3 1.6s-2.2-.6-3-1.6Z"/></svg>
     UNITED CITIZEN <b>LAW</b></a>
   <ul>
-    <li><a href="./index.html#practice-areas">Practice Areas</a></li>
-    <li><a href="./index.html#results">Results</a></li>
-    <li><a href="./team.html">Team</a></li>
-    <li><a href="./index.html#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="./index.html#practice-areas" data-i18n="nav.practice">Practice Areas</a></li>
+    <li><a href="./index.html#results" data-i18n="nav.results">Results</a></li>
+    <li><a href="./team.html" data-i18n="nav.team">Team</a></li>
+    <li><a href="./index.html#faq" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
   <a class="btn btn-gold navcall" href="tel:{TEL}">{PHONE}
     <span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a>
@@ -208,9 +214,9 @@ def end_and_footer(case):
     return f"""
 <section class="endcta" aria-labelledby="end-h">
   <div class="wrap">
-    <span class="eyebrow">Free Consultation</span>
-    <h2 id="end-h">You focus on healing. We'll handle the fight.</h2>
-    <p>Free consultation · No fee unless we win · Answered 24/7, in English, Español, دری, اردو &amp; العربية.</p>
+    <span class="eyebrow" data-i18n="end.eyebrow">Free Consultation</span>
+    <h2 id="end-h" data-i18n="end.h">You focus on healing. We'll handle the fight.</h2>
+    <p data-i18n="end.p">Free consultation · No fee unless we win · Answered 24/7, in English, Español, دری, اردو &amp; العربية.</p>
     <div class="cta-row">{call_btn()}{review_btn(case, cls="btn-ghost")}</div>
   </div>
 </section>
@@ -218,8 +224,8 @@ def end_and_footer(case):
 <section class="contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap wide contact-grid">
     <div>
-      <span class="eyebrow">Contact Us</span>
-      <h2 id="contact-h">Come see us, call us, or we'll come to you</h2>
+      <span class="eyebrow" data-i18n="contact.eyebrow">Contact Us</span>
+      <h2 id="contact-h" data-i18n="contact.h">Come see us, call us, or we'll come to you</h2>
       <address itemscope itemtype="https://schema.org/PostalAddress">
         <strong>Office:</strong> <span itemprop="streetAddress">3301 Watt Ave, Suite 100</span>, <span itemprop="addressLocality">Sacramento</span>, <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95821</span><br>
         <strong>Phone:</strong> <a href="tel:{TEL}">{PHONE}</a> — answered 24/7<br>
@@ -271,7 +277,7 @@ def end_and_footer(case):
         <li><a href="./team.html">Our Team</a></li>
         <li><a href="./index.html#results">Case Results</a></li>
         <li><a href="./index.html#faq">FAQs</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -285,18 +291,7 @@ def end_and_footer(case):
   <a class="c2" href="./index.html#review-{case}">Free case review</a>
 </nav>
 
-<script>
-(function(){{
-  var K='ucl_size';
-  try{{ if(localStorage.getItem(K)==='big'){{ document.documentElement.classList.add('bigtext'); document.querySelectorAll('[data-size]').forEach(function(b){{b.classList.toggle('on',b.dataset.size==='big');}}); }} }}catch(e){{}}
-  document.addEventListener('click',function(e){{
-    var s=e.target.closest('[data-size]'); if(!s) return;
-    document.documentElement.classList.toggle('bigtext', s.dataset.size==='big');
-    try{{ localStorage.setItem(K, s.dataset.size); }}catch(err){{}}
-    document.querySelectorAll('[data-size]').forEach(function(b){{ b.classList.toggle('on', b===s); }});
-  }});
-}})();
-</script>
+<script src="./i18n.js"></script>
 </body></html>"""
 
 def faq_schema(faqs):
@@ -543,20 +538,48 @@ PAGES = [
    ("What does it cost our family?","Nothing unless we win. The consultation is free and our fee comes only from any recovery."),
  ],
 },
+{
+ "case":"cat","slug":"catastrophic-injury-lawyer-sacramento",
+ "title":"Sacramento Catastrophic Injury Lawyer | United Citizen Law",
+ "desc":"Life-changing injury — spinal cord, brain, amputation, or burns? United Citizen Law builds the full life-care case for maximum recovery. No fee unless we win. (916) 800-8457.",
+ "h1_pre":"A catastrophic injury?","h1_em":"We fight for your whole future.",
+ "service":"Catastrophic Injury Representation","stype":"Catastrophic injury personal injury law",
+ "lede":"Some injuries don't just heal and fade — they reshape the rest of your life. A spinal cord injury, traumatic brain injury, amputation, or severe burn can mean surgeries, therapy, adapted housing, and lost earning power for decades. When the stakes are this high, the case has to be built for a lifetime, not a season.",
+ "answer":"United Citizen Law represents Sacramento clients and families facing the most serious, life-altering injuries — spinal cord damage, traumatic brain injury, amputation, severe burns, and other permanent harm. We build these cases around the full lifetime cost of the injury, on a contingency basis, so you pay nothing unless we win.",
+ "why_h":"Why catastrophic cases demand a different level of preparation",
+ "why":[
+   "When an injury is permanent, the biggest number in your case isn't today's hospital bill — it's the decades of care, equipment, home modification, and lost income ahead. Insurers know this, which is why they move quickly to settle catastrophic claims cheaply before the true, lifelong cost is ever documented.",
+   "We do the opposite. We bring in the medical, economic, and life-care experts needed to prove exactly what your future requires and what it will cost, and we prepare every case as if it is going to trial. That preparation is what forces insurers to value your recovery honestly instead of hoping you'll accept less while you're overwhelmed."
+ ],
+ "chips":["Spinal cord injury & paralysis","Traumatic brain injury (TBI)","Amputation & limb loss","Severe burns & scarring","Multiple fractures","Injuries requiring lifelong care"],
+ "steps":[
+   ("We preserve everything","We secure the evidence and get you connected with the right specialists immediately, documenting the injury and its trajectory from the very start."),
+   ("We prove the lifetime cost","We work with medical and life-care experts and economists to build a complete picture of your future — surgeries, care, equipment, home changes, and lost earning capacity."),
+   ("We pursue full value","We negotiate from a position of trial-ready strength and go to court when insurers won't be fair, so your recovery reflects a lifetime — not a moment."),
+ ],
+ "faqs":[
+   ("What counts as a catastrophic injury?","Generally, an injury that causes permanent impairment or long-term disability — such as spinal cord injury, traumatic brain injury, amputation, or severe burns. These cases involve far higher lifetime costs, which is why they need specialized handling."),
+   ("How is compensation different in a catastrophic case?","Beyond medical bills and lost wages, catastrophic claims account for future medical care, in-home assistance, assistive equipment, home and vehicle modifications, lost earning capacity, and the pain and loss of quality of life over your lifetime."),
+   ("What is a life-care plan?","A life-care plan is a detailed, expert-prepared projection of every treatment, service, and piece of equipment you'll need for the rest of your life, with costs. It's central to proving the true value of a catastrophic injury claim."),
+   ("How soon should we call after a serious injury?","As early as possible. Critical evidence and medical documentation are strongest early, and building a catastrophic case takes time. California generally allows two years to file, but earlier is always better."),
+   ("What does it cost to hire you?","Nothing up front. We work on contingency — the consultation is free and our fee comes only out of what we recover for you. If we don't win, you owe no attorney fee."),
+ ],
+},
 ]
 
 def build_practice(pg):
     canonical=f"https://uclaw.net/{pg['slug']}.html"
     schema=page_schema(pg['title'],pg['desc'],canonical,pg['service'],pg['stype'],pg['faqs'],pg['title'].split(' | ')[0])
+    ik={'other':'wd'}.get(pg['case'], pg['case'])   # i18n key prefix (wrongful-death case is 'other')
     out=head(pg['title'],pg['desc'],canonical,schema)
     out+=f"""<main id="main">
-<div class="wrap crumb"><a href="./index.html">Home</a> › <span>{html.escape(pg['title'].split(' | ')[0])}</span></div>
+<div class="wrap crumb"><a href="./index.html" data-i18n="crumb.home">Home</a> › <span>{html.escape(pg['title'].split(' | ')[0])}</span></div>
 <section class="phero"><div class="wrap">
-  <span class="eyebrow">Sacramento Personal Injury</span>
-  <h1>{html.escape(pg['h1_pre'])} <em>{html.escape(pg['h1_em'])}</em></h1>
-  <p class="lede">{html.escape(pg['lede'])}</p>
+  <span class="eyebrow" data-i18n="pp.eyebrow">Sacramento Personal Injury</span>
+  <h1><span data-i18n="p.{ik}.pre">{html.escape(pg['h1_pre'])}</span> <em data-i18n="p.{ik}.em">{html.escape(pg['h1_em'])}</em></h1>
+  <p class="lede" data-i18n="p.{ik}.lede">{html.escape(pg['lede'])}</p>
   <div class="cta-row">{call_btn()}{review_btn(pg['case'], cls='btn-ghost')}</div>
-  <p class="risk">No fee unless we win. Hospitalized? We come to you.</p>
+  <p class="risk" data-i18n="pp.risk">No fee unless we win. Hospitalized? We come to you.</p>
 </div></section>
 
 <section class="prose light"><div class="wrap">
@@ -567,8 +590,8 @@ def build_practice(pg):
 </div></section>
 
 <section class="prose"><div class="wrap">
-  <h2>Our proven three-step process</h2>
-  <p>We bring the same tested framework to every case while accounting for the details of your unique situation.</p>
+  <h2 data-i18n="pp.process.h">Our proven three-step process</h2>
+  <p data-i18n="pp.process.p">We bring the same tested framework to every case while accounting for the details of your unique situation.</p>
   {steps_html(pg['steps'])}
 </div></section>
 

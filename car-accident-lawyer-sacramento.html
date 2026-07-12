@@ -39,10 +39,13 @@ img{max-width:100%;height:auto}
 .wide{max-width:74rem}
 /* top + nav */
 .topstrip{position:fixed;top:0;left:0;right:0;z-index:92;display:flex;justify-content:center;gap:.4rem;padding:.45rem 1rem 0}
-.sizesw{display:inline-flex;gap:.15rem;background:rgba(13,13,16,.72);backdrop-filter:blur(14px);border:1px solid var(--hair-d);border-radius:999px;padding:.18rem}
-.sizesw button{background:none;border:0;color:var(--mute-d);font-family:var(--sans);font-weight:700;padding:.28rem .62rem;border-radius:999px;cursor:pointer;min-width:2.3rem;min-height:2.3rem}
-.sizesw button.on{background:rgba(212,167,44,.16);color:var(--gold-hi)}
-.sizesw .s1{font-size:.72rem}.sizesw .s2{font-size:.92rem}
+.langsw{display:inline-flex;gap:.1rem;background:rgba(13,13,16,.7);backdrop-filter:blur(14px);border:1px solid var(--hair-d);border-radius:999px;padding:.18rem;max-width:calc(100vw - 1.2rem)}
+.langsw button{background:none;border:0;color:var(--mute-d);font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:.28rem .6rem;border-radius:999px;cursor:pointer;transition:all .35s var(--ease);min-height:2.1rem}
+.langsw button:hover{color:var(--white)}
+.langsw button.on{background:rgba(212,167,44,.16);color:var(--gold-hi)}
+@view-transition{ navigation: auto; }
+@media(prefers-reduced-motion:reduce){ @view-transition{ navigation: none; } }
+::view-transition-old(root),::view-transition-new(root){ animation-duration:.28s; }
 .navwrap{position:fixed;top:2.5rem;left:0;right:0;z-index:90;display:flex;justify-content:center;padding-inline:1rem}
 .pillnav{display:flex;align-items:center;gap:1.3rem;background:rgba(13,13,16,.74);backdrop-filter:blur(22px);border:1px solid var(--hair-d);border-radius:999px;padding:.5rem .55rem .5rem 1.35rem;box-shadow:0 18px 50px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);max-width:100%}
 .brand{font-family:var(--serif);font-size:1.05rem;color:var(--white);text-decoration:none;letter-spacing:.05em;white-space:nowrap;display:flex;align-items:center;gap:.55rem}
@@ -153,11 +156,14 @@ footer.site address{font-style:normal;line-height:1.85}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 <div class="topstrip">
-  <div class="sizesw" role="group" aria-label="Text size">
-    <button class="s1 on" data-size="normal" aria-label="Normal text size">A</button>
-    <button class="s2" data-size="big" aria-label="Large text size">A</button>
+  <div class="langsw" role="group" aria-label="Language">
+    <button data-setlang="en" class="on">EN</button>
+    <button data-setlang="es">ES</button>
+    <button data-setlang="fa" lang="fa">دری</button>
+    <button data-setlang="ur" lang="ur">اردو</button>
+    <button data-setlang="ar" lang="ar">عربي</button>
   </div>
 </div>
 <div class="navwrap"><nav class="pillnav" aria-label="Main">
@@ -165,23 +171,23 @@ footer.site address{font-style:normal;line-height:1.85}
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0cf6a" stroke-width="1.1" aria-hidden="true"><path d="M12 3v18M5 21h14M12 5l-5.5 3M12 5l5.5 3M3.5 13.5 6.5 8l3 5.5c-.8 1-2.1 1.6-3 1.6s-2.2-.6-3-1.6ZM14.5 13.5 17.5 8l3 5.5c-.8 1-2.1 1.6-3 1.6s-2.2-.6-3-1.6Z"/></svg>
     UNITED CITIZEN <b>LAW</b></a>
   <ul>
-    <li><a href="./index.html#practice-areas">Practice Areas</a></li>
-    <li><a href="./index.html#results">Results</a></li>
-    <li><a href="./team.html">Team</a></li>
-    <li><a href="./index.html#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="./index.html#practice-areas" data-i18n="nav.practice">Practice Areas</a></li>
+    <li><a href="./index.html#results" data-i18n="nav.results">Results</a></li>
+    <li><a href="./team.html" data-i18n="nav.team">Team</a></li>
+    <li><a href="./index.html#faq" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
   <a class="btn btn-gold navcall" href="tel:+19168008457">(916) 800-8457
     <span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a>
 </nav></div>
 <main id="main">
-<div class="wrap crumb"><a href="./index.html">Home</a> › <span>Sacramento Car Accident Lawyer</span></div>
+<div class="wrap crumb"><a href="./index.html" data-i18n="crumb.home">Home</a> › <span>Sacramento Car Accident Lawyer</span></div>
 <section class="phero"><div class="wrap">
-  <span class="eyebrow">Sacramento Personal Injury</span>
-  <h1>Injured in a car accident? <em>We&#x27;re on your side.</em></h1>
-  <p class="lede">Whether you&#x27;re the driver, passenger, or pedestrian, car accidents are traumatic events that can change the course of your life in an instant. On top of your injuries, you may feel scared to drive again or to walk down the street in your neighborhood. We understand your feelings of pain and fear, and we&#x27;ll do everything we can to help you feel like your old self again. Our team has won enormous settlements for car accident victims, and we&#x27;ll strive to do the same for you.</p>
+  <span class="eyebrow" data-i18n="pp.eyebrow">Sacramento Personal Injury</span>
+  <h1><span data-i18n="p.car.pre">Injured in a car accident?</span> <em data-i18n="p.car.em">We&#x27;re on your side.</em></h1>
+  <p class="lede" data-i18n="p.car.lede">Whether you&#x27;re the driver, passenger, or pedestrian, car accidents are traumatic events that can change the course of your life in an instant. On top of your injuries, you may feel scared to drive again or to walk down the street in your neighborhood. We understand your feelings of pain and fear, and we&#x27;ll do everything we can to help you feel like your old self again. Our team has won enormous settlements for car accident victims, and we&#x27;ll strive to do the same for you.</p>
   <div class="cta-row"><a class="btn btn-gold" href="tel:+19168008457"><span>Call (916) 800-8457</span><span class="orb" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a><a class="btn btn-ghost" href="./index.html#review-car"><span>Start my free case review</span><span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></div>
-  <p class="risk">No fee unless we win. Hospitalized? We come to you.</p>
+  <p class="risk" data-i18n="pp.risk">No fee unless we win. Hospitalized? We come to you.</p>
 </div></section>
 
 <section class="prose light"><div class="wrap">
@@ -192,8 +198,8 @@ footer.site address{font-style:normal;line-height:1.85}
 </div></section>
 
 <section class="prose"><div class="wrap">
-  <h2>Our proven three-step process</h2>
-  <p>We bring the same tested framework to every case while accounting for the details of your unique situation.</p>
+  <h2 data-i18n="pp.process.h">Our proven three-step process</h2>
+  <p data-i18n="pp.process.p">We bring the same tested framework to every case while accounting for the details of your unique situation.</p>
   <div class="steps"><div class="stepc"><div class="stepc-in"><h3>We gather the evidence</h3><p>From the moment you call, we preserve what matters — the police report, scene photos, vehicle damage, camera footage, and witness accounts — before it disappears.</p></div></div><div class="stepc"><div class="stepc-in"><h3>We build the case</h3><p>We document every injury and cost, coordinate your medical care, and prepare your claim as if it&#x27;s going to trial, which is exactly what makes insurers take it seriously.</p></div></div><div class="stepc"><div class="stepc-in"><h3>We win your recovery</h3><p>We negotiate hard for full value and go to court if the insurer won&#x27;t be fair. Our fee comes only out of what we recover for you.</p></div></div></div>
 </div></section>
 
@@ -202,9 +208,9 @@ footer.site address{font-style:normal;line-height:1.85}
 
 <section class="endcta" aria-labelledby="end-h">
   <div class="wrap">
-    <span class="eyebrow">Free Consultation</span>
-    <h2 id="end-h">You focus on healing. We'll handle the fight.</h2>
-    <p>Free consultation · No fee unless we win · Answered 24/7, in English, Español, دری, اردو &amp; العربية.</p>
+    <span class="eyebrow" data-i18n="end.eyebrow">Free Consultation</span>
+    <h2 id="end-h" data-i18n="end.h">You focus on healing. We'll handle the fight.</h2>
+    <p data-i18n="end.p">Free consultation · No fee unless we win · Answered 24/7, in English, Español, دری, اردو &amp; العربية.</p>
     <div class="cta-row"><a class="btn btn-gold" href="tel:+19168008457"><span>Call (916) 800-8457</span><span class="orb" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a><a class="btn btn-ghost" href="./index.html#review-car"><span>Start my free case review</span><span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></div>
   </div>
 </section>
@@ -212,8 +218,8 @@ footer.site address{font-style:normal;line-height:1.85}
 <section class="contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap wide contact-grid">
     <div>
-      <span class="eyebrow">Contact Us</span>
-      <h2 id="contact-h">Come see us, call us, or we'll come to you</h2>
+      <span class="eyebrow" data-i18n="contact.eyebrow">Contact Us</span>
+      <h2 id="contact-h" data-i18n="contact.h">Come see us, call us, or we'll come to you</h2>
       <address itemscope itemtype="https://schema.org/PostalAddress">
         <strong>Office:</strong> <span itemprop="streetAddress">3301 Watt Ave, Suite 100</span>, <span itemprop="addressLocality">Sacramento</span>, <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95821</span><br>
         <strong>Phone:</strong> <a href="tel:+19168008457">(916) 800-8457</a> — answered 24/7<br>
@@ -265,7 +271,7 @@ footer.site address{font-style:normal;line-height:1.85}
         <li><a href="./team.html">Our Team</a></li>
         <li><a href="./index.html#results">Case Results</a></li>
         <li><a href="./index.html#faq">FAQs</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -279,16 +285,5 @@ footer.site address{font-style:normal;line-height:1.85}
   <a class="c2" href="./index.html#review-car">Free case review</a>
 </nav>
 
-<script>
-(function(){
-  var K='ucl_size';
-  try{ if(localStorage.getItem(K)==='big'){ document.documentElement.classList.add('bigtext'); document.querySelectorAll('[data-size]').forEach(function(b){b.classList.toggle('on',b.dataset.size==='big');}); } }catch(e){}
-  document.addEventListener('click',function(e){
-    var s=e.target.closest('[data-size]'); if(!s) return;
-    document.documentElement.classList.toggle('bigtext', s.dataset.size==='big');
-    try{ localStorage.setItem(K, s.dataset.size); }catch(err){}
-    document.querySelectorAll('[data-size]').forEach(function(b){ b.classList.toggle('on', b===s); });
-  });
-})();
-</script>
+<script src="./i18n.js"></script>
 </body></html>

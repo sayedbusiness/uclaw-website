@@ -445,6 +445,11 @@
     .byline{font-size:.85rem}
     blockquote{font-size:1.15rem}
   }
+  /* smooth cross-page navigation (Chrome/Safari); falls back to instant elsewhere */
+  @view-transition{ navigation: auto; }
+  @media(prefers-reduced-motion:reduce){ @view-transition{ navigation: none; } }
+  ::view-transition-old(root){ animation-duration:.28s; }
+  ::view-transition-new(root){ animation-duration:.28s; }
 </style>
 
 <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
@@ -603,7 +608,6 @@
         <button class="shell rv tmbtn d2" data-mem="7" aria-label="View bio for Yasir Albadran"><span class="core tm"><img src="./team/yasir-albadran.jpg" alt="Yasir Albadran, Office Clerk · Arabic support" width="320" height="480" loading="lazy" decoding="async"><b>Yasir Albadran</b><span class="role" data-i18n="tw.r8">Office Clerk · Arabic support</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
         <button class="shell rv tmbtn d3" data-mem="8" aria-label="View bio for Jesse Fareed"><span class="core tm"><img src="./team/jesse-fareed.jpg" alt="Jesse Fareed, Office Clerk" width="320" height="480" loading="lazy" decoding="async"><b>Jesse Fareed</b><span class="role" data-i18n="tw.r9">Office Clerk</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
       </div>
-      <p style="margin-top:1.8rem" class="rv"><a href="./team.html" data-jump="#team" data-i18n="tw.all">Meet the full team — bios, languages &amp; direct extensions →</a></p>
     </div>
   </section>
 
@@ -670,7 +674,12 @@
           <h3 data-i18n="pa.ped">Pedestrian &amp; Bicycle Accidents</h3>
           <p data-i18n="pa.pedP">Crosswalk and bike-lane collisions cause devastating injuries against zero protection. California law is on your side — we enforce it, fully.</p>
           <span class="go" data-i18n="pa.go7">Learn more →</span></span></a>
-        <a class="bcard b-12 rv" href="./wrongful-death-lawyer-sacramento.html" data-case="other"><span class="bcard-core">
+        <a class="bcard b-6 rv" href="./catastrophic-injury-lawyer-sacramento.html"><span class="bcard-core">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3 12h4l2-5 3 10 2-7 1.5 2H21"/></svg>
+          <h3 data-i18n="pa.cat">Catastrophic &amp; Life-Changing Injury</h3>
+          <p data-i18n="pa.catP">Spinal cord and brain injuries, amputation, severe burns — permanent harm demands a case built for a lifetime of care, not a quick settlement. We prove the full future cost.</p>
+          <span class="go" data-i18n="pa.goc">Learn more →</span></span></a>
+        <a class="bcard b-6 rv d1" href="./wrongful-death-lawyer-sacramento.html"><span class="bcard-core">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 21s-8-5.2-10-9.6C.6 8 3 4.6 6.4 4.6c2 0 3.8 1 4.6 2.6L12 8.5l1-1.3c.8-1.6 2.6-2.6 4.6-2.6 3.4 0 5.8 3.4 4.4 6.8C20 15.8 12 21 12 21Z"/></svg>
           <h3 data-i18n="pa.wd">Wrongful Death &amp; Everything Else</h3>
           <p data-i18n="pa.wdP">No settlement replaces a life — but accountability, answers, and your family's security matter. Whatever happened to you, tell us. If we can't take it, we'll point you to someone who can.</p>
@@ -1006,7 +1015,7 @@ es:{
  "pa.dog":"Mordeduras de perro","pa.dogP":"California responsabiliza estrictamente a los dueños. Nosotros manejamos el reclamo mientras usted se recupera.",
  "pa.slip":"Resbalones y caídas","pa.slipP":"Los propietarios le deben un lugar seguro — pisos mojados, escaleras rotas, mala iluminación. Cuando recortan gastos, los hacemos responsables.",
  "pa.ped":"Peatones y ciclistas","pa.pedP":"Los atropellos en cruces y ciclovías causan lesiones devastadoras sin protección alguna. La ley de California está de su lado — nosotros la hacemos cumplir.",
- "pa.wd":"Muerte injusta y todo lo demás","pa.wdP":"Ningún acuerdo reemplaza una vida — pero la rendición de cuentas, las respuestas y la seguridad de su familia importan. Lo que sea que le pasó, cuéntenos.",
+ "pa.wd":"Muerte injusta y todo lo demás","pa.cat":"Lesiones catastróficas y que cambian la vida","pa.catP":"Lesiones de la médula espinal y del cerebro, amputaciones, quemaduras graves — el daño permanente exige un caso construido para toda una vida de cuidados, no un acuerdo rápido. Probamos el costo futuro completo.","pa.goc":"Más información →","pa.wdP":"Ningún acuerdo reemplaza una vida — pero la rendición de cuentas, las respuestas y la seguridad de su familia importan. Lo que sea que le pasó, cuéntenos.",
  "lg.eyebrow":"Su idioma, su caso","lg.h":"La justicia no debería requerir traductor","lg.sub":"Cuando está lesionado, no debería pelear en un segundo idioma. Nuestro equipo — no un servicio telefónico — maneja su caso en cinco. Toque el suyo:",
  "lg.tap":"toque para cambiar","lg.tap2":"toque para cambiar","lg.tap3":"toque para cambiar","lg.tap4":"toque para cambiar","lg.tap5":"toque para cambiar",
  "st.eyebrow":"Qué sigue","st.h":"De la primera llamada al cheque final",
@@ -1316,9 +1325,14 @@ document.addEventListener('click',function(ev){
   var wz=ev.target.closest('[data-wizard]');
   if(wz){ ev.preventDefault(); openWiz(wz.dataset.case||''); return; }
   var pcs=ev.target.closest('a[data-case]');
-  if(pcs){ if(PREVIEW_MODE){ ev.preventDefault(); openWiz(pcs.dataset.case||''); } return; }
+  if(pcs){ var ph=pcs.getAttribute('href'); var toPage=ph && ph.charAt(0)!=='#';
+    if(!toPage && PREVIEW_MODE){ ev.preventDefault(); openWiz(pcs.dataset.case||''); }
+    return; /* real page href -> navigate normally (View Transition handles the animation) */ }
   var jp=ev.target.closest('[data-jump]');
-  if(jp){ if(PREVIEW_MODE || !jp.getAttribute('href')){ ev.preventDefault(); var tgt=$(jp.dataset.jump); if(tgt) tgt.scrollIntoView({behavior:reduce?'auto':'smooth'}); } return; }
+  if(jp){ var tgt=$(jp.dataset.jump);
+    if(tgt){ ev.preventDefault(); tgt.scrollIntoView({behavior:reduce?'auto':'smooth'}); }
+    /* else: no such section on THIS page -> let the href navigate to the other page */
+    return; }
 });
 /* callbar review is an <a role=button>: support keyboard */
 $$('[data-wizard][role="button"]').forEach(function(el){
