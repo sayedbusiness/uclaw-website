@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add('js')</script>
 <title>Meet Our Team | Sacramento Personal Injury Attorneys | United Citizen Law</title>
 <meta name="description" content="Meet the United Citizen Law team — attorneys, case managers, and staff serving Sacramento in English, Spanish, Dari, Pashto, Urdu, Hindi, and Arabic. Real people who answer your call and build your case.">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -47,7 +48,15 @@ img{max-width:100%;height:auto}
 .langsw button.on{background:rgba(212,167,44,.16);color:var(--gold-hi)}
 @view-transition{ navigation: auto; }
 @media(prefers-reduced-motion:reduce){ @view-transition{ navigation: none; } }
-::view-transition-old(root),::view-transition-new(root){ animation-duration:.28s; }
+::view-transition-old(root){ animation:vtOut .32s var(--ease) both; }
+::view-transition-new(root){ animation:vtIn .4s var(--ease) both; }
+@keyframes vtOut{ to{ opacity:0; transform:translateY(-8px) } }
+@keyframes vtIn{ from{ opacity:0; transform:translateY(10px) } }
+/* ── scroll reveal (progressive-enhancement: visible without JS) ── */
+html.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .reveal.d1{transition-delay:.07s}html.js .reveal.d2{transition-delay:.14s}html.js .reveal.d3{transition-delay:.21s}html.js .reveal.d4{transition-delay:.28s}html.js .reveal.d5{transition-delay:.35s}
+@media(prefers-reduced-motion:reduce){html.js .reveal{opacity:1!important;transform:none!important;transition:none!important}}
 .navwrap{position:fixed;top:2.5rem;left:0;right:0;z-index:90;display:flex;justify-content:center;padding-inline:1rem}
 .pillnav{display:flex;align-items:center;gap:1.3rem;background:rgba(13,13,16,.74);backdrop-filter:blur(22px);border:1px solid var(--hair-d);border-radius:999px;padding:.5rem .55rem .5rem 1.35rem;box-shadow:0 18px 50px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);max-width:100%}
 .brand{font-family:var(--serif);font-size:1.05rem;color:var(--white);text-decoration:none;letter-spacing:.05em;white-space:nowrap;display:flex;align-items:center;gap:.55rem}
@@ -93,18 +102,22 @@ img{max-width:100%;height:auto}
 .lead-answer{font-size:1.2rem;border-inline-start:3px solid var(--gold);padding-inline-start:1.3rem;margin-bottom:1.6rem;color:var(--white)}
 .prose.light .lead-answer{color:var(--ink)}
 .chips{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
-.chip{background:rgba(212,167,44,.08);border:1px solid var(--hair-g);color:var(--gold-hi);border-radius:999px;padding:.4rem .95rem;font-size:.92rem;font-weight:600}
+.chip{background:rgba(212,167,44,.08);border:1px solid var(--hair-g);color:var(--gold-hi);border-radius:999px;padding:.4rem .95rem;font-size:.92rem;font-weight:600;transition:transform .45s var(--ease),background .45s var(--ease),border-color .45s var(--ease)}
+.chip:hover{transform:translateY(-2px);background:rgba(212,167,44,.14);border-color:var(--gold-hi)}
 .prose.light .chip{background:rgba(122,94,11,.08);border-color:rgba(122,94,11,.25);color:var(--gold-deep)}
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.8rem;counter-reset:s}
 @media(max-width:56rem){.steps{grid-template-columns:1fr}}
-.stepc{border-radius:1.3rem;padding:.4rem;background:rgba(16,18,22,.04);border:1px solid var(--hair-l)}
+.stepc{border-radius:1.3rem;padding:.4rem;background:rgba(16,18,22,.04);border:1px solid var(--hair-l);transition:transform .55s var(--ease),box-shadow .55s var(--ease)}
+.stepc:hover{transform:translateY(-4px);box-shadow:0 22px 50px -24px rgba(16,18,22,.35)}
 .stepc-in{border-radius:calc(1.3rem - .4rem);background:var(--white);border:1px solid rgba(16,18,22,.05);padding:1.6rem;height:100%;counter-increment:s;box-shadow:inset 0 1px 1px rgba(255,255,255,.9)}
 .stepc-in::before{content:"0" counter(s);font-family:var(--serif);font-size:2.4rem;color:var(--gold-deep);opacity:.55;display:block;margin-bottom:.7rem;line-height:1}
 .stepc-in h3{color:var(--ink);font-size:1.2rem;margin:0 0 .4rem}
 .stepc-in p{font-size:.96rem;color:var(--body-l);margin:0}
 /* faq */
-details{border:1px solid var(--hair-l);border-radius:1.1rem;background:var(--white);margin-bottom:.85rem;overflow:hidden}
+details{border:1px solid var(--hair-l);border-radius:1.1rem;background:var(--white);margin-bottom:.85rem;overflow:hidden;transition:border-color .4s var(--ease),box-shadow .4s var(--ease)}
+details:hover{border-color:var(--hair-g)}
+details[open]{box-shadow:0 18px 44px -28px rgba(16,18,22,.3)}
 details[open]{box-shadow:0 22px 50px -28px rgba(16,18,22,.22)}
 summary{cursor:pointer;font-weight:700;color:var(--ink);padding:1.15rem 1.4rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:52px;font-size:1.05rem}
 summary::-webkit-details-marker{display:none}
@@ -145,11 +158,14 @@ footer.site a{color:#cfcaba;text-decoration:none}footer.site a:hover{color:var(-
 footer.site address{font-style:normal;line-height:1.85}
 .legal{border-top:1px solid rgba(255,255,255,.06);padding-block:1.5rem;font-size:.76rem;color:#6f6a5c}
 /* sticky mobile call */
-.callbar{position:fixed;bottom:.8rem;left:.8rem;right:.8rem;z-index:95;display:none;grid-template-columns:1.2fr 1fr;gap:.5rem}
-.callbar a{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem;font-weight:800;text-decoration:none;font-size:1rem;min-height:54px;border-radius:999px;box-shadow:0 16px 40px rgba(0,0,0,.5)}
+.callbar{position:fixed;bottom:calc(.55rem + env(safe-area-inset-bottom));left:.6rem;right:.6rem;z-index:95;display:none;grid-template-columns:1.15fr 1fr;gap:.5rem}
+.callbar a{display:flex;align-items:center;justify-content:center;gap:.4rem;height:52px;padding:0 .7rem;font-weight:800;text-decoration:none;font-size:.92rem;line-height:1;white-space:nowrap;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.callbar a:active{transform:scale(.96)}
+.callbar a svg{flex:none}
 .callbar .c1{background:linear-gradient(155deg,var(--gold-hi),var(--gold));color:#151004}
-.callbar .c2{background:rgba(13,13,16,.9);backdrop-filter:blur(14px);color:var(--white);border:1px solid var(--hair-d)}
-@media(max-width:48rem){.callbar{display:grid}body{padding-bottom:4.6rem}}
+.callbar .c2{background:rgba(13,13,16,.92);backdrop-filter:blur(14px);color:var(--white);border:1px solid var(--hair-d)}
+@media(max-width:48rem){.callbar{display:grid}body{padding-bottom:4.7rem}}
+@media(max-width:22rem){.callbar{gap:.4rem}.callbar a{font-size:.82rem;padding:0 .5rem}}
 @media(max-width:56rem){
   .topstrip{padding:.4rem .6rem 0}
   .langsw{gap:.1rem;padding:.2rem}
@@ -166,7 +182,8 @@ footer.site address{font-style:normal;line-height:1.85}
 @media(max-width:22rem){ .langsw button{padding:.5rem .34rem;font-size:.7rem} }
 /* team page */
 .teamgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(18rem,1fr));gap:1.4rem}
-.tcard{border-radius:1.5rem;padding:.45rem;background:rgba(255,255,255,.04);border:1px solid var(--hair-d)}
+.tcard{border-radius:1.5rem;padding:.45rem;background:rgba(255,255,255,.04);border:1px solid var(--hair-d);transition:transform .55s var(--ease),border-color .55s var(--ease),box-shadow .55s var(--ease)}
+.tcard:hover{transform:translateY(-5px);border-color:var(--hair-g);box-shadow:0 30px 60px -34px rgba(0,0,0,.6)}
 .tcard-in{border-radius:1.1rem;background:var(--coal);border:1px solid rgba(255,255,255,.05);padding:1.7rem;height:100%}
 .tcard-in img{width:5.5rem;height:5.5rem;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--hair-g);margin-bottom:1rem}
 .tcard-in h3{color:var(--white);font-size:1.3rem;margin-bottom:.2rem}
@@ -207,39 +224,39 @@ footer.site address{font-style:normal;line-height:1.85}
   <span class="eyebrow">The People In Your Corner</span>
   <h1>One team. Five languages. <em>Your case by name.</em></h1>
   <p class="lede">No call centers, no case mills. These are the actual people who answer your call, build your case, and fight for your recovery — and many of them speak your language.</p>
-  <div class="cta-row"><a class="btn btn-gold" href="tel:+19168008457"><span>Call (916) 800-8457</span><span class="orb" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a><a class="btn btn-ghost" href="./index.html#review-car"><span>Start my free case review</span><span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></div>
+  <div class="cta-row"><a class="btn btn-gold" href="tel:+19168008457"><span data-i18n="cta.call">Call (916) 800-8457</span><span class="orb" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a><a class="btn btn-ghost" href="./index.html#review-car"><span data-i18n="cta.review">Start my free case review</span><span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></div>
 </div></section>
 <section class="prose" style="padding-top:1rem"><div class="wrap wide">
-  <div class="teamgrid"><div class="tcard"><div class="tcard-in"><img src="./team/sam-fareed.jpg" alt="Sam Fareed, Founding Attorney at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Sam Fareed</h3><span class="role">Founding Attorney</span><p>Sam Fareed founded United Citizen Law after surviving a serious car accident in 2017 while an undergraduate at UCLA. Navigating surgeries and insurance adjusters from the victim&#x27;s side, he made a promise that no one should have to fight that battle alone — and built the firm he couldn&#x27;t find. Super Lawyers Rising Star 2021–2026 and recognized by Forbes among Sacramento&#x27;s top injury lawyers.</p><div class="meta"><a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard"><div class="tcard-in"><img src="./team/shereen-ghaith.jpg" alt="Shereen Ghaith, Associate Attorney at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Shereen Ghaith</h3><span class="role">Associate Attorney</span><p>Shereen holds a B.S. in Business with a concentration in Marketing and a B.A. in Communications focused on Public Relations, both from California State University, Sacramento, as well as a J.D. from McGeorge School of Law. Beyond her professional accomplishments, Shereen finds joy in life&#x27;s simple pleasures, often spending time at the beach or lake with loved ones.</p><div class="meta">Ext. 335 · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard"><div class="tcard-in"><img src="./team/homaira-laila-fareed.jpg" alt="Homaira Laila Fareed, Associate Attorney at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Homaira Laila Fareed</h3><span class="role">Associate Attorney</span><p>Laila holds a B.A. from the University of California, Davis, and a J.D. from Lincoln Law School of Sacramento. She has been with United Citizen Law since the start of her career, beginning as a law clerk. Today she handles many aspects of personal injury cases — client consultations, legal research, drafting documents, negotiating settlements, and representing clients in court. Outside of work, Laila is a devoted mother of three who enjoys hiking and cooking with loved ones.</p><div class="meta">Ext. 105 · <a href="mailto:lailaf@uclaw.net">lailaf@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard"><div class="tcard-in"><img src="./team/zahid-sher-fareed.jpg" alt="Zahid “Sher” Fareed, Client Services Director at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Zahid “Sher” Fareed</h3><span class="role">Client Services Director</span><p>Zahid holds a B.A. in History from California State University, Sacramento. As Head of Client Liaison, he ensures clients receive attentive, professional service and oversees all pre-litigation cases, addressing clients&#x27; needs efficiently from the start. He also leads and trains his team with an emphasis on communication and client relationships. Outside of work, Zahid is a dedicated husband and father of three who enjoys traveling and fitness.</p><div class="meta">Ext. 102 · <a href="mailto:clients@uclaw.net">clients@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard"><div class="tcard-in"><img src="./team/abdul-wardak.jpg" alt="Abdul Wardak, Case Manager at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Abdul Wardak</h3><span class="role">Case Manager</span><p>Abdul is the first point of contact for clients and the face of the firm, handling new intakes and guiding clients through the process. Fluent in English, Dari, and Pashto, he connects with a diverse clientele and ensures smooth communication throughout case management. In his spare time he enjoys football and basketball — a big Warriors and 49ers fan.</p><div class="meta">Ext. 340 · <a href="mailto:clients@uclaw.net">clients@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard"><div class="tcard-in"><img src="./team/richard-prasad.jpg" alt="Richard Prasad, Paralegal at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Richard Prasad</h3><span class="role">Paralegal</span><p>Richard began his studies at Sacramento City College and continues building his knowledge, particularly in legal and medical research. At the firm he drafts demands, analyzes records, and files complaints; his attention to detail and dedication to clients help keep everything running smoothly. Outside of work he enjoys reading, gardening, and cooking.</p><div class="meta">Ext. 334 · <a href="mailto:sfareed@uclaw.net">sfareed@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard"><div class="tcard-in"><img src="./team/roya-fareed.jpg" alt="Roya Fareed, Controller at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Roya Fareed</h3><span class="role">Controller</span><p>Roya oversees all financial operations of the firm. With more than eight years of experience in banking — including wealth management and financial planning — she brings strategic, analytical strength to securing the capital that keeps the firm ready for trial and positioned for growth. An avid traveler who has visited more than 18 countries, she credits that experience with keeping her open-minded and approachable with a diverse clientele.</p><div class="meta">Ext. 341 · <a href="mailto:reyah.ucl@outlook.com">reyah.ucl@outlook.com</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard"><div class="tcard-in"><img src="./team/yasir-albadran.jpg" alt="Yasir Albadran, Office Clerk at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Yasir Albadran</h3><span class="role">Office Clerk</span><p>Yasir holds a B.A. in Physical Education from the University of Baghdad, Iraq. He supports daily office operations — managing documents, scheduling, and client communications — and, as a first point of contact for many clients, specializes in assisting Arabic-speaking individuals with clarity and precision. Outside of work he enjoys time with family, basketball, traveling, and hiking.</p><div class="meta">Ext. 103 · <a href="mailto:clients@uclaw.net">clients@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard"><div class="tcard-in"><img src="./team/jesse-fareed.jpg" alt="Jesse Fareed, Office Clerk at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Jesse Fareed</h3><span class="role">Office Clerk</span><p>Jesse frequently works in the field, handling tasks for client cases and making sure everything is done on time, including driving clients to appointments and keeping them comfortable with the process. Outside of work he has a strong interest in culture and entertainment, enjoying classic films and classical music.</p><div class="meta"><a href="mailto:clients@uclaw.net">clients@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div></div>
+  <div class="teamgrid"><div class="tcard reveal d1"><div class="tcard-in"><img src="./team/sam-fareed.jpg" alt="Sam Fareed, Founding Attorney at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Sam Fareed</h3><span class="role">Founding Attorney</span><p>Sam Fareed founded United Citizen Law after surviving a serious car accident in 2017 while an undergraduate at UCLA. Navigating surgeries and insurance adjusters from the victim&#x27;s side, he made a promise that no one should have to fight that battle alone — and built the firm he couldn&#x27;t find. Super Lawyers Rising Star 2021–2026 and recognized by Forbes among Sacramento&#x27;s top injury lawyers.</p><div class="meta"><a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard reveal d2"><div class="tcard-in"><img src="./team/shereen-ghaith.jpg" alt="Shereen Ghaith, Associate Attorney at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Shereen Ghaith</h3><span class="role">Associate Attorney</span><p>Shereen holds a B.S. in Business with a concentration in Marketing and a B.A. in Communications focused on Public Relations, both from California State University, Sacramento, as well as a J.D. from McGeorge School of Law. Beyond her professional accomplishments, Shereen finds joy in life&#x27;s simple pleasures, often spending time at the beach or lake with loved ones.</p><div class="meta">Ext. 335 · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard reveal d3"><div class="tcard-in"><img src="./team/homaira-laila-fareed.jpg" alt="Homaira Laila Fareed, Associate Attorney at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Homaira Laila Fareed</h3><span class="role">Associate Attorney</span><p>Laila holds a B.A. from the University of California, Davis, and a J.D. from Lincoln Law School of Sacramento. She has been with United Citizen Law since the start of her career, beginning as a law clerk. Today she handles many aspects of personal injury cases — client consultations, legal research, drafting documents, negotiating settlements, and representing clients in court. Outside of work, Laila is a devoted mother of three who enjoys hiking and cooking with loved ones.</p><div class="meta">Ext. 105 · <a href="mailto:lailaf@uclaw.net">lailaf@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard reveal d4"><div class="tcard-in"><img src="./team/zahid-sher-fareed.jpg" alt="Zahid “Sher” Fareed, Client Services Director at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Zahid “Sher” Fareed</h3><span class="role">Client Services Director</span><p>Zahid holds a B.A. in History from California State University, Sacramento. As Head of Client Liaison, he ensures clients receive attentive, professional service and oversees all pre-litigation cases, addressing clients&#x27; needs efficiently from the start. He also leads and trains his team with an emphasis on communication and client relationships. Outside of work, Zahid is a dedicated husband and father of three who enjoys traveling and fitness.</p><div class="meta">Ext. 102 · <a href="mailto:clients@uclaw.net">clients@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard reveal d1"><div class="tcard-in"><img src="./team/abdul-wardak.jpg" alt="Abdul Wardak, Case Manager at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Abdul Wardak</h3><span class="role">Case Manager</span><p>Abdul is the first point of contact for clients and the face of the firm, handling new intakes and guiding clients through the process. Fluent in English, Dari, and Pashto, he connects with a diverse clientele and ensures smooth communication throughout case management. In his spare time he enjoys football and basketball — a big Warriors and 49ers fan.</p><div class="meta">Ext. 340 · <a href="mailto:clients@uclaw.net">clients@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard reveal d2"><div class="tcard-in"><img src="./team/richard-prasad.jpg" alt="Richard Prasad, Paralegal at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Richard Prasad</h3><span class="role">Paralegal</span><p>Richard began his studies at Sacramento City College and continues building his knowledge, particularly in legal and medical research. At the firm he drafts demands, analyzes records, and files complaints; his attention to detail and dedication to clients help keep everything running smoothly. Outside of work he enjoys reading, gardening, and cooking.</p><div class="meta">Ext. 334 · <a href="mailto:sfareed@uclaw.net">sfareed@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard reveal d3"><div class="tcard-in"><img src="./team/roya-fareed.jpg" alt="Roya Fareed, Controller at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Roya Fareed</h3><span class="role">Controller</span><p>Roya oversees all financial operations of the firm. With more than eight years of experience in banking — including wealth management and financial planning — she brings strategic, analytical strength to securing the capital that keeps the firm ready for trial and positioned for growth. An avid traveler who has visited more than 18 countries, she credits that experience with keeping her open-minded and approachable with a diverse clientele.</p><div class="meta">Ext. 341 · <a href="mailto:reyah.ucl@outlook.com">reyah.ucl@outlook.com</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard reveal d4"><div class="tcard-in"><img src="./team/yasir-albadran.jpg" alt="Yasir Albadran, Office Clerk at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Yasir Albadran</h3><span class="role">Office Clerk</span><p>Yasir holds a B.A. in Physical Education from the University of Baghdad, Iraq. He supports daily office operations — managing documents, scheduling, and client communications — and, as a first point of contact for many clients, specializes in assisting Arabic-speaking individuals with clarity and precision. Outside of work he enjoys time with family, basketball, traveling, and hiking.</p><div class="meta">Ext. 103 · <a href="mailto:clients@uclaw.net">clients@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div><div class="tcard reveal d1"><div class="tcard-in"><img src="./team/jesse-fareed.jpg" alt="Jesse Fareed, Office Clerk at United Citizen Law" width="88" height="88" loading="lazy" decoding="async"><h3>Jesse Fareed</h3><span class="role">Office Clerk</span><p>Jesse frequently works in the field, handling tasks for client cases and making sure everything is done on time, including driving clients to appointments and keeping them comfortable with the process. Outside of work he has a strong interest in culture and entertainment, enjoying classic films and classical music.</p><div class="meta"><a href="mailto:clients@uclaw.net">clients@uclaw.net</a> · <a href="tel:+19168008457">(916) 800-8457</a></div></div></div></div>
 </div></section>
 </main>
 
 <section class="endcta" aria-labelledby="end-h">
   <div class="wrap">
-    <span class="eyebrow" data-i18n="end.eyebrow">Free Consultation</span>
-    <h2 id="end-h" data-i18n="end.h">You focus on healing. We'll handle the fight.</h2>
-    <p data-i18n="end.p">Free consultation · No fee unless we win · Answered 24/7, in English, Español, دری, اردو &amp; العربية.</p>
-    <div class="cta-row"><a class="btn btn-gold" href="tel:+19168008457"><span>Call (916) 800-8457</span><span class="orb" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a><a class="btn btn-ghost" href="./index.html#review-car"><span>Start my free case review</span><span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></div>
+    <span class="eyebrow reveal" data-i18n="end.eyebrow">Free Consultation</span>
+    <h2 id="end-h" class="reveal d1" data-i18n="end.h">You focus on healing. We'll handle the fight.</h2>
+    <p class="reveal d2" data-i18n="end.p">Free consultation · No fee unless we win · Answered 24/7, in English, Español, دری, اردو &amp; العربية.</p>
+    <div class="cta-row reveal d3"><a class="btn btn-gold" href="tel:+19168008457"><span data-i18n="cta.call">Call (916) 800-8457</span><span class="orb" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg></span></a><a class="btn btn-ghost" href="./index.html#review-car"><span data-i18n="cta.review">Start my free case review</span><span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></div>
   </div>
 </section>
 
 <section class="contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap wide contact-grid">
     <div>
-      <span class="eyebrow" data-i18n="contact.eyebrow">Contact Us</span>
-      <h2 id="contact-h" data-i18n="contact.h">Come see us, call us, or we'll come to you</h2>
+      <span class="eyebrow reveal" data-i18n="contact.eyebrow">Contact Us</span>
+      <h2 id="contact-h" class="reveal d1" data-i18n="contact.h">Come see us, call us, or we'll come to you</h2>
       <address itemscope itemtype="https://schema.org/PostalAddress">
-        <strong>Office:</strong> <span itemprop="streetAddress">3301 Watt Ave, Suite 100</span>, <span itemprop="addressLocality">Sacramento</span>, <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95821</span><br>
-        <strong>Phone:</strong> <a href="tel:+19168008457">(916) 800-8457</a> — answered 24/7<br>
-        <strong>Email:</strong> <a href="mailto:clients@uclaw.net">clients@uclaw.net</a><br>
-        <strong>Hours:</strong> Mon–Fri 8:00am–7:00pm (phones never close)<br>
-        <a href="https://www.google.com/maps/search/?api=1&query=United+Citizen+Law+3301+Watt+Ave+Suite+100+Sacramento+CA+95821" target="_blank" rel="noopener">Open in Google Maps →</a>
+        <strong data-i18n="addr.office">Office:</strong> <span itemprop="streetAddress">3301 Watt Ave, Suite 100</span>, <span itemprop="addressLocality">Sacramento</span>, <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95821</span><br>
+        <strong data-i18n="addr.phone">Phone:</strong> <a href="tel:+19168008457" dir="ltr">(916) 800-8457</a> — <span data-i18n="addr.answered">answered 24/7</span><br>
+        <strong data-i18n="addr.email">Email:</strong> <a href="mailto:clients@uclaw.net" dir="ltr">clients@uclaw.net</a><br>
+        <strong data-i18n="addr.hours">Hours:</strong> <span data-i18n="addr.hourval">Mon–Fri 8:00am–7:00pm (phones never close)</span><br>
+        <a href="https://www.google.com/maps/search/?api=1&query=United+Citizen+Law+3301+Watt+Ave+Suite+100+Sacramento+CA+95821" target="_blank" rel="noopener" data-i18n="addr.maps">Open in Google Maps →</a>
       </address>
     </div>
-    <div class="ccard"><div class="ccard-in">
-      <h3>Not sure where to start?</h3>
-      <p>Answer six quick questions and the right person will call you back — usually within minutes.</p>
-      <a class="btn btn-gold" href="./index.html#review-car"><span>Start my free case review</span><span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+    <div class="ccard reveal d2"><div class="ccard-in">
+      <h3 data-i18n="contact.card.h">Not sure where to start?</h3>
+      <p data-i18n="contact.card.p">Answer six quick questions and the right person will call you back — usually within minutes.</p>
+      <a class="btn btn-gold" href="./index.html#review-car"><span data-i18n="cta.review">Start my free case review</span><span class="orb" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
     </div></div>
   </div>
 </section>
@@ -253,50 +270,50 @@ footer.site address{font-style:normal;line-height:1.85}
         <a href="tel:+19168008457">(916) 800-8457</a><br>
         <a href="mailto:clients@uclaw.net">clients@uclaw.net</a>
       </address>
-      <p style="margin-top:.9rem">Office: Mon–Fri 8am–7pm<br>Phones answered 24/7 · Se habla español</p>
+      <p style="margin-top:.9rem" data-i18n-html="foot.hours">Office: Mon–Fri 8am–7pm<br>Phones answered 24/7 · Se habla español</p>
       <div class="social" role="group" aria-label="United Citizen Law on social media">
         <a href="https://www.instagram.com/unitedcitizenlaw/" target="_blank" rel="noopener" aria-label="Instagram — @unitedcitizenlaw"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.15" fill="currentColor" stroke="none"/></svg></a>
         <a href="https://www.tiktok.com/@uclawca" target="_blank" rel="noopener" aria-label="TikTok — @uclawca"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M16.9 3c.35 2.2 1.72 3.78 3.85 4.06v2.55c-1.35.08-2.6-.32-3.83-1.05v6.36c0 3.5-2.83 6.08-6.19 5.86A5.87 5.87 0 0 1 5 14.9a5.86 5.86 0 0 1 6.35-5.32v2.72a3.17 3.17 0 0 0-3.5 3.05 3.17 3.17 0 0 0 6.32.2V3h2.73Z"/></svg></a>
         <a href="https://www.google.com/maps/search/?api=1&query=United+Citizen+Law+3301+Watt+Ave+Suite+100+Sacramento+CA+95821" target="_blank" rel="noopener" aria-label="Read our reviews on Google"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.63 5.72 6.27.72-4.66 4.23 1.25 6.18L12 16.98 6.51 19.45l1.25-6.18L3.1 9.04l6.27-.72L12 2.6Z"/></svg></a>
       </div>
-      <a class="greviews" href="https://www.google.com/maps/search/?api=1&query=United+Citizen+Law+3301+Watt+Ave+Suite+100+Sacramento+CA+95821" target="_blank" rel="noopener">★★★★★ Read our Google reviews</a>
+      <a class="greviews" href="https://www.google.com/maps/search/?api=1&query=United+Citizen+Law+3301+Watt+Ave+Suite+100+Sacramento+CA+95821" target="_blank" rel="noopener"><span aria-hidden="true">★★★★★</span> <span data-i18n="foot.reviews">Read our Google reviews</span></a>
     </div>
     <div>
-      <h3>Practice Areas</h3>
+      <h3 data-i18n="foot.practice">Practice Areas</h3>
       <ul>
-        <li><a href="./car-accident-lawyer-sacramento.html">Car Accidents</a></li>
-        <li><a href="./truck-accident-lawyer-sacramento.html">Truck Accidents</a></li>
-        <li><a href="./motorcycle-accident-lawyer-sacramento.html">Motorcycle Accidents</a></li>
-        <li><a href="./rideshare-accident-lawyer-sacramento.html">Rideshare Accidents</a></li>
-        <li><a href="./pedestrian-accident-lawyer-sacramento.html">Pedestrian &amp; Bicycle</a></li>
-        <li><a href="./dog-bite-lawyer-sacramento.html">Dog Bites</a></li>
-        <li><a href="./slip-and-fall-lawyer-sacramento.html">Slip &amp; Fall</a></li>
-        <li><a href="./wrongful-death-lawyer-sacramento.html">Wrongful Death</a></li>
+        <li><a href="./car-accident-lawyer-sacramento.html" data-i18n="pn.car">Car Accidents</a></li>
+        <li><a href="./truck-accident-lawyer-sacramento.html" data-i18n="pn.truck">Truck Accidents</a></li>
+        <li><a href="./motorcycle-accident-lawyer-sacramento.html" data-i18n="pn.moto">Motorcycle Accidents</a></li>
+        <li><a href="./rideshare-accident-lawyer-sacramento.html" data-i18n="pn.rideshare">Rideshare Accidents</a></li>
+        <li><a href="./pedestrian-accident-lawyer-sacramento.html" data-i18n="pn.ped">Pedestrian &amp; Bicycle</a></li>
+        <li><a href="./dog-bite-lawyer-sacramento.html" data-i18n="pn.dog">Dog Bites</a></li>
+        <li><a href="./slip-and-fall-lawyer-sacramento.html" data-i18n="pn.slip">Slip &amp; Fall</a></li>
+        <li><a href="./wrongful-death-lawyer-sacramento.html" data-i18n="pn.wd">Wrongful Death</a></li>
       </ul>
     </div>
     <div>
-      <h3>Serving</h3>
+      <h3 data-i18n="foot.serving">Serving</h3>
       <ul><li>Sacramento</li><li>Elk Grove</li><li>Roseville</li><li>Folsom</li><li>Citrus Heights</li><li>Rancho Cordova</li></ul>
     </div>
     <div>
-      <h3>Firm</h3>
+      <h3 data-i18n="foot.firm">Firm</h3>
       <ul>
-        <li><a href="./index.html#sam-fareed">About Sam Fareed</a></li>
-        <li><a href="./team.html">Our Team</a></li>
-        <li><a href="./index.html#results">Case Results</a></li>
-        <li><a href="./index.html#faq">FAQs</a></li>
+        <li><a href="./index.html#sam-fareed" data-i18n="fn.about">About Sam Fareed</a></li>
+        <li><a href="./team.html" data-i18n="nav.team">Our Team</a></li>
+        <li><a href="./index.html#results" data-i18n="fn.results">Case Results</a></li>
+        <li><a href="./index.html#faq" data-i18n="fn.faqs">FAQs</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
   </div>
   <div class="wrap wide legal">
-    <p>© 2026 United Citizen Law. Attorney advertising. Past results do not guarantee future outcomes. This website is for general information only and does not constitute legal advice; contacting the firm does not create an attorney-client relationship. Content reviewed by attorney Sam Fareed · Last updated July 11, 2026.</p>
+    <p data-i18n="foot.legal">© 2026 United Citizen Law. Attorney advertising. Past results do not guarantee future outcomes. This website is for general information only and does not constitute legal advice; contacting the firm does not create an attorney-client relationship. Content reviewed by attorney Sam Fareed · Last updated July 11, 2026.</p>
   </div>
 </footer>
 
 <nav class="callbar" aria-label="Quick contact">
-  <a class="c1" href="tel:+19168008457"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>Call now — free</a>
-  <a class="c2" href="./index.html#review-car">Free case review</a>
+  <a class="c1" href="tel:+19168008457"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg><span data-i18n="bar.call">Call now — free</span></a>
+  <a class="c2" href="./index.html#review-car"><span data-i18n="bar.review">Free case review</span></a>
 </nav>
 
 <script src="./i18n.js"></script>

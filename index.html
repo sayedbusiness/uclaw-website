@@ -320,11 +320,13 @@
   footer.site a:hover{color:var(--gold-hi)}
   address{font-style:normal;line-height:1.85}
   .legal{border-top:1px solid rgba(255,255,255,.06);padding-block:1.5rem;font-size:.76rem;color:#6f6a5c}
-  .callbar{position:fixed;bottom:.8rem;left:.8rem;right:.8rem;z-index:95;display:none;grid-template-columns:1.2fr 1fr;gap:.5rem}
-  .callbar a{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem;font-weight:800;text-decoration:none;font-size:1rem;min-height:54px;border-radius:999px;box-shadow:0 16px 40px rgba(0,0,0,.5);cursor:pointer}
+  .callbar{position:fixed;bottom:calc(.55rem + env(safe-area-inset-bottom));left:.6rem;right:.6rem;z-index:95;display:none;grid-template-columns:1.15fr 1fr;gap:.5rem}
+  .callbar a{display:flex;align-items:center;justify-content:center;gap:.4rem;height:52px;padding:0 .7rem;font-weight:800;text-decoration:none;font-size:.92rem;line-height:1;white-space:nowrap;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.5);cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+  .callbar a:active{transform:scale(.96)}
+  .callbar a svg{flex:none}
   .callbar .c1{background:linear-gradient(155deg,var(--gold-hi),var(--gold));color:#151004}
-  .callbar .c2{background:rgba(13,13,16,.9);backdrop-filter:blur(14px);color:var(--white);border:1px solid var(--hair-d)}
-  @media(max-width:48rem){.callbar{display:grid}body{padding-bottom:4.6rem}}
+  .callbar .c2{background:rgba(13,13,16,.92);backdrop-filter:blur(14px);color:var(--white);border:1px solid var(--hair-d)}
+  @media(max-width:48rem){.callbar{display:grid}body{padding-bottom:4.7rem}}
   /* ── toast ── */
   .toast{position:fixed;left:50%;bottom:5.6rem;transform:translate(-50%,20px);background:rgba(13,13,16,.94);border:1px solid var(--hair-g);color:var(--gold-hi);padding:.7rem 1.3rem;border-radius:999px;font-size:.9rem;font-weight:600;z-index:99;opacity:0;pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease);max-width:92vw;text-align:center}
   .toast.show{opacity:1;transform:translate(-50%,0)}
@@ -428,18 +430,16 @@
     .brandlogo{height:1.55rem}
     .navcall{padding:0;min-height:44px;width:44px;height:44px;gap:0;justify-content:center;align-items:center;font-size:0;flex:none}
     .navcall .orb{margin:0;width:1.7rem;height:1.7rem}
-    .hero{padding-top:clamp(9.5rem,24vw,12rem);background-image:linear-gradient(100deg,rgba(5,5,7,.97) 0%,rgba(5,5,7,.9) 28%,rgba(9,7,4,.62) 58%,rgba(9,7,4,.42) 100%),linear-gradient(to top,rgba(5,5,7,.94) 0%,rgba(5,5,7,.2) 40%,rgba(5,5,7,0) 74%),url('./hero-courtroom-sm.jpg')}
+    .hero{padding-top:clamp(9rem,23vw,11.5rem);background-image:linear-gradient(180deg,rgba(5,5,7,.96) 0%,rgba(5,5,7,.83) 32%,rgba(9,7,4,.82) 60%,rgba(5,5,7,.93) 84%,rgba(5,5,7,.99) 100%),radial-gradient(135% 66% at 50% 30%,rgba(5,5,7,0) 34%,rgba(5,5,7,.62) 100%),url('./hero-courtroom-sm.jpg');background-position:center,center,50% 22%;background-size:cover,cover,cover}
     .hero h1{font-size:clamp(2.05rem,8.4vw,3rem);line-height:1.08}
     .lede{font-size:1.05rem}
     .cta-row .btn{flex:1 1 auto;justify-content:space-between}
   }
   @media(max-width:22rem){ .langsw button{padding:.5rem .34rem;font-size:.7rem} }
 
-  /* ── mobile v2: smaller CTA bar + tighter headings (iPhone; clears home indicator) ── */
+  /* ── mobile: reserve room for the sticky CTA bar (clears iOS home indicator) ── */
   @media(max-width:48rem){
-    .callbar{bottom:calc(.5rem + env(safe-area-inset-bottom));left:.6rem;right:.6rem;gap:.45rem}
-    .callbar a{padding:.6rem .8rem;font-size:.84rem;min-height:44px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
-    body{padding-bottom:calc(3.9rem + env(safe-area-inset-bottom))}
+    body{padding-bottom:calc(4.4rem + env(safe-area-inset-bottom))}
   }
   @media(max-width:56rem){
     .hero h1{font-size:clamp(1.95rem,7.6vw,2.9rem);line-height:1.07}
@@ -546,12 +546,12 @@
         <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3v18M5 21h14M12 5l-5.5 3M12 5l5.5 3"/></svg><span data-i18n="cred.rec">$13M+ recovered for clients</span></span>
       </div>
       <div class="marq-seg" aria-hidden="true">
-        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></svg><span>BBB A+ Accredited</span></span>
-        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.7-4.9 4.4 1.4 6.4L12 16.7 6 20l1.4-6.4L2.5 9.2l6.6-.7 2.9-6Z"/></svg><span>Super Lawyers Rising Star 2021–2026</span></span>
-        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Featured by Forbes</span></span>
-        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>Phones answered 24/7</span></span>
-        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3.5c2.6 2.5 3.9 5.4 3.9 8.5s-1.3 6-3.9 8.5C9.4 18 8.1 15.1 8.1 12s1.3-6 3.9-8.5Z"/></svg><span>5 languages spoken</span></span>
-        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3v18M5 21h14M12 5l-5.5 3M12 5l5.5 3"/></svg><span>$13M+ recovered for clients</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></svg><span data-i18n="cred.bbb">BBB A+ Accredited</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.7-4.9 4.4 1.4 6.4L12 16.7 6 20l1.4-6.4L2.5 9.2l6.6-.7 2.9-6Z"/></svg><span data-i18n="cred.sl">Super Lawyers Rising Star 2021–2026</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-i18n="cred.forbes">Featured by Forbes</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="cred.247">Phones answered 24/7</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3.5c2.6 2.5 3.9 5.4 3.9 8.5s-1.3 6-3.9 8.5C9.4 18 8.1 15.1 8.1 12s1.3-6 3.9-8.5Z"/></svg><span data-i18n="cred.lang">5 languages spoken</span></span>
+        <span class="cred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3v18M5 21h14M12 5l-5.5 3M12 5l5.5 3"/></svg><span data-i18n="cred.rec">$13M+ recovered for clients</span></span>
       </div>
     </div>
   </div>

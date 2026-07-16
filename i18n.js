@@ -128,6 +128,48 @@
   I18N.ur["pp.faq.h"]="عام سوالات";
   I18N.ar["pp.faq.h"]="الأسئلة الشائعة";
 
+  /* shared chrome: CTA buttons, contact card, address, footer, sticky bar */
+  Object.assign(I18N.es,{
+    "cta.review":"Comience su evaluación gratis","cta.call":"Llame al (916) 800-8457",
+    "bar.call":"Llame ahora — gratis","bar.review":"Evaluación gratis",
+    "contact.card.h":"¿No sabe por dónde empezar?","contact.card.p":"Responda seis preguntas rápidas y la persona indicada le devolverá la llamada — normalmente en minutos.",
+    "addr.office":"Oficina:","addr.phone":"Teléfono:","addr.answered":"atendido 24/7","addr.email":"Correo:","addr.hours":"Horario:","addr.hourval":"Lun–Vie 8:00am–7:00pm (los teléfonos nunca cierran)","addr.maps":"Abrir en Google Maps →",
+    "foot.hours":"Oficina: Lun–Vie 8am–7pm<br>Teléfonos atendidos 24/7 · Se habla español","foot.reviews":"Lea nuestras reseñas en Google","foot.serving":"Servimos",
+    "pn.car":"Accidentes de auto","pn.truck":"Accidentes de camión","pn.moto":"Accidentes de motocicleta","pn.rideshare":"Accidentes de viaje compartido","pn.ped":"Peatones y bicicletas","pn.dog":"Mordidas de perro","pn.slip":"Resbalones y caídas","pn.wd":"Muerte por negligencia",
+    "fn.about":"Sobre Sam Fareed","fn.results":"Resultados de casos","fn.faqs":"Preguntas frecuentes",
+    "foot.legal":"© 2026 United Citizen Law. Publicidad de abogados. Los resultados pasados no garantizan resultados futuros. Este sitio web es solo para información general y no constituye asesoría legal; contactar al bufete no crea una relación abogado-cliente. Contenido revisado por el abogado Sam Fareed · Última actualización: 11 de julio de 2026."
+  });
+  Object.assign(I18N.fa,{
+    "cta.review":"ارزیابی رایگان پروندهٔ خود را شروع کنید","cta.call":"تماس: (916) 800-8457",
+    "bar.call":"همین حالا زنگ بزنید — رایگان","bar.review":"ارزیابی رایگان",
+    "contact.card.h":"نمی‌دانید از کجا شروع کنید؟","contact.card.p":"به شش پرسش کوتاه پاسخ دهید و فرد مناسب با شما تماس می‌گیرد — معمولاً ظرف چند دقیقه.",
+    "addr.office":"دفتر:","addr.phone":"تلفن:","addr.answered":"پاسخگویی ۲۴ ساعته","addr.email":"ایمیل:","addr.hours":"ساعات:","addr.hourval":"دوشنبه تا جمعه ۸ صبح تا ۷ عصر (تلفن‌ها هرگز بسته نمی‌شوند)","addr.maps":"باز کردن در گوگل مپ →",
+    "foot.hours":"دفتر: دوشنبه تا جمعه ۸ صبح تا ۷ عصر<br>تلفن‌ها ۲۴ ساعته پاسخ داده می‌شوند · اسپانیایی صحبت می‌کنیم","foot.reviews":"نظرات ما را در گوگل بخوانید","foot.serving":"خدمت‌رسانی به",
+    "pn.car":"تصادفات رانندگی","pn.truck":"تصادفات کامیون","pn.moto":"تصادفات موترسایکل","pn.rideshare":"تصادفات خودروی اشتراکی","pn.ped":"عابر و دوچرخه","pn.dog":"گازگرفتگی سگ","pn.slip":"لغزش و زمین‌خوردن","pn.wd":"مرگ ناشی از قصور",
+    "fn.about":"دربارهٔ سام فرید","fn.results":"نتایج پرونده‌ها","fn.faqs":"پرسش‌های متداول",
+    "foot.legal":"© ۲۰۲۶ United Citizen Law. تبلیغات وکالت. نتایج گذشته تضمینی برای نتایج آینده نیست. این وب‌سایت تنها برای اطلاعات عمومی است و مشاورهٔ حقوقی محسوب نمی‌شود؛ تماس با دفتر رابطهٔ وکیل‑موکل ایجاد نمی‌کند. محتوا توسط وکیل سام فرید بازبینی شده · آخرین به‌روزرسانی: ۱۱ جولای ۲۰۲۶."
+  });
+  Object.assign(I18N.ur,{
+    "cta.review":"اپنے کیس کا مفت جائزہ شروع کریں","cta.call":"کال کریں (916) 800-8457",
+    "bar.call":"ابھی کال کریں — مفت","bar.review":"مفت جائزہ",
+    "contact.card.h":"معلوم نہیں کہاں سے شروع کریں؟","contact.card.p":"چھ فوری سوالات کے جواب دیں اور مناسب فرد آپ کو واپس کال کرے گا — عموماً چند منٹ میں۔",
+    "addr.office":"دفتر:","addr.phone":"فون:","addr.answered":"24/7 جواب","addr.email":"ای میل:","addr.hours":"اوقات:","addr.hourval":"پیر–جمعہ صبح 8:00 تا شام 7:00 (فون کبھی بند نہیں ہوتے)","addr.maps":"گوگل میپس میں کھولیں →",
+    "foot.hours":"دفتر: پیر–جمعہ صبح 8 تا شام 7<br>فون 24/7 جواب دیے جاتے ہیں · ہسپانوی بولی جاتی ہے","foot.reviews":"گوگل پر ہمارے جائزے پڑھیں","foot.serving":"خدمت کے علاقے",
+    "pn.car":"کار حادثات","pn.truck":"ٹرک حادثات","pn.moto":"موٹرسائیکل حادثات","pn.rideshare":"رائیڈ شیئر حادثات","pn.ped":"پیدل اور سائیکل","pn.dog":"کتے کے کاٹنے","pn.slip":"پھسلنا اور گرنا","pn.wd":"ناجائز موت",
+    "fn.about":"سام فرید کے بارے میں","fn.results":"کیس کے نتائج","fn.faqs":"عام سوالات",
+    "foot.legal":"© 2026 United Citizen Law۔ وکلاء کی تشہیر۔ ماضی کے نتائج مستقبل کے نتائج کی ضمانت نہیں دیتے۔ یہ ویب سائٹ صرف عام معلومات کے لیے ہے اور قانونی مشورہ نہیں؛ فرم سے رابطہ وکیل‑مؤکل تعلق قائم نہیں کرتا۔ مواد کا جائزہ وکیل سام فرید نے لیا · آخری اپ ڈیٹ: 11 جولائی 2026۔"
+  });
+  Object.assign(I18N.ar,{
+    "cta.review":"ابدأ تقييم قضيتك المجاني","cta.call":"اتصل على (916) 800-8457",
+    "bar.call":"اتصل الآن — مجانًا","bar.review":"تقييم مجاني",
+    "contact.card.h":"لا تعرف من أين تبدأ؟","contact.card.p":"أجب عن ستة أسئلة سريعة وسيتصل بك الشخص المناسب — عادةً خلال دقائق.",
+    "addr.office":"المكتب:","addr.phone":"الهاتف:","addr.answered":"نردّ على مدار الساعة","addr.email":"البريد:","addr.hours":"ساعات العمل:","addr.hourval":"الاثنين–الجمعة 8:00ص–7:00م (الهاتف لا يُغلق أبدًا)","addr.maps":"افتح في خرائط جوجل →",
+    "foot.hours":"المكتب: الاثنين–الجمعة 8ص–7م<br>نردّ على الهاتف على مدار الساعة · نتحدث الإسبانية","foot.reviews":"اقرأ تقييماتنا على جوجل","foot.serving":"نخدم",
+    "pn.car":"حوادث السيارات","pn.truck":"حوادث الشاحنات","pn.moto":"حوادث الدراجات النارية","pn.rideshare":"حوادث النقل التشاركي","pn.ped":"المشاة والدراجات","pn.dog":"عضّات الكلاب","pn.slip":"الانزلاق والسقوط","pn.wd":"الوفاة بالإهمال",
+    "fn.about":"عن سام فريد","fn.results":"نتائج القضايا","fn.faqs":"الأسئلة الشائعة",
+    "foot.legal":"© 2026 United Citizen Law. إعلان محاماة. النتائج السابقة لا تضمن النتائج المستقبلية. هذا الموقع لأغراض المعلومات العامة فقط ولا يُعدّ استشارة قانونية؛ التواصل مع المكتب لا يُنشئ علاقة محامٍ‑موكل. راجع المحتوى المحامي سام فريد · آخر تحديث: 11 يوليو 2026."
+  });
+
   /* merge page-specific prose injected inline (window.UCL_PAGE_I18N) before this script loads */
   (function(p){ if(!p) return; ["es","fa","ur","ar"].forEach(function(lg){ if(!p[lg]) return; I18N[lg]=I18N[lg]||{}; for(var k in p[lg]) I18N[lg][k]=p[lg][k]; }); })(window.UCL_PAGE_I18N);
 
@@ -152,7 +194,21 @@
     $$('[data-setlang]').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-setlang')===code); b.setAttribute('aria-pressed', b.getAttribute('data-setlang')===code?'true':'false'); });
   }
 
+  function initReveal(){
+    var els = $$('.reveal');
+    if(!els.length) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce || !('IntersectionObserver' in window)){ els.forEach(function(el){ el.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+    /* safety net: anything still hidden after load gets revealed */
+    window.addEventListener('load', function(){ setTimeout(function(){ els.forEach(function(el){ if(!el.classList.contains('in')){ var r=el.getBoundingClientRect(); if(r.top < innerHeight) el.classList.add('in'); } }); }, 1200); });
+  }
+
   function boot(){
+    document.documentElement.classList.add('js');
     cacheEnglish();
     $$('[data-setlang]').forEach(function(b){
       b.addEventListener('click', function(){ applyLang(b.getAttribute('data-setlang')); });
@@ -160,6 +216,7 @@
     var saved='en';
     try{ saved=localStorage.getItem('ucl_lang')||'en'; }catch(e){}
     applyLang(saved);
+    initReveal();
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
