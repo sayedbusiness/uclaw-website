@@ -122,6 +122,15 @@
     }
   };
 
+  /* shared FAQ section heading (identical on every practice page) */
+  I18N.es["pp.faq.h"]="Preguntas frecuentes";
+  I18N.fa["pp.faq.h"]="پرسش‌های متداول";
+  I18N.ur["pp.faq.h"]="عام سوالات";
+  I18N.ar["pp.faq.h"]="الأسئلة الشائعة";
+
+  /* merge page-specific prose injected inline (window.UCL_PAGE_I18N) before this script loads */
+  (function(p){ if(!p) return; ["es","fa","ur","ar"].forEach(function(lg){ if(!p[lg]) return; I18N[lg]=I18N[lg]||{}; for(var k in p[lg]) I18N[lg][k]=p[lg][k]; }); })(window.UCL_PAGE_I18N);
+
   var EN_CACHE = {};
   function cacheEnglish(){
     $$('[data-i18n]').forEach(function(el){ EN_CACHE[el.getAttribute('data-i18n')] = el.textContent; });

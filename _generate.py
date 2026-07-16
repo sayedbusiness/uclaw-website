@@ -3,7 +3,8 @@
 All pages share one shell (header, contact band, footer, a11y toggles) and each
 carries unique SEO meta + schema. Copy is original, grounded in the firm's real
 services — not copied from uclaw.net (avoids duplicate-content self-competition)."""
-import base64, os, html
+import base64, os, html, json
+from translations import PROSE   # per-page prose translations (es/fa/ur/ar), keyed by case
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 def av(name):
@@ -337,12 +338,12 @@ def page_schema(title, desc, canonical, service_name, service_type, faqs, crumb_
     return '{"@context":"https://schema.org","@graph":['+",".join(graph)+']}'
 
 def steps_html(steps):
-    return '<div class="steps">'+''.join(f'<div class="stepc"><div class="stepc-in"><h3>{html.escape(t)}</h3><p>{html.escape(p)}</p></div></div>' for t,p in steps)+'</div>'
+    return '<div class="steps">'+''.join(f'<div class="stepc"><div class="stepc-in"><h3 data-i18n="b.step.{i}.t">{html.escape(t)}</h3><p data-i18n="b.step.{i}.d">{html.escape(p)}</p></div></div>' for i,(t,p) in enumerate(steps))+'</div>'
 
 def faq_html(faqs):
-    out='<div class="wrap" style="max-width:52rem"><h2 style="margin-bottom:1.5rem">Common questions</h2>'
-    for q,a in faqs:
-        out+=f'<details><summary><span>{html.escape(q)}</span><span class="sig" aria-hidden="true">+</span></summary><div class="answer"><p>{html.escape(a)}</p></div></details>'
+    out='<div class="wrap" style="max-width:52rem"><h2 style="margin-bottom:1.5rem" data-i18n="pp.faq.h">Common questions</h2>'
+    for i,(q,a) in enumerate(faqs):
+        out+=f'<details><summary><span data-i18n="b.faq.{i}.q">{html.escape(q)}</span><span class="sig" aria-hidden="true">+</span></summary><div class="answer"><p data-i18n="b.faq.{i}.a">{html.escape(a)}</p></div></details>'
     return out+'</div>'
 
 # ─────────────── PRACTICE PAGE DATA (original copy, grounded in the firm's real services) ───────────────
@@ -604,16 +605,16 @@ def build_practice(pg):
 <section class="phero"><div class="wrap">
   <span class="eyebrow" data-i18n="pp.eyebrow">Sacramento Personal Injury</span>
   <h1><span data-i18n="p.{ik}.pre">{html.escape(pg['h1_pre'])}</span> <em data-i18n="p.{ik}.em">{html.escape(pg['h1_em'])}</em></h1>
-  <p class="lede" data-i18n="p.{ik}.lede">{html.escape(pg['lede'])}</p>
+  <p class="lede" data-i18n="b.lede">{html.escape(pg['lede'])}</p>
   <div class="cta-row">{call_btn()}{review_btn(pg['case'], cls='btn-ghost')}</div>
   <p class="risk" data-i18n="pp.risk">No fee unless we win. Hospitalized? We come to you.</p>
 </div></section>
 
 <section class="prose light"><div class="wrap">
-  <p class="lead-answer">{html.escape(pg['answer'])}</p>
-  <h2>{html.escape(pg['why_h'])}</h2>
-  {''.join(f'<p>{html.escape(x)}</p>' for x in pg['why'])}
-  <div class="chips">{''.join(f'<span class="chip">{html.escape(c)}</span>' for c in pg['chips'])}</div>
+  <p class="lead-answer" data-i18n="b.answer">{html.escape(pg['answer'])}</p>
+  <h2 data-i18n="b.why.h">{html.escape(pg['why_h'])}</h2>
+  {''.join(f'<p data-i18n="b.why.{i}">{html.escape(x)}</p>' for i,x in enumerate(pg['why']))}
+  <div class="chips">{''.join(f'<span class="chip" data-i18n="b.chip.{i}">{html.escape(c)}</span>' for i,c in enumerate(pg['chips']))}</div>
 </div></section>
 
 <section class="prose"><div class="wrap">
@@ -625,6 +626,8 @@ def build_practice(pg):
 <section class="prose light"><div class="wrap">{faq_html(pg['faqs'])}</div></section>
 </main>
 """
+    # inject this page's prose translations (runs before i18n.js, which merges them)
+    out+='<script>window.UCL_PAGE_I18N='+json.dumps(PROSE.get(pg['case'],{}), ensure_ascii=False)+'</script>\n'
     out+=end_and_footer(pg['case'])
     return out
 
@@ -690,10 +693,22 @@ def build_team():
     return out
 
 # ─────────────── WRITE ───────────────
-for pg in PAGES:
-    with open(os.path.join(BASE, pg['slug']+'.html'),'w',encoding='utf-8') as f:
-        f.write(build_practice(pg))
-    print('wrote', pg['slug']+'.html')
-with open(os.path.join(BASE,'team.html'),'w',encoding='utf-8') as f:
-    f.write(build_team())
-print('wrote team.html')
+def page_prose_keys(pg):
+    """Authoritative English key→text map for a page's translatable body prose.
+    MUST stay in lock-step with the data-i18n keys emitted by build_practice/
+    steps_html/faq_html, so translations.py can be validated for full coverage."""
+    m={"b.lede":pg["lede"], "b.answer":pg["answer"], "b.why.h":pg["why_h"]}
+    for i,x in enumerate(pg["why"]):   m[f"b.why.{i}"]=x
+    for i,c in enumerate(pg["chips"]): m[f"b.chip.{i}"]=c
+    for i,(t,d) in enumerate(pg["steps"]): m[f"b.step.{i}.t"]=t; m[f"b.step.{i}.d"]=d
+    for i,(q,a) in enumerate(pg["faqs"]):  m[f"b.faq.{i}.q"]=q; m[f"b.faq.{i}.a"]=a
+    return m
+
+if __name__=='__main__':
+    for pg in PAGES:
+        with open(os.path.join(BASE, pg['slug']+'.html'),'w',encoding='utf-8') as f:
+            f.write(build_practice(pg))
+        print('wrote', pg['slug']+'.html')
+    with open(os.path.join(BASE,'team.html'),'w',encoding='utf-8') as f:
+        f.write(build_team())
+    print('wrote team.html')
