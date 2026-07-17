@@ -264,9 +264,24 @@
   }
 
   function startSchedule() {
-    S.flow = 'schedule'; S.step = S.ctx.name && S.ctx.phone ? 2 : 0; clearChips();
-    if (S.step === 2) { schedDay(); return; }
-    botDelay('Happy to set that up. What’s your first and last name?');
+    S.flow = 'schedule'; clearChips();
+    /* always know WHY they're coming in before booking */
+    if (!S.ctx.case_type) {
+      S.step = -1;
+      botDelay('Happy to set that up. So the right attorney prepares for you — what kind of accident is this about?', function () {
+        chips(KB.cases.map(function (c) {
+          return { label: c.label, action: function () { S.ctx.case_type = c.label; schedAfterCase(); } };
+        }));
+      });
+      return;
+    }
+    schedAfterCase();
+  }
+  function schedAfterCase() {
+    S.flow = 'schedule';
+    if (S.ctx.name && S.ctx.phone) { schedDay(); return; }
+    S.step = 0;
+    botDelay('Got it — ' + S.ctx.case_type.toLowerCase() + '. What’s your first and last name?');
   }
   function schedDay() {
     S.flow = 'schedule'; S.step = 2;
@@ -301,11 +316,20 @@
       }
     } catch (e) {}
     var t = typing();
-    sbInsert('appointments', {
+    /* a booking without a lead still becomes a CRM lead — the team's pipeline
+       is the source of truth, so every scheduler lands there too */
+    var leadFirst = S.leadId ? Promise.resolve(null) : sbInsert('chat_leads', {
+      name: S.ctx.name || null, phone: S.ctx.phone || null, email: S.ctx.email || null,
+      case_type: S.ctx.case_type || null,
+      summary: 'Booked a consultation via website chat (' + whenText + ')',
+      transcript: S.transcript.slice(-30), lang: document.documentElement.lang || 'en',
+      page: location.pathname.split('/').pop() || 'index.html', status: 'new'
+    }).then(function (lead) { S.leadId = lead.id; persist(); }).catch(function () {});
+    leadFirst.then(function () { return sbInsert('appointments', {
       lead_id: S.leadId, name: S.ctx.name || null, phone: S.ctx.phone || null, email: S.ctx.email || null,
       case_type: S.ctx.case_type || null, preferred_at: preferredAt, preferred_text: whenText,
       status: 'requested', sms_status: 'pending'
-    }).then(function (appt) {
+    }); }).then(function (appt) {
       return sbFn('chat-notify', { kind: 'appointment', phone: S.ctx.phone, name: S.ctx.name, when_text: whenText, appointment_id: appt.id });
     }).then(function (n) {
       t.remove();
