@@ -29,7 +29,7 @@
   --sans:"Avenir Next","Avenir","Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:6.5rem}
+html{scroll-behavior:smooth;scroll-padding-top:6.5rem;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 html.bigtext{font-size:118%}
 body{background:var(--black);color:var(--body-d);font-family:var(--sans);line-height:1.75;font-size:1.075rem;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:.004em;text-wrap:balance;color:var(--white)}
@@ -53,10 +53,18 @@ img{max-width:100%;height:auto}
 @keyframes vtOut{ to{ opacity:0; transform:translateY(-8px) } }
 @keyframes vtIn{ from{ opacity:0; transform:translateY(10px) } }
 /* ── scroll reveal (progressive-enhancement: visible without JS) ── */
-html.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
-html.js .reveal.in{opacity:1;transform:none}
-html.js .reveal.d1{transition-delay:.07s}html.js .reveal.d2{transition-delay:.14s}html.js .reveal.d3{transition-delay:.21s}html.js .reveal.d4{transition-delay:.28s}html.js .reveal.d5{transition-delay:.35s}
-@media(prefers-reduced-motion:reduce){html.js .reveal{opacity:1!important;transform:none!important;transition:none!important}}
+html.js .reveal{opacity:0;transform:translateY(26px);filter:blur(7px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease);will-change:opacity,transform}
+html.js .reveal.in{opacity:1;transform:none;filter:blur(0)}
+html.js .reveal.d1{transition-delay:.08s}html.js .reveal.d2{transition-delay:.16s}html.js .reveal.d3{transition-delay:.24s}html.js .reveal.d4{transition-delay:.32s}html.js .reveal.d5{transition-delay:.4s}
+@media(prefers-reduced-motion:reduce){html.js .reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}}
+/* ── hero load-in: staggered entrance so the first thing a visitor sees is alive ── */
+@keyframes pheroRise{from{opacity:0;transform:translateY(24px);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+html.js .phero .eyebrow,html.js .phero h1,html.js .phero .lede,html.js .phero .cta-row,html.js .phero .risk{animation:pheroRise .85s var(--ease) both}
+html.js .phero h1{animation-delay:.08s}
+html.js .phero .lede{animation-delay:.2s}
+html.js .phero .cta-row{animation-delay:.32s}
+html.js .phero .risk{animation-delay:.42s}
+@media(prefers-reduced-motion:reduce){html.js .phero .eyebrow,html.js .phero h1,html.js .phero .lede,html.js .phero .cta-row,html.js .phero .risk{animation:none}}
 .navwrap{position:fixed;top:2.5rem;left:0;right:0;z-index:90;display:flex;justify-content:center;padding-inline:1rem}
 .pillnav{display:flex;align-items:center;gap:1.3rem;background:rgba(13,13,16,.74);backdrop-filter:blur(22px);border:1px solid var(--hair-d);border-radius:999px;padding:.5rem .55rem .5rem 1.35rem;box-shadow:0 18px 50px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);max-width:100%}
 .brand{font-family:var(--serif);font-size:1.05rem;color:var(--white);text-decoration:none;letter-spacing:.05em;white-space:nowrap;display:flex;align-items:center;gap:.55rem}
@@ -87,7 +95,7 @@ html.js .reveal.d1{transition-delay:.07s}html.js .reveal.d2{transition-delay:.14
 .eyebrow{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.32rem .95rem;font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.3rem;background:rgba(212,167,44,.08);border:1px solid var(--hair-g);color:var(--gold-hi)}
 .eyebrow::before{content:"";width:.4rem;height:.4rem;border-radius:99px;background:currentColor}
 .phero h1{font-size:clamp(2.3rem,5vw,3.8rem);margin-bottom:1.1rem;position:relative}
-.phero h1 em{font-style:italic;background:linear-gradient(120deg,var(--gold-hi),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.phero h1 em{font-style:italic;color:var(--gold-hi)}
 .phero .lede{font-size:1.2rem;max-width:44rem;color:var(--body-d);margin-bottom:1.7rem;position:relative}
 .phero .cta-row{display:flex;flex-wrap:wrap;gap:1rem;position:relative}
 .phero .risk{margin-top:1rem;font-size:.92rem;color:var(--mute-d);position:relative}
@@ -158,14 +166,18 @@ footer.site a{color:#cfcaba;text-decoration:none}footer.site a:hover{color:var(-
 footer.site address{font-style:normal;line-height:1.85}
 .legal{border-top:1px solid rgba(255,255,255,.06);padding-block:1.5rem;font-size:.76rem;color:#6f6a5c}
 /* sticky mobile call */
-.callbar{position:fixed;bottom:calc(.55rem + env(safe-area-inset-bottom));left:.6rem;right:.6rem;z-index:95;display:none;grid-template-columns:1.15fr 1fr;gap:.5rem}
-.callbar a{display:flex;align-items:center;justify-content:center;gap:.4rem;height:52px;padding:0 .7rem;font-weight:800;text-decoration:none;font-size:.92rem;line-height:1;white-space:nowrap;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform .5s cubic-bezier(.16,1,.3,1)}
-.callbar a:active{transform:scale(.96)}
+.callbar{position:fixed;bottom:calc(.55rem + env(safe-area-inset-bottom));left:.6rem;right:.6rem;z-index:95;display:none;grid-template-columns:1.12fr 1fr;gap:.5rem}
+.callbar a{display:flex;align-items:center;justify-content:center;gap:.4rem;height:54px;min-width:0;padding:0 .7rem;font-weight:800;text-decoration:none;font-size:.92rem;line-height:1;white-space:nowrap;overflow:hidden;border-radius:999px;box-shadow:0 12px 34px rgba(0,0,0,.55);transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.callbar a span{overflow:hidden;text-overflow:ellipsis}
+.callbar a:active{transform:scale(.955)}
 .callbar a svg{flex:none}
 .callbar .c1{background:linear-gradient(155deg,var(--gold-hi),var(--gold));color:#151004}
-.callbar .c2{background:rgba(13,13,16,.92);backdrop-filter:blur(14px);color:var(--white);border:1px solid var(--hair-d)}
-@media(max-width:48rem){.callbar{display:grid}body{padding-bottom:4.7rem}}
-@media(max-width:22rem){.callbar{gap:.4rem}.callbar a{font-size:.82rem;padding:0 .5rem}}
+.callbar .c2{background:rgba(13,13,16,.94);backdrop-filter:blur(14px);color:var(--white);border:1px solid var(--hair-d)}
+html.js .callbar{transform:translateY(160%);opacity:0;pointer-events:none;transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .4s ease}
+html.js .callbar.show{transform:translateY(0);opacity:1;pointer-events:auto}
+@media(max-width:48rem){.callbar{display:grid}body{padding-bottom:calc(4.9rem + env(safe-area-inset-bottom))}}
+@media(max-width:22rem){.callbar{gap:.4rem}.callbar a{font-size:.82rem;padding:0 .45rem}}
+@media(prefers-reduced-motion:reduce){html.js .callbar{transition:opacity .3s ease}}
 @media(max-width:56rem){
   .topstrip{padding:.4rem .6rem 0}
   .langsw{gap:.1rem;padding:.2rem}
@@ -191,6 +203,25 @@ footer.site address{font-style:normal;line-height:1.85}
 .tcard-in p{font-size:.95rem;color:var(--body-d);margin-bottom:.7rem}
 .tcard-in .meta{font-size:.85rem;color:var(--mute-d);border-top:1px solid var(--hair-d);padding-top:.8rem;margin-top:.8rem}
 .tcard-in .meta a{color:var(--gold-hi)}
+.tcard-in .viewstory{display:inline-flex;align-items:center;gap:.4rem;margin-top:.55rem;color:var(--gold-hi);font-weight:700;font-size:.9rem;font-family:var(--sans);text-decoration:none;transition:gap .4s var(--ease)}
+.tcard-in .viewstory:hover{gap:.65rem}
+/* ── individual team member pages ── */
+.memhero-grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+@media(max-width:44rem){.memhero-grid{grid-template-columns:1fr;text-align:center;justify-items:center}}
+.memphoto{width:clamp(9.5rem,27vw,13.5rem);height:clamp(12rem,34vw,17rem);border-radius:1.4rem;object-fit:cover;object-position:top;border:1px solid var(--hair-g);box-shadow:0 34px 74px -32px rgba(0,0,0,.75)}
+.mem-role{color:var(--gold-hi);font-weight:700;font-family:var(--sans);font-size:1rem;letter-spacing:.02em;display:block;margin-bottom:.9rem}
+.mem-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.3rem}
+@media(max-width:44rem){.mem-tags{justify-content:center}}
+.mem-tag{font-size:.8rem;font-weight:700;color:var(--gold-hi);background:rgba(214,176,102,.09);border:1px solid rgba(214,176,102,.24);padding:.34rem .82rem;border-radius:999px;font-family:var(--sans)}
+.mem-contact{display:flex;flex-wrap:wrap;gap:.55rem 1.5rem;margin-top:1.4rem;font-size:1rem;color:var(--body-d)}
+.mem-contact a{color:var(--gold-hi);font-weight:600}
+.focusgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.85rem;margin-top:1.5rem}
+.focusitem{display:flex;align-items:center;gap:.75rem;background:var(--coal);border:1px solid var(--hair-d);border-radius:.95rem;padding:.95rem 1.15rem;font-size:.98rem;color:var(--body-d);transition:transform .5s var(--ease),border-color .5s var(--ease)}
+.focusitem:hover{transform:translateY(-3px);border-color:var(--hair-g)}
+.prose.light .focusitem{background:#fff;border-color:rgba(122,94,11,.16);color:var(--body-l)}
+.focusitem svg{flex:none;color:var(--gold-hi)}
+.mem-back{display:inline-flex;align-items:center;gap:.5rem;margin-top:2rem;color:var(--gold-hi);font-weight:700;font-family:var(--sans);text-decoration:none;transition:gap .4s var(--ease)}
+.mem-back:hover{gap:.75rem}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -327,7 +358,7 @@ footer.site address{font-style:normal;line-height:1.85}
 
 <nav class="callbar" aria-label="Quick contact">
   <a class="c1" href="tel:+19168008457"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg><span data-i18n="bar.call">Call now — free</span></a>
-  <a class="c2" href="./index.html#review-slip"><span data-i18n="bar.review">Free case review</span></a>
+  <a class="c2" href="./index.html#review-slip"><span data-i18n="bar.review">Free review</span></a>
 </nav>
 
 <script src="./i18n.js"></script>

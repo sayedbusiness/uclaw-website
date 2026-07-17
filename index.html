@@ -114,7 +114,7 @@
     --sans:"Avenir Next","Avenir","Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:6.5rem}
+  html{scroll-behavior:smooth;scroll-padding-top:6.5rem;-webkit-text-size-adjust:100%;text-size-adjust:100%}
   body{background:var(--black);color:var(--body-d);font-family:var(--sans);line-height:1.7;font-size:1.0625rem;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   body.lock{overflow:hidden}
   h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:.004em;text-wrap:balance}
@@ -178,7 +178,7 @@
   .on-light .shell{background:rgba(16,18,22,.04);border-color:var(--hair-l)}
   .on-light .core{background:var(--white);border-color:rgba(16,18,22,.05);box-shadow:inset 0 1px 1px rgba(255,255,255,.9), 0 24px 60px -30px rgba(16,18,22,.18)}
   /* ── hero ── */
-  .hero{position:relative;padding-top:clamp(8.5rem,15vw,11.5rem);padding-bottom:clamp(4rem,8vw,6.5rem);overflow:hidden;background-color:#070709;background-image:linear-gradient(100deg,rgba(5,5,7,.97) 0%,rgba(5,5,7,.9) 28%,rgba(9,7,4,.62) 58%,rgba(9,7,4,.42) 100%),linear-gradient(to top,rgba(5,5,7,.94) 0%,rgba(5,5,7,.2) 40%,rgba(5,5,7,0) 74%),url('./hero-courtroom.jpg');background-repeat:no-repeat;background-position:center,center,center 26%;background-size:cover,cover,cover}
+  .hero{position:relative;padding-top:clamp(8.5rem,15vw,11.5rem);padding-bottom:clamp(4rem,8vw,6.5rem);overflow:hidden;background-color:#070709;background-image:linear-gradient(100deg,rgba(5,5,7,.96) 0%,rgba(6,6,9,.9) 30%,rgba(10,8,5,.58) 62%,rgba(12,10,6,.32) 100%),linear-gradient(to top,rgba(5,5,7,.9) 0%,rgba(5,5,7,.26) 42%,rgba(5,5,7,0) 76%),url('./hero-courtroom.jpg');background-repeat:no-repeat;background-position:center,center,center 34%;background-size:cover,cover,cover}
   .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
   .hero::before{width:40rem;height:40rem;top:-20rem;right:-12rem;background:radial-gradient(circle,rgba(240,207,106,.14),transparent 66%)}
   .hero::after{width:34rem;height:22rem;bottom:-12rem;left:-8rem;background:radial-gradient(ellipse,rgba(240,207,106,.06),transparent 68%)}
@@ -224,11 +224,11 @@
   @media(max-width:56rem){.contact-grid{grid-template-columns:1fr}}
   .contact-grid address{font-size:1.05rem;line-height:2}
   .contact-grid address a{font-weight:700}
-  .ledger-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair-g);border:1px solid var(--hair-g);border-radius:1.4rem;overflow:hidden}
+  .ledger-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,1.7vw,1.5rem)}
   @media(max-width:56rem){.ledger-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:34rem){.ledger-grid{grid-template-columns:1fr}}
-  .cell{background:var(--coal);padding:2rem 1.8rem;transition:background .6s var(--ease)}
-  .cell:hover{background:var(--coal-2)}
+  .cell{background:linear-gradient(158deg,var(--coal-2),var(--coal));padding:clamp(1.7rem,3vw,2.2rem) clamp(1.5rem,2.4vw,2rem);border:1px solid var(--hair-g);border-radius:1.15rem;transition:transform .6s var(--ease),border-color .6s var(--ease),box-shadow .6s var(--ease)}
+  .cell:hover{transform:translateY(-5px);border-color:rgba(214,176,102,.34);box-shadow:0 22px 52px rgba(0,0,0,.42)}
   .amt{font-family:var(--serif);font-size:clamp(2rem,3.4vw,2.7rem);color:var(--gold-hi);display:block;line-height:1;font-variant-numeric:tabular-nums}
   .case{font-size:.9rem;color:var(--mute-d);margin-top:.7rem;display:block}
   .disclaimer{font-size:.76rem;color:var(--mute-d);margin-top:1.7rem;max-width:54rem}
@@ -320,13 +320,19 @@
   footer.site a:hover{color:var(--gold-hi)}
   address{font-style:normal;line-height:1.85}
   .legal{border-top:1px solid rgba(255,255,255,.06);padding-block:1.5rem;font-size:.76rem;color:#6f6a5c}
-  .callbar{position:fixed;bottom:calc(.55rem + env(safe-area-inset-bottom));left:.6rem;right:.6rem;z-index:95;display:none;grid-template-columns:1.15fr 1fr;gap:.5rem}
-  .callbar a{display:flex;align-items:center;justify-content:center;gap:.4rem;height:52px;padding:0 .7rem;font-weight:800;text-decoration:none;font-size:.92rem;line-height:1;white-space:nowrap;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.5);cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1)}
-  .callbar a:active{transform:scale(.96)}
+  .callbar{position:fixed;bottom:calc(.55rem + env(safe-area-inset-bottom));left:.6rem;right:.6rem;z-index:95;display:none;grid-template-columns:1.12fr 1fr;gap:.5rem}
+  .callbar a{display:flex;align-items:center;justify-content:center;gap:.4rem;height:54px;min-width:0;padding:0 .7rem;font-weight:800;text-decoration:none;font-size:.92rem;line-height:1;white-space:nowrap;overflow:hidden;border-radius:999px;box-shadow:0 12px 34px rgba(0,0,0,.55);cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+  .callbar a span{overflow:hidden;text-overflow:ellipsis}
+  .callbar a:active{transform:scale(.955)}
   .callbar a svg{flex:none}
   .callbar .c1{background:linear-gradient(155deg,var(--gold-hi),var(--gold));color:#151004}
-  .callbar .c2{background:rgba(13,13,16,.92);backdrop-filter:blur(14px);color:var(--white);border:1px solid var(--hair-d)}
-  @media(max-width:48rem){.callbar{display:grid}body{padding-bottom:4.7rem}}
+  .callbar .c2{background:rgba(13,13,16,.94);backdrop-filter:blur(14px);color:var(--white);border:1px solid var(--hair-d)}
+  /* Progressive enhancement: JS hides the bar over the hero, then slides it up on scroll. No-JS keeps it visible. */
+  html.js .callbar{transform:translateY(160%);opacity:0;pointer-events:none;transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .4s ease}
+  html.js .callbar.show{transform:translateY(0);opacity:1;pointer-events:auto}
+  @media(max-width:48rem){.callbar{display:grid}body{padding-bottom:calc(4.9rem + env(safe-area-inset-bottom))}}
+  @media(max-width:22rem){.callbar a{font-size:.82rem;gap:.3rem;padding:0 .45rem}}
+  @media(prefers-reduced-motion:reduce){html.js .callbar{transition:opacity .3s ease}}
   /* ── toast ── */
   .toast{position:fixed;left:50%;bottom:5.6rem;transform:translate(-50%,20px);background:rgba(13,13,16,.94);border:1px solid var(--hair-g);color:var(--gold-hi);padding:.7rem 1.3rem;border-radius:999px;font-size:.9rem;font-weight:600;z-index:99;opacity:0;pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease);max-width:92vw;text-align:center}
   .toast.show{opacity:1;transform:translate(-50%,0)}
@@ -399,7 +405,7 @@
   }
 
   /* team clickable + bio modal */
-  .tmbtn{display:block;width:100%;text-align:center;cursor:pointer;font:inherit;color:inherit;-webkit-appearance:none;appearance:none}
+  .tmbtn{display:block;width:100%;text-align:center;cursor:pointer;font:inherit;color:inherit;text-decoration:none;-webkit-appearance:none;appearance:none}
   .tmbtn .core{display:block}
   .tmbtn .tm{transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
   .tmbtn:hover .tm{transform:translateY(-4px)}
@@ -430,9 +436,14 @@
     .brandlogo{height:1.55rem}
     .navcall{padding:0;min-height:44px;width:44px;height:44px;gap:0;justify-content:center;align-items:center;font-size:0;flex:none}
     .navcall .orb{margin:0;width:1.7rem;height:1.7rem}
-    .hero{padding-top:clamp(9rem,23vw,11.5rem);background-image:linear-gradient(180deg,rgba(5,5,7,.96) 0%,rgba(5,5,7,.83) 32%,rgba(9,7,4,.82) 60%,rgba(5,5,7,.93) 84%,rgba(5,5,7,.99) 100%),radial-gradient(135% 66% at 50% 30%,rgba(5,5,7,0) 34%,rgba(5,5,7,.62) 100%),url('./hero-courtroom-sm.jpg');background-position:center,center,50% 22%;background-size:cover,cover,cover}
-    .hero h1{font-size:clamp(2.05rem,8.4vw,3rem);line-height:1.08}
-    .lede{font-size:1.05rem}
+    /* Mobile hero: the courtroom reads through the upper band (behind eyebrow + headline), then deepens to solid black so the founder copy, stars and CTAs stay perfectly legible. */
+    .hero{padding-top:clamp(8rem,20vw,10.5rem);padding-bottom:clamp(3rem,9vw,4.5rem);background-image:linear-gradient(179deg,rgba(5,5,7,.9) 0%,rgba(6,6,9,.5) 20%,rgba(9,8,6,.44) 38%,rgba(7,6,6,.7) 56%,rgba(5,5,7,.93) 74%,rgba(5,5,7,.99) 100%),radial-gradient(125% 52% at 50% 30%,rgba(214,176,102,.14),rgba(5,5,7,0) 62%),url('./hero-courtroom-sm.jpg');background-repeat:no-repeat,no-repeat,no-repeat;background-position:center,center,50% 28%;background-size:cover,cover,cover}
+    .hero h1{font-size:clamp(2.05rem,8.4vw,3rem);line-height:1.08;text-shadow:0 2px 26px rgba(0,0,0,.55)}
+    .hero .eyebrow,.hero .kicker{text-shadow:0 1px 14px rgba(0,0,0,.5)}
+    /* lift hero body + credentials off the courtroom imagery for AA legibility */
+    .hero .lede{font-size:1.05rem;color:#f4f0e8;text-shadow:0 1px 16px rgba(0,0,0,.62)}
+    .hero .stars span{color:#e8e2d4;text-shadow:0 1px 12px rgba(0,0,0,.7)}
+    .hero .lede strong{color:#fff}
     .cta-row .btn{flex:1 1 auto;justify-content:space-between}
   }
   @media(max-width:22rem){ .langsw button{padding:.5rem .34rem;font-size:.7rem} }
@@ -605,15 +616,15 @@
         <p class="rv d2" data-i18n="tw.sub">No call centers, no case mills — these are the actual people who answer your call, build your case, and fight for your recovery.</p>
       </div>
       <div class="team-grid">
-        <button class="shell rv tmbtn" data-mem="0" aria-label="View bio for Sam Fareed"><span class="core tm"><img src="./team/sam-fareed.jpg" alt="Sam Fareed, Founding Attorney" width="320" height="480" loading="lazy" decoding="async"><b>Sam Fareed</b><span class="role" data-i18n="tw.r1">Founding Attorney</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
-        <button class="shell rv tmbtn d1" data-mem="1" aria-label="View bio for Shereen Ghaith"><span class="core tm"><img src="./team/shereen-ghaith.jpg" alt="Shereen Ghaith, Associate Attorney" width="320" height="480" loading="lazy" decoding="async"><b>Shereen Ghaith</b><span class="role" data-i18n="tw.r2">Associate Attorney</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
-        <button class="shell rv tmbtn d2" data-mem="2" aria-label="View bio for Laila Fareed"><span class="core tm"><img src="./team/homaira-laila-fareed.jpg" alt="Laila Fareed, Associate Attorney" width="320" height="480" loading="lazy" decoding="async"><b>Laila Fareed</b><span class="role" data-i18n="tw.r3">Associate Attorney</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
-        <button class="shell rv tmbtn d3" data-mem="3" aria-label="View bio for Zahid “Sher” Fareed"><span class="core tm"><img src="./team/zahid-sher-fareed.jpg" alt="Zahid “Sher” Fareed, Client Services Director" width="320" height="480" loading="lazy" decoding="async"><b>Zahid “Sher” Fareed</b><span class="role" data-i18n="tw.r4">Client Services Director</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
-        <button class="shell rv tmbtn" data-mem="4" aria-label="View bio for Abdul Wardak"><span class="core tm"><img src="./team/abdul-wardak.jpg" alt="Abdul Wardak, Case Manager · EN/Dari/Pashto" width="320" height="480" loading="lazy" decoding="async"><b>Abdul Wardak</b><span class="role" data-i18n="tw.r5">Case Manager · EN/Dari/Pashto</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
-        <button class="shell rv tmbtn" data-mem="5" aria-label="View bio for Richard Prasad"><span class="core tm"><img src="./team/richard-prasad.jpg" alt="Richard Prasad, Paralegal" width="320" height="480" loading="lazy" decoding="async"><b>Richard Prasad</b><span class="role" data-i18n="tw.r6">Paralegal</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
-        <button class="shell rv tmbtn d1" data-mem="6" aria-label="View bio for Roya Fareed"><span class="core tm"><img src="./team/roya-fareed.jpg" alt="Roya Fareed, Controller" width="320" height="480" loading="lazy" decoding="async"><b>Roya Fareed</b><span class="role" data-i18n="tw.r7">Controller</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
-        <button class="shell rv tmbtn d2" data-mem="7" aria-label="View bio for Yasir Albadran"><span class="core tm"><img src="./team/yasir-albadran.jpg" alt="Yasir Albadran, Office Clerk · Arabic support" width="320" height="480" loading="lazy" decoding="async"><b>Yasir Albadran</b><span class="role" data-i18n="tw.r8">Office Clerk · Arabic support</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
-        <button class="shell rv tmbtn d3" data-mem="8" aria-label="View bio for Jesse Fareed"><span class="core tm"><img src="./team/jesse-fareed.jpg" alt="Jesse Fareed, Office Clerk" width="320" height="480" loading="lazy" decoding="async"><b>Jesse Fareed</b><span class="role" data-i18n="tw.r9">Office Clerk</span><span class="viewbio">View bio <span aria-hidden="true">&rarr;</span></span></span></button>
+        <a class="shell rv tmbtn" href="./team-sam-fareed.html" aria-label="Read Sam Fareed's story"><span class="core tm"><img src="./team/sam-fareed.jpg" alt="Sam Fareed, Founding Attorney" width="320" height="480" loading="lazy" decoding="async"><b>Sam Fareed</b><span class="role" data-i18n="tw.r1">Founding Attorney</span><span class="viewbio">Read story <span aria-hidden="true">&rarr;</span></span></span></a>
+        <a class="shell rv tmbtn d1" href="./team-shereen-ghaith.html" aria-label="Read Shereen Ghaith's story"><span class="core tm"><img src="./team/shereen-ghaith.jpg" alt="Shereen Ghaith, Associate Attorney" width="320" height="480" loading="lazy" decoding="async"><b>Shereen Ghaith</b><span class="role" data-i18n="tw.r2">Associate Attorney</span><span class="viewbio">Read story <span aria-hidden="true">&rarr;</span></span></span></a>
+        <a class="shell rv tmbtn d2" href="./team-homaira-laila-fareed.html" aria-label="Read Laila Fareed's story"><span class="core tm"><img src="./team/homaira-laila-fareed.jpg" alt="Laila Fareed, Associate Attorney" width="320" height="480" loading="lazy" decoding="async"><b>Laila Fareed</b><span class="role" data-i18n="tw.r3">Associate Attorney</span><span class="viewbio">Read story <span aria-hidden="true">&rarr;</span></span></span></a>
+        <a class="shell rv tmbtn d3" href="./team-zahid-sher-fareed.html" aria-label="Read Zahid Fareed's story"><span class="core tm"><img src="./team/zahid-sher-fareed.jpg" alt="Zahid “Sher” Fareed, Client Services Director" width="320" height="480" loading="lazy" decoding="async"><b>Zahid “Sher” Fareed</b><span class="role" data-i18n="tw.r4">Client Services Director</span><span class="viewbio">Read story <span aria-hidden="true">&rarr;</span></span></span></a>
+        <a class="shell rv tmbtn" href="./team-abdul-wardak.html" aria-label="Read Abdul Wardak's story"><span class="core tm"><img src="./team/abdul-wardak.jpg" alt="Abdul Wardak, Case Manager · EN/Dari/Pashto" width="320" height="480" loading="lazy" decoding="async"><b>Abdul Wardak</b><span class="role" data-i18n="tw.r5">Case Manager · EN/Dari/Pashto</span><span class="viewbio">Read story <span aria-hidden="true">&rarr;</span></span></span></a>
+        <a class="shell rv tmbtn" href="./team-richard-prasad.html" aria-label="Read Richard Prasad's story"><span class="core tm"><img src="./team/richard-prasad.jpg" alt="Richard Prasad, Paralegal" width="320" height="480" loading="lazy" decoding="async"><b>Richard Prasad</b><span class="role" data-i18n="tw.r6">Paralegal</span><span class="viewbio">Read story <span aria-hidden="true">&rarr;</span></span></span></a>
+        <a class="shell rv tmbtn d1" href="./team-roya-fareed.html" aria-label="Read Roya Fareed's story"><span class="core tm"><img src="./team/roya-fareed.jpg" alt="Roya Fareed, Controller" width="320" height="480" loading="lazy" decoding="async"><b>Roya Fareed</b><span class="role" data-i18n="tw.r7">Controller</span><span class="viewbio">Read story <span aria-hidden="true">&rarr;</span></span></span></a>
+        <a class="shell rv tmbtn d2" href="./team-yasir-albadran.html" aria-label="Read Yasir Albadran's story"><span class="core tm"><img src="./team/yasir-albadran.jpg" alt="Yasir Albadran, Office Clerk · Arabic support" width="320" height="480" loading="lazy" decoding="async"><b>Yasir Albadran</b><span class="role" data-i18n="tw.r8">Office Clerk · Arabic support</span><span class="viewbio">Read story <span aria-hidden="true">&rarr;</span></span></span></a>
+        <a class="shell rv tmbtn d3" href="./team-jesse-fareed.html" aria-label="Read Jesse Fareed's story"><span class="core tm"><img src="./team/jesse-fareed.jpg" alt="Jesse Fareed, Office Clerk" width="320" height="480" loading="lazy" decoding="async"><b>Jesse Fareed</b><span class="role" data-i18n="tw.r9">Office Clerk</span><span class="viewbio">Read story <span aria-hidden="true">&rarr;</span></span></span></a>
       </div>
     </div>
   </section>
@@ -1984,6 +1995,16 @@ if(!reduce){
   $$('.cnt').forEach(function(el){ cio.observe(el); });
 }
 
+/* ── sticky call bar: reveal after the hero so it never overlaps it ── */
+(function(){
+  var cb=document.querySelector('.callbar'); if(!cb) return;
+  var shown=false, ticking=false;
+  function upd(){ ticking=false; var s=window.scrollY > window.innerHeight*0.55; if(s!==shown){ shown=s; cb.classList.toggle('show',s); } }
+  window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(upd); } },{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  upd();
+})();
+
 /* ── toast ── */
 var toastEl=null, toastT=null;
 function toast(msg){
@@ -2158,8 +2179,8 @@ var TEAM_BIOS=[{"name": "Sam Fareed", "role": "Founding Attorney", "ext": "", "e
    var x=bm.querySelector('.biomodal-x'); if(x)x.focus();
  }
  function closeBio(){bm.hidden=true; document.body.style.overflow='';}
+ /* team cards are now real links to per-person story pages — no modal hijack */
  document.addEventListener('click',function(e){
-   var tb=e.target.closest&&e.target.closest('.tmbtn'); if(tb){e.preventDefault();openBio(+tb.dataset.mem);return;}
    if(e.target.closest&&e.target.closest('[data-bmclose]')){closeBio();}
  });
  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&bm&&!bm.hidden)closeBio();});
