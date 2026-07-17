@@ -413,17 +413,6 @@
   .tm .role{display:block;min-height:2.6em}
   .viewbio{display:inline-block;margin-top:.7rem;font-size:.76rem;font-weight:700;letter-spacing:.03em;color:var(--gold-deep);font-family:var(--sans)}
   .tmbtn:hover .viewbio{color:var(--gold)}
-  .biomodal{position:fixed;inset:0;z-index:130;display:grid;place-items:center;padding:1.2rem}
-  .biomodal[hidden]{display:none}
-  .biomodal-scrim{position:absolute;inset:0;background:rgba(6,7,8,.72);backdrop-filter:blur(6px)}
-  .biomodal-card{position:relative;z-index:1;max-width:33rem;width:100%;max-height:88vh;overflow-y:auto;background:var(--coal,#141418);border:1px solid var(--hair-g);border-radius:1.5rem;padding:2rem 1.9rem;text-align:center;box-shadow:0 40px 100px -30px rgba(0,0,0,.8)}
-  .biomodal-card img{width:8rem;height:8rem;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(212,167,44,.5);margin-bottom:1rem}
-  .biomodal-card h3{color:var(--white);font-size:1.5rem;margin-bottom:.2rem}
-  .bm-role{color:var(--gold-hi);font-weight:700;font-family:var(--sans);font-size:.92rem;display:block;margin-bottom:.6rem}
-  .bm-meta{color:var(--mute-d);font-size:.84rem;margin-bottom:1.1rem}
-  .bm-meta a{color:var(--gold-hi)}
-  .biomodal-card p{color:var(--body-d);font-size:.98rem;line-height:1.65;text-align:start}
-  .biomodal-x{position:absolute;top:.9rem;inset-inline-end:.9rem;width:2.2rem;height:2.2rem;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid var(--hair-d);color:var(--white);cursor:pointer;font-size:1rem;line-height:1}
 
   /* ── mobile polish (nav/lang/hero fit) ── */
   @media(max-width:56rem){
@@ -436,6 +425,8 @@
     .brandlogo{height:1.55rem}
     .navcall{padding:0;min-height:44px;width:44px;height:44px;gap:0;justify-content:center;align-items:center;font-size:0;flex:none}
     .navcall .orb{margin:0;width:1.7rem;height:1.7rem}
+    /* Top scrim: content scrolling under the floating language pills + nav was visible in the transparent gaps around them on iPhone. A fixed fade masks the whole top zone; sits under the nav (z 80 < 90) and above content. */
+    body::before{content:"";position:fixed;top:0;left:0;right:0;height:8.6rem;z-index:80;pointer-events:none;background:linear-gradient(180deg,rgba(5,5,7,.97) 0%,rgba(5,5,7,.9) 52%,rgba(5,5,7,.5) 80%,rgba(5,5,7,0) 100%)}
     /* Mobile hero: the courtroom reads through the upper band (behind eyebrow + headline), then deepens to solid black so the founder copy, stars and CTAs stay perfectly legible. */
     .hero{padding-top:clamp(8rem,20vw,10.5rem);padding-bottom:clamp(3rem,9vw,4.5rem);background-image:linear-gradient(179deg,rgba(5,5,7,.9) 0%,rgba(6,6,9,.5) 20%,rgba(9,8,6,.44) 38%,rgba(7,6,6,.7) 56%,rgba(5,5,7,.93) 74%,rgba(5,5,7,.99) 100%),radial-gradient(125% 52% at 50% 30%,rgba(214,176,102,.14),rgba(5,5,7,0) 62%),url('./hero-courtroom-sm.jpg');background-repeat:no-repeat,no-repeat,no-repeat;background-position:center,center,50% 28%;background-size:cover,cover,cover}
     .hero h1{font-size:clamp(2.05rem,8.4vw,3rem);line-height:1.08;text-shadow:0 2px 26px rgba(0,0,0,.55)}
@@ -977,15 +968,6 @@
   </div>
 </div>
 
-<div class="biomodal" id="biomodal" role="dialog" aria-modal="true" aria-labelledby="bm-name" hidden>
-  <div class="biomodal-scrim" data-bmclose></div>
-  <div class="biomodal-card">
-    <button class="biomodal-x" data-bmclose aria-label="Close bio">&#10005;</button>
-    <img id="bm-img" alt="" width="128" height="128">
-    <h3 id="bm-name"></h3><span class="bm-role" id="bm-role"></span>
-    <div class="bm-meta" id="bm-meta"></div><p id="bm-bio"></p>
-  </div>
-</div>
 <script>
 (function(){
 'use strict';
@@ -2164,27 +2146,11 @@ applyLang(savedLang,true);
   var m=(location.hash||'').match(/^#review(?:-([a-z]+))?$/);
   if(m){ setTimeout(function(){ openWiz(m[1]||''); }, reduce?0:400); }
 })();
-var TEAM_BIOS=[{"name": "Sam Fareed", "role": "Founding Attorney", "ext": "", "email": "sfareed@uclaw.net", "langs": "English", "bio": "Sam Fareed founded United Citizen Law after surviving a serious car accident in 2017 while an undergraduate at UCLA. Navigating surgeries and insurance adjusters from the victim's side, he made a promise that no one should have to fight that battle alone \u2014 and built the firm he couldn't find. Super Lawyers Rising Star 2021\u20132026 and recognized by Forbes among Sacramento's top injury lawyers."}, {"name": "Shereen Ghaith", "role": "Associate Attorney", "ext": "Ext. 335", "email": "clients@uclaw.net", "langs": "English", "bio": "Shereen holds a B.S. in Business with a concentration in Marketing and a B.A. in Communications focused on Public Relations, both from California State University, Sacramento, as well as a J.D. from McGeorge School of Law. Beyond her professional accomplishments, Shereen finds joy in life's simple pleasures, often spending time at the beach or lake with loved ones."}, {"name": "Laila Fareed", "role": "Associate Attorney", "ext": "Ext. 105", "email": "lailaf@uclaw.net", "langs": "English", "bio": "Laila holds a B.A. from the University of California, Davis, and a J.D. from Lincoln Law School of Sacramento. She has been with United Citizen Law since the start of her career, beginning as a law clerk. Today she handles many aspects of personal injury cases \u2014 client consultations, legal research, drafting documents, negotiating settlements, and representing clients in court. Outside of work, Laila is a devoted mother of three who enjoys hiking and cooking with loved ones."}, {"name": "Zahid \u201cSher\u201d Fareed", "role": "Client Services Director", "ext": "Ext. 102", "email": "clients@uclaw.net", "langs": "English", "bio": "Zahid holds a B.A. in History from California State University, Sacramento. As Head of Client Liaison, he ensures clients receive attentive, professional service and oversees all pre-litigation cases, addressing clients' needs efficiently from the start. He also leads and trains his team with an emphasis on communication and client relationships. Outside of work, Zahid is a dedicated husband and father of three who enjoys traveling and fitness."}, {"name": "Abdul Wardak", "role": "Case Manager \u00b7 EN/Dari/Pashto", "ext": "Ext. 340", "email": "clients@uclaw.net", "langs": "English, Dari, Pashto", "bio": "Abdul is the first point of contact for clients and the face of the firm, handling new intakes and guiding clients through the process. Fluent in English, Dari, and Pashto, he connects with a diverse clientele and ensures smooth communication throughout case management. In his spare time he enjoys football and basketball \u2014 a big Warriors and 49ers fan."}, {"name": "Richard Prasad", "role": "Paralegal", "ext": "Ext. 334", "email": "sfareed@uclaw.net", "langs": "English", "bio": "Richard began his studies at Sacramento City College and continues building his knowledge, particularly in legal and medical research. At the firm he drafts demands, analyzes records, and files complaints; his attention to detail and dedication to clients help keep everything running smoothly. Outside of work he enjoys reading, gardening, and cooking."}, {"name": "Roya Fareed", "role": "Controller", "ext": "Ext. 341", "email": "reyah.ucl@outlook.com", "langs": "English", "bio": "Roya oversees all financial operations of the firm. With more than eight years of experience in banking \u2014 including wealth management and financial planning \u2014 she brings strategic, analytical strength to securing the capital that keeps the firm ready for trial and positioned for growth. An avid traveler who has visited more than 18 countries, she credits that experience with keeping her open-minded and approachable with a diverse clientele."}, {"name": "Yasir Albadran", "role": "Office Clerk \u00b7 Arabic support", "ext": "Ext. 103", "email": "clients@uclaw.net", "langs": "English, Arabic", "bio": "Yasir holds a B.A. in Physical Education from the University of Baghdad, Iraq. He supports daily office operations \u2014 managing documents, scheduling, and client communications \u2014 and, as a first point of contact for many clients, specializes in assisting Arabic-speaking individuals with clarity and precision. Outside of work he enjoys time with family, basketball, traveling, and hiking."}, {"name": "Jesse Fareed", "role": "Office Clerk", "ext": "", "email": "clients@uclaw.net", "langs": "English", "bio": "Jesse frequently works in the field, handling tasks for client cases and making sure everything is done on time, including driving clients to appointments and keeping them comfortable with the process. Outside of work he has a strong interest in culture and entertainment, enjoying classic films and classical music."}];
-(function(){
- function q(s){return document.querySelector(s);}
- var bm=q('#biomodal');
- function openBio(i){var m=TEAM_BIOS[i];if(!m||!bm)return;
-   var card=document.querySelectorAll('.tmbtn')[i];
-   var im=q('#bm-img'); im.src=card?card.querySelector('img').src:''; im.alt=m.name;
-   q('#bm-name').textContent=m.name; q('#bm-role').textContent=m.role;
-   var meta=[]; if(m.langs)meta.push('Speaks '+m.langs); if(m.ext)meta.push(m.ext);
-   if(m.email)meta.push('<a href="mailto:'+m.email+'">'+m.email+'</a>');
-   q('#bm-meta').innerHTML=meta.join(' &middot; '); q('#bm-bio').textContent=m.bio;
-   bm.hidden=false; document.body.style.overflow='hidden';
-   var x=bm.querySelector('.biomodal-x'); if(x)x.focus();
- }
- function closeBio(){bm.hidden=true; document.body.style.overflow='';}
- /* team cards are now real links to per-person story pages — no modal hijack */
- document.addEventListener('click',function(e){
-   if(e.target.closest&&e.target.closest('[data-bmclose]')){closeBio();}
- });
- document.addEventListener('keydown',function(e){if(e.key==='Escape'&&bm&&!bm.hidden)closeBio();});
-})();
 
 })();
 </script>
+<script>window.UCL_SB={u:'https://ulbybyuudermwyaucpdc.supabase.co',k:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVsYnlieXV1ZGVybXd5YXVjcGRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQyNDUxMjIsImV4cCI6MjA5OTgyMTEyMn0.11IrPB1C9SupOBOY0BSWLYW_YEvcfwaO1S0hNvk4WqI'}</script>
+<script src="./assistant-kb.js" defer></script>
+<script src="./assistant.js" defer></script>
+</body>
+</html>

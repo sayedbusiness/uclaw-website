@@ -179,6 +179,8 @@ html.js .callbar.show{transform:translateY(0);opacity:1;pointer-events:auto}
 @media(max-width:22rem){.callbar{gap:.4rem}.callbar a{font-size:.82rem;padding:0 .45rem}}
 @media(prefers-reduced-motion:reduce){html.js .callbar{transition:opacity .3s ease}}
 @media(max-width:56rem){
+  /* fixed fade behind the floating language pills + nav so scrolled content never collides visually (z 80 < navwrap 90) */
+  body::before{content:"";position:fixed;top:0;left:0;right:0;height:8.6rem;z-index:80;pointer-events:none;background:linear-gradient(180deg,rgba(5,5,7,.97) 0%,rgba(5,5,7,.9) 52%,rgba(5,5,7,.5) 80%,rgba(5,5,7,0) 100%)}
   .topstrip{padding:.4rem .6rem 0}
   .langsw{gap:.1rem;padding:.2rem}
   .langsw button{padding:.5rem .62rem;font-size:.78rem;min-height:40px;display:inline-flex;align-items:center}
@@ -362,4 +364,7 @@ html.js .callbar.show{transform:translateY(0);opacity:1;pointer-events:auto}
 </nav>
 
 <script src="./i18n.js"></script>
+<script>window.UCL_SB={u:'https://ulbybyuudermwyaucpdc.supabase.co',k:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVsYnlieXV1ZGVybXd5YXVjcGRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQyNDUxMjIsImV4cCI6MjA5OTgyMTEyMn0.11IrPB1C9SupOBOY0BSWLYW_YEvcfwaO1S0hNvk4WqI'}</script>
+<script src="./assistant-kb.js" defer></script>
+<script src="./assistant.js" defer></script>
 </body></html>
